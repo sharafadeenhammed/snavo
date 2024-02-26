@@ -35,9 +35,9 @@ function Login() {
       </h1>
       {/* input */}
       <div className='mb-5'>
-        <AppInput LeftIcon={<p className="flex items-center text-indigo-600 font-bold text-lg mr-2 bg-gray-50">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" />
+        <AppInput LeftIcon={<p className="cursor-pointer flex items-center text-indigo-600 font-bold text-lg mr-2 bg-gray-50">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" />
 
-        <AppInput LeftIcon={<FaLock size={30} className="mr-2" />} type={passwordType} placeholder='Please enter password' RightIcon={passwordType === "password" ? < FaEyeSlash color="lightgray" onClick={() => setPasswordType("text")} size={25} /> : <FaEye color="lightgray" onClick={() => setPasswordType("password")} size={25} />} />
+        <AppInput LeftIcon={<FaLock size={20} className="mr-2" />} type={passwordType} placeholder='Please enter password' RightIcon={passwordType === "password" ? < FaEyeSlash color="lightgray" onClick={() => setPasswordType("text")} size={25} /> : <FaEye color="lightgray" onClick={() => setPasswordType("password")} size={25} />} />
 
 
         <input className='bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg' type='submit' value="Log in" />

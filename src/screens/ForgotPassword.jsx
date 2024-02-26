@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaArrowLeft, FaArrowRight, FaLock, FaEye, FaEyeSlash, FaInbox, FaShieldAlt, } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaLock, FaEye, FaEyeSlash, FaShieldAlt, FaEnvelope } from "react-icons/fa";
 
 
 // import } from "react-icons/ai"
@@ -49,20 +49,35 @@ function ForgotPassword() {
         {/* input */}
         <div className='mb-5'>
           {recoveryType === "phone" ?
-            (<AppInput value={phone} handleOnChange={(e) => setPhone(e.target.value)} LeftIcon={<p className="flex items-center text-indigo-600 font-bold text-lg mr-2">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" />)
+            (<>
+              <h1 className='text-xl mb-2 '>
+                Phone number
+              </h1>
+              <AppInput value={phone} handleOnChange={(e) => setPhone(e.target.value)} LeftIcon={<p className="flex items-center text-indigo-600 font-bold text-lg mr-2">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" /> </>)
             :
-            (<AppInput placeholder="Please input the email address" value={email} handleOnChange={(e) => setEmail(e.target.value)} LeftIcon={<FaInbox size={20} className="mr-2" />} type="email" />)
+            (<>
+              <h1 className='text-xl mb-2 '>
+                Mail
+              </h1>
+              <AppInput placeholder="Please input the email address" value={email} handleOnChange={(e) => setEmail(e.target.value)} LeftIcon={<FaEnvelope size={20} className="mr-2" />} type="email" />
+            </>)
 
           }
-
+          <h1 className='text-xl  mb-2 '>
+            New Password
+          </h1>
           <AppInput value={password} handleOnChange={(e) => setPassword(e.target.value)} LeftIcon={<FaLock size={20} className="mr-2" />} type={passwordType} placeholder='Please enter new password' RightIcon={passwordType === "password" ? < FaEyeSlash color="darkgray" onClick={() => setPasswordType("text")} size={25} /> : <FaEye color="darkgray" onClick={() => setPasswordType("password")} size={25} />} />
-
+          <h1 className='text-xl mb-2 '>
+            Confirm Password
+          </h1>
           <AppInput value={confirmPassword} handleOnChange={(e) => setConfirmPassword(e.target.value)} LeftIcon={<FaLock size={20} className="mr-2" />} type={confirmPasswordType} placeholder='Enter password again' RightIcon={confirmPasswordType === "password" ? < FaEyeSlash color="darkgray" onClick={() => setConfirmPasswordType("text")} size={25} /> : <FaEye color="darkgray" onClick={() => setConfirmPasswordType("password")} size={25} />} />
 
-
+          <h1 className='text-xl mb-2 '>
+            Verification code
+          </h1>
           <AppInput value={code} handleOnChange={(e) => setCode(e.target.value)} LeftIcon={<FaShieldAlt className="scale-125 mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<button disabled={reqestCode} onClick={() => console.log("request code")} className="text-indigo-600 px-1 text-sm w-full bg-white font-bold cursor-pointer outline-none">{reqestCodeText}</button>} />
 
-          <input className='bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg' type='submit' value="Confirm submission" />
+          <input className=' cursor-pointer bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg' type='submit' value="Confirm submission" />
 
         </div>
       </form>
