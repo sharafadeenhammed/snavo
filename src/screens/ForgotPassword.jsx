@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { FaArrowLeft, FaArrowRight, FaLock, FaEye, FaEyeSlash, FaShieldAlt, FaEnvelope } from "react-icons/fa";
+import { FaArrowRight, FaLock, FaEye, FaEyeSlash, FaShieldAlt, FaEnvelope } from "react-icons/fa";
+import { AnimatePresence, motion } from "framer-motion";
 
-
-// import } from "react-icons/ai"
 
 import AppInput from "../components/AppInput";
-
+import Back from "../components/Back";
+import CountryPicker from "../components/CountryPicker";
 
 
 
@@ -20,17 +20,31 @@ function ForgotPassword() {
   const [ countryCode, setCountryCode ] = useState("+234")
   const [ recoveryType, setRecoveryType ] = useState("phone")
   const [ reqestCodeText, setRequestCodeText ] = useState("Send the verification code")
+  const [ openCountryPicker, setOpenCountryPicker ] = useState(false);
+  const handleCountryChange = (idd) => {
+    setCountryCode(idd)
+    setOpenCountryPicker(false)
+  }
   const [ reqestCode, setRequestCode ] = useState(false)
   async function handleSubmit(e) {
     e.preventDefault();
   }
   return (
-    <div className="container px-4 py-0.050  pt-20 border-x-2 border-slate-100 h-screen mx-auto max-w-md bg-gray-50">
+    <motion.div
+      initial={{ x: 1000 }}
+      animate={{ x: 0 }}
+      exit={{ opacity: 0, x: 100, transition: { duration: 0.2 } }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="container px-4 py-0.050  pt-20 border-x-2 border-slate-100 h-screen mx-auto max-w-lg bg-gray-50">
+      <AnimatePresence>
+        {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
 
-      <div className='bg-gray-50 py-1 z-40 fixed top-0  w-full mx-auto max-w-md'>
-        <div className=" flex items-center mr-10" >
+      </AnimatePresence>
+
+      <div className='container box-border bg-gray-50 py-1 z-40 fixed top-0 mx-auto max-w-lg'>
+        <div className=" flex items-center" >
           <div>
-            <FaArrowLeft size={20} />
+            <Back />
           </div>
           <div className="w-full text-center">
             <h1 className='text-center text-2xl font-medium'>
@@ -53,7 +67,7 @@ function ForgotPassword() {
               <h1 className='text-xl mb-2 '>
                 Phone number
               </h1>
-              <AppInput value={phone} handleOnChange={(e) => setPhone(e.target.value)} LeftIcon={<p className="flex items-center text-indigo-600 font-bold text-lg mr-2">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" /> </>)
+              <AppInput value={phone} handleOnChange={(e) => setPhone(e.target.value)} LeftIcon={<p onClick={() => setOpenCountryPicker(true)} className="flex items-center font-bold text-lg mr-2 cursor-pointer">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" /> </>)
             :
             (<>
               <h1 className='text-xl mb-2 '>
@@ -81,7 +95,7 @@ function ForgotPassword() {
 
         </div>
       </form>
-    </div>
+    </motion.div>
   )
 }
 

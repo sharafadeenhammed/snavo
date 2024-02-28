@@ -11,6 +11,13 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    window.addEventListener('beforeunload', (e) => {
+      console.log("preventing reloading..")
+      window.onbeforeunload = null
+      e.preventDefault()
+    })
+  </script>
 </body>
 
 </html>
