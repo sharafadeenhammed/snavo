@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import AppInput from "../components/AppInput";
 import CountryPicker from "../components/CountryPicker";
 import routesName from "../data/routesName";
+import pageAnimation from "../data/pageAnimation";
 
 
 function Login() {
@@ -18,10 +19,7 @@ function Login() {
   }
   return (
     <motion.div
-      initial={{ x: 1000 }}
-      animate={{ x: 0 }}
-      exit={{ opacity: 0, x: 100, transition: { duration: 0.2 } }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      {...pageAnimation}
       className="container px-4 py-0.050  border-x-2 border-slate-100 h-screen mx-auto max-w-lg bg-gray-50">
       <AnimatePresence>
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
@@ -57,7 +55,7 @@ function Login() {
         <AppInput LeftIcon={<FaLock size={20} className="mr-2" />} type={passwordType} placeholder='Please enter password' RightIcon={passwordType === "password" ? < FaEyeSlash color="lightgray" onClick={() => setPasswordType("text")} size={25} /> : <FaEye color="lightgray" onClick={() => setPasswordType("password")} size={25} />} />
 
 
-        <input className='bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg' type='submit' value="Log in" />
+        <input className='bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg cursor-pointer' type='submit' value="Log in" />
       </div>
 
       <div className='flex justify-between'>

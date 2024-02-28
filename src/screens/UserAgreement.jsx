@@ -1,17 +1,12 @@
-import { FaArrowLeft } from "react-icons/fa";
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
 import Screen from "../components/Screen";
 import Back from "../components/Back";
+import pageAnimation from "../data/pageAnimation";
 function UserAgreement() {
-  const navigate = useNavigate()
   const [ textClass, setTextClass ] = useState("text-lg mb-20")
   return (
     <Screen
-      initial={{ x: 1000 }}
-      animate={{ x: 0 }}
-      exit={{ opacity: 0, x: 100, transition: { duration: 0.2 } }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}>
+      {...pageAnimation}>
       <div className='bg-gray-50 py-1 z-40 fixed top-0  w-full mx-auto max-w-md'>
         <div className=" flex items-center mr-10" >
           <Back />

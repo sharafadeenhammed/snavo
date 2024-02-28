@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import AppInput from "../components/AppInput";
 import Back from "../components/Back";
 import CountryPicker from "../components/CountryPicker";
-
+import pageAnimation from "../data/pageAnimation";
 
 
 function ForgotPassword() {
@@ -31,10 +31,7 @@ function ForgotPassword() {
   }
   return (
     <motion.div
-      initial={{ x: 1000 }}
-      animate={{ x: 0 }}
-      exit={{ opacity: 0, x: 100, transition: { duration: 0.2 } }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      {...pageAnimation}
       className="container px-4 py-0.050  pt-20 border-x-2 border-slate-100 h-screen mx-auto max-w-lg bg-gray-50">
       <AnimatePresence>
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}

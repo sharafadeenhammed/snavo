@@ -8,6 +8,7 @@ import AppInput from "../components/AppInput";
 import CountryPicker from "../components/CountryPicker";
 import Back from "../components/Back";
 import routesName from "../data/routesName";
+import pageAnimation from "../data/pageAnimation";
 
 
 
@@ -41,10 +42,7 @@ function Register() {
   }
   return (
     <motion.div
-      initial={{ x: 1000 }}
-      animate={{ x: 0 }}
-      exit={{ opacity: 0, x: 100, transition: { duration: 0.2 } }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      {...pageAnimation}
       className="container px-4 py-0.050  pt-20 border-x-2 border-slate-100 h-screen mx-auto max-w-lg bg-gray-50">
       <AnimatePresence>
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
@@ -88,7 +86,7 @@ function Register() {
 
           <AppInput value={captcha} handleOnChange={(e) => setCaptcha(e.target.value)} LeftIcon={<FaShieldAlt className="mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<LoadCanvasTemplateNoReload className="bg-slate-400" />} />
 
-          <input className='bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg' type='submit' value="Register" />
+          <input className='bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg cursor-pointer' type='submit' value="Register" />
 
         </div>
       </form>
