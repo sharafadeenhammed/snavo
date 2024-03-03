@@ -7,4 +7,6 @@ export default Object.freeze({
   USER_AGREEMENT: "/agreement",
   COMPANY_PROFILE: "/company-profile",
   COMPANY_RULES: "/company-rules",
+  COMMON_PROBLEM: "/common-problem",
+  FUNDING_DETAILS: "/funding-details",
 })

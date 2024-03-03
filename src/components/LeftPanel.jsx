@@ -93,7 +93,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* common problems */}
-          <div className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.COMMON_PROBLEM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={question} alt="" />
               <p className="font-normal text-lg" >Common Problems</p>

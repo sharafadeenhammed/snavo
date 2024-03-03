@@ -9,6 +9,7 @@ import routesName from "./data/routesName"
 import Home from "./screens/Home"
 import CompanyProfile from "./screens/CompanyProfile"
 import PlatformRules from "./screens/PlatformRules"
+import CommonProblem from "./screens/CommonProblem"
 function Navigation() {
   const location = useLocation()
   return (
@@ -17,6 +18,9 @@ function Navigation() {
         <Route path={routesName.HOME} element={<Home />} />
         <Route path={routesName.COMPANY_PROFILE} element={<CompanyProfile />} />
         <Route path={routesName.COMPANY_RULES} element={<PlatformRules />} />
+        <Route path={routesName.COMMON_PROBLEM} element={<CommonProblem />} />
+
+
         <Route path={routesName.LOGIN} element={<Login />} />
         <Route path={routesName.REGISTER} element={<Register />} />
         <Route path={routesName.PRIVACY_POLICY} element={<PrivacyPolicy />} />
