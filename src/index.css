@@ -7,6 +7,19 @@
 :root{
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+.indicators{
+  position: absolute;
+  bottom:10px;
+  left:50%;
+  transform: translateX(50%);
+} 
+.left-panel{
+  transform: traslateX(-50%);
+}
+
+.custom-primary-color{
+  color:#644fdd
+}
 /* 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

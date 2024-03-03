@@ -13,13 +13,20 @@ import ThinSpinner from "./components/ThinSpinner"
 
 import { BrowserRouter as Router } from "react-router-dom"
 import Navigation from "./Navigation"
+import Home from "./screens/Home"
+import Announcement from "./components/Announcement"
+import LeftPanel from "./components/LeftPanel"
 
 function App() {
 
   return (
-    <Router>
-      <Navigation />
-    </Router>
+    // <Router>
+    //   <Navigation />
+    // </Router>
+    // <Screen>
+    <Home />
+
+    // </Screen>
   )
 }
 

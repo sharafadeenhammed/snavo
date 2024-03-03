@@ -25,8 +25,8 @@ function Login() {
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
 
       </AnimatePresence>
-      <div className=' container bg-gray-50 py-5 z-30 fixed top-1 w-full box-border mx-auto max-w-lg'>
-        <div className="justify-between flex items-center mr-10" >
+      <div className=' container bg-gray-50 py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
+        <div className="justify-between flex items-center" >
           <div>
             <FaArrowLeft size={20} />
           </div>

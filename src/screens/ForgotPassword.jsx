@@ -38,7 +38,7 @@ function ForgotPassword() {
 
       </AnimatePresence>
 
-      <div className='container box-border bg-gray-50 py-1 z-40 fixed top-0 mx-auto max-w-lg'>
+      <div className=' container bg-gray-50 py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
         <div className=" flex items-center" >
           <div>
             <Back />
