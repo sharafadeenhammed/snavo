@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { FaCopy, FaUser } from "react-icons/fa"
+import { useNavigate } from "react-router-dom"
 
 import homeNoticeMore from "../assets/images/home_notice_more.png"
 import copy from "../assets/images/leftpanel/copy.png"
@@ -13,9 +14,11 @@ import memo from "../assets/images/leftpanel/memo.png"
 import userlove from "../assets/images/leftpanel/userlove.png"
 import users from "../assets/images/leftpanel/users.png"
 import book from "../assets/images/leftpanel/book.png"
+import routesName from "../data/routesName"
 
 
 function LeftPanel({ hadleClosePanel, panelOpen = false }) {
+  const navigate = useNavigate();
   return (
     <motion.div
       id="close-left-panel"
@@ -74,7 +77,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
         {/* other links */}
         <div className="w-full">
           {/* company profile */}
-          <div className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.COMPANY_PROFILE)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={info} alt="" />
               <p className="font-normal text-lg" >Company Profile</p>
@@ -82,7 +85,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* platform rules */}
-          <div className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.COMPANY_RULES)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={message} alt="" />
               <p className="font-normal text-lg" >Platform Rules</p>

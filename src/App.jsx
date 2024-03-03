@@ -20,11 +20,10 @@ import LeftPanel from "./components/LeftPanel"
 function App() {
 
   return (
-    // <Router>
-    //   <Navigation />
-    // </Router>
-    // <Screen>
-    <Home />
+    <Router>
+      <Navigation />
+    </Router>
+
 
     // </Screen>
   )

@@ -40,6 +40,7 @@ function Home() {
     const response = await getCoinData();
     if (response == null) {
       setIsLoading(false);
+      setShowAnnouncement(true);
       setCoinApiData([]);
       return;
     }
@@ -52,6 +53,7 @@ function Home() {
       })
     }
     setCoinApiData(responseArray);
+    setShowAnnouncement(true);
     setIsLoading(false);
   }
 
