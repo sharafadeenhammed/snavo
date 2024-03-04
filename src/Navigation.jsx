@@ -15,6 +15,7 @@ import UpdateLoginPassword from "./screens/UpdateLoginPassword"
 import SetTransactionPassword from "./screens/SetTransactionPassword"
 import BindMail from "./screens/BindMail"
 import FundingDetails from "./screens/FundingDetails"
+import InviteFriends from "./screens/InviteFriends"
 function Navigation() {
   const location = useLocation()
   return (
@@ -29,6 +30,7 @@ function Navigation() {
         <Route path={routesName.SET_TRANSACTION_PASSWORD} element={<SetTransactionPassword />} />
         <Route path={routesName.SET_MAIL} element={<BindMail />} />
         <Route path={routesName.FUNDING_DETAILS} element={<FundingDetails />} />
+        <Route path={routesName.INVITE_FRIENDS} element={<InviteFriends />} />
 
 
 

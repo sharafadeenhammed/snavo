@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import Screen from "../components/Screen";
 import Back from "../components/Back";
-import AppInput from "../components/AppInput";
 import ToastMessage from "../components/ToastMessage";
 import FundDetailItemCard from "../components/FundDetailItemCard";
 import ThinSpinner from "../components/ThinSpinner";

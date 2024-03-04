@@ -20,4 +20,5 @@ export default Object.freeze({
   UPDATE_LOGIN_PASSWORD: "/update-login-password",
   SET_MAIL: "/set-mail",
   UPDATE_MAIL: "/mail-update",
+  INVITE_FRIENDS: "/invite-friends",
 })
