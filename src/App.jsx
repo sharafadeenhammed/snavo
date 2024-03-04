@@ -17,6 +17,7 @@ import Home from "./screens/Home"
 import Announcement from "./components/Announcement"
 import LeftPanel from "./components/LeftPanel"
 import BottomTabs from "./components/BottomTabs"
+import SecurityCenter from "./screens/SecurityCenter"
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
     <Screen>
       <Router>
         <Routes>
-          <Route path="/" element={<BottomTabs />} />
+          <Route path="/" element={<SecurityCenter />} />
         </Routes>
       </Router>
     </Screen>
