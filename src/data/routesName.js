@@ -9,4 +9,11 @@ export default Object.freeze({
   COMPANY_RULES: "/company-rules",
   COMMON_PROBLEM: "/common-problem",
   FUNDING_DETAILS: "/funding-details",
+  SECURITY_CENTER: "/security-center",
+  QUANTIFY: "/quantify",
+  WITHDRAW: "/withdraw",
+  RECHARGE: "/recharge",
+  PROFILE: "/profile",
+  TEAM: "/team",
+  MINER: "/miner",
 })

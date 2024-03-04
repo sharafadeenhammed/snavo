@@ -20,7 +20,6 @@ function Navigation() {
         <Route path={routesName.COMPANY_RULES} element={<PlatformRules />} />
         <Route path={routesName.COMMON_PROBLEM} element={<CommonProblem />} />
 
-
         <Route path={routesName.LOGIN} element={<Login />} />
         <Route path={routesName.REGISTER} element={<Register />} />
         <Route path={routesName.PRIVACY_POLICY} element={<PrivacyPolicy />} />

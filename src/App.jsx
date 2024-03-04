@@ -11,21 +11,26 @@ import { useState, useEffect } from "react"
 import Spinner from "./components/Spinner"
 import ThinSpinner from "./components/ThinSpinner"
 
-import { BrowserRouter as Router } from "react-router-dom"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import Navigation from "./Navigation"
 import Home from "./screens/Home"
 import Announcement from "./components/Announcement"
 import LeftPanel from "./components/LeftPanel"
+import BottomTabs from "./components/BottomTabs"
 
 function App() {
 
   return (
-    <Router>
-      <Navigation />
-    </Router>
-
-
-    // </Screen>
+    // <Router>
+    //   <Navigation />
+    // </Router>
+    <Screen>
+      <Router>
+        <Routes>
+          <Route path="/" element={<BottomTabs />} />
+        </Routes>
+      </Router>
+    </Screen>
   )
 }
 
