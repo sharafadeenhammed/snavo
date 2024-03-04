@@ -16,4 +16,8 @@ export default Object.freeze({
   PROFILE: "/profile",
   TEAM: "/team",
   MINER: "/miner",
+  SET_TRANSACTION_PASSWORD: "/set-transaction-password",
+  UPDATE_LOGIN_PASSWORD: "/update-login-password",
+  SET_MAIL: "/set-mail",
+  UPDATE_MAIL: "/mail-update",
 })

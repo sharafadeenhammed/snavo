@@ -10,6 +10,10 @@ import Home from "./screens/Home"
 import CompanyProfile from "./screens/CompanyProfile"
 import PlatformRules from "./screens/PlatformRules"
 import CommonProblem from "./screens/CommonProblem"
+import SecurityCenter from "./screens/SecurityCenter"
+import UpdateLoginPassword from "./screens/UpdateLoginPassword"
+import SetTransactionPassword from "./screens/SetTransactionPassword"
+import BindMail from "./screens/BindMail"
 function Navigation() {
   const location = useLocation()
   return (
@@ -19,6 +23,10 @@ function Navigation() {
         <Route path={routesName.COMPANY_PROFILE} element={<CompanyProfile />} />
         <Route path={routesName.COMPANY_RULES} element={<PlatformRules />} />
         <Route path={routesName.COMMON_PROBLEM} element={<CommonProblem />} />
+        <Route path={routesName.SECURITY_CENTER} element={<SecurityCenter />} />
+        <Route path={routesName.UPDATE_LOGIN_PASSWORD} element={<UpdateLoginPassword />} />
+        <Route path={routesName.SET_TRANSACTION_PASSWORD} element={<SetTransactionPassword />} />
+        <Route path={routesName.SET_MAIL} element={<BindMail />} />
 
         <Route path={routesName.LOGIN} element={<Login />} />
         <Route path={routesName.REGISTER} element={<Register />} />

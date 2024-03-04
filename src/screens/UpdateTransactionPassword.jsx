@@ -7,9 +7,11 @@ import AppInput from "../components/AppInput";
 import ToastMessage from "../components/ToastMessage";
 import pageAnimation from "../data/pageAnimation";
 
-function ModifyTransactionPassword() {
+function UpdateTransactionPassword() {
+  const [ oldPasswordType, setOldPasswordType ] = useState("password");
   const [ passwordType, setPasswordType ] = useState("password");
   const [ confirmPasswordType, setConfirmPasswordType ] = useState("password");
+  const [ oldPasssword, setOldPassword ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ confirmPassword, setConfirmPassword ] = useState("");
   const [ isLoading, setIsLoading ] = useState(false);
@@ -18,6 +20,12 @@ function ModifyTransactionPassword() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (oldPasssword == "") {
+      setToastMessge("Please enter old password");
+      setShowToast(true);
+      isLoading(false);
+      return;
+    }
     if (password == "" || confirmPassword == "") {
       setToastMessge("Please enter password and confirm password");
       setShowToast(true);
@@ -53,6 +61,13 @@ function ModifyTransactionPassword() {
       </div>
       <form onSubmit={handleSubmit} >
         <div className="w-full">
+          <p className="text-xl">Original transaction password</p>
+          <AppInput
+            value={oldPasssword}
+            handleOnChange={(e) => setPassword(e.target.value)}
+            type={oldPasswordType}
+            placeholder='Please enter a new transaction password'
+            RightIcon={oldPasswordType === "password" ? < FaEyeSlash color="darkgray" onClick={() => setOldPasswordType("text")} size={25} /> : <FaEye color="darkgray" onClick={() => setOldPasswordType("password")} size={25} />} />
           <p className="text-xl">New transaction password</p>
           <AppInput
             value={password}
@@ -71,4 +86,4 @@ function ModifyTransactionPassword() {
   )
 }
 
-export default ModifyTransactionPassword
+export default UpdateTransactionPassword

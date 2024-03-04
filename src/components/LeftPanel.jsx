@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { FaCopy, FaUser } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 import homeNoticeMore from "../assets/images/home_notice_more.png"
 import copy from "../assets/images/leftpanel/copy.png"
@@ -15,9 +16,12 @@ import userlove from "../assets/images/leftpanel/userlove.png"
 import users from "../assets/images/leftpanel/users.png"
 import book from "../assets/images/leftpanel/book.png"
 import routesName from "../data/routesName"
+import ToastMessage from "./ToastMessage"
 
 
 function LeftPanel({ hadleClosePanel, panelOpen = false }) {
+  const [ showToast, setShowToast ] = useState(false);
+  const [ toastMessage, setToastMessage ] = useState("");
   const navigate = useNavigate();
   return (
     <motion.div
@@ -32,7 +36,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
       animate={{ x: 0 }}
       exit={{ x: "-100%", width: 0 }}
       transition={{ duration: 0.3 }} >
-
+      <ToastMessage showToast={showToast} handleRemoveToast={() => setShowToast(false)} message={toastMessage} />
       <div
         className=" relative w-9/12 min-h-full bg-white pt-5 pb-5">
         {/* security center */}
@@ -54,7 +58,8 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
                 src={copy}
                 onClick={() => {
                   navigator.clipboard.writeText("12363477")
-                  alert("Copied!")
+                  setToastMessage("Copied!")
+                  setShowToast(true);
                 }}
                 color={"#4f46e5"} />
             </div>
@@ -101,7 +106,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* security center */}
-          <div className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.SECURITY_CENTER)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={shield} alt="" />
               <p className="font-normal text-lg" >Security Center</p>

@@ -18,21 +18,23 @@ import Announcement from "./components/Announcement"
 import LeftPanel from "./components/LeftPanel"
 import BottomTabs from "./components/BottomTabs"
 import SecurityCenter from "./screens/SecurityCenter"
-import ModifyTransactionPassword from "./screens/ModifyTransactionPassword"
+import SetTransactionPassword from "./screens/SetTransactionPassword"
 import UpdateLoginPassword from "./screens/UpdateLoginPassword"
+import BindMail from "./screens/BindMail"
+
 
 function App() {
 
   return (
-    // <Router>
-    //   <Navigation />
-    // </Router>
-    // <Screen>
     <Router>
-      <Routes>
-        <Route path="/" element={<UpdateLoginPassword />} />
-      </Routes>
+      <Navigation />
     </Router>
+    // <Screen>
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<BindMail />} />
+    //   </Routes>
+    // </Router>
     // </Screen>
   )
 }
