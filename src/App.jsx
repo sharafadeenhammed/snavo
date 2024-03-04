@@ -21,6 +21,7 @@ import SecurityCenter from "./screens/SecurityCenter"
 import SetTransactionPassword from "./screens/SetTransactionPassword"
 import UpdateLoginPassword from "./screens/UpdateLoginPassword"
 import BindMail from "./screens/BindMail"
+import FundingDetails from "./screens/FundingDetails"
 
 
 function App() {
