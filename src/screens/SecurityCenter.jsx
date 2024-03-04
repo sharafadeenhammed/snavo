@@ -6,7 +6,6 @@ import homeNoticeMore from "../assets/images/home_notice_more.png"
 import infoError from "../assets/images/info_error.png"
 
 function SecurityCenter() {
-  const [ textClass, setTextClass ] = useState("text-lg mb-20")
   return (
     <Screen
       {...pageAnimation}>
@@ -17,9 +16,9 @@ function SecurityCenter() {
             <h1 className='text-center text-2xl font-medium'>
               Security center</h1>
           </div>
-
         </div>
       </div>
+
       <div className="w-full">
         {/* transaction password */}
         <div className="w-full p-5 flex text-xl font-normal items-center justify-between border-b-2 border-b-slate-200" >

@@ -18,6 +18,8 @@ import Announcement from "./components/Announcement"
 import LeftPanel from "./components/LeftPanel"
 import BottomTabs from "./components/BottomTabs"
 import SecurityCenter from "./screens/SecurityCenter"
+import ModifyTransactionPassword from "./screens/ModifyTransactionPassword"
+import UpdateLoginPassword from "./screens/UpdateLoginPassword"
 
 function App() {
 
@@ -25,13 +27,13 @@ function App() {
     // <Router>
     //   <Navigation />
     // </Router>
-    <Screen>
-      <Router>
-        <Routes>
-          <Route path="/" element={<SecurityCenter />} />
-        </Routes>
-      </Router>
-    </Screen>
+    // <Screen>
+    <Router>
+      <Routes>
+        <Route path="/" element={<UpdateLoginPassword />} />
+      </Routes>
+    </Router>
+    // </Screen>
   )
 }
 
