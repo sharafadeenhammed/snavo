@@ -21,4 +21,6 @@ export default Object.freeze({
   SET_MAIL: "/set-mail",
   UPDATE_MAIL: "/mail-update",
   INVITE_FRIENDS: "/invite-friends",
+  QUANTIZIZATION: "/quantization",
+  MY_TEAM: "/my-team",
 })

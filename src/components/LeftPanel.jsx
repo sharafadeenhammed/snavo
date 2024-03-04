@@ -132,7 +132,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* my team */}
-          <div className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.MY_TEAM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={users} alt="" />
               <p className="font-normal text-lg" >My Team</p>
@@ -140,7 +140,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* quantization tutorial */}
-          <div className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.QUANTIZIZATION)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={book} alt="" />
               <p className="font-normal text-lg" >Quantization Tutorial</p>

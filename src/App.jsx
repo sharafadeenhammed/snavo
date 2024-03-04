@@ -22,6 +22,8 @@ import SetTransactionPassword from "./screens/SetTransactionPassword"
 import UpdateLoginPassword from "./screens/UpdateLoginPassword"
 import BindMail from "./screens/BindMail"
 import FundingDetails from "./screens/FundingDetails"
+import Quantization from "./screens/Quantization"
+import MyTeam from "./screens/MyTeam"
 
 
 function App() {
@@ -33,7 +35,7 @@ function App() {
     // <Screen>
     // <Router>
     //   <Routes>
-    //     <Route path="/" element={<BindMail />} />
+    //     <Route path="/" element={<MyTeam />} />
     //   </Routes>
     // </Router>
     // </Screen>
