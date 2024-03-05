@@ -23,4 +23,5 @@ export default Object.freeze({
   INVITE_FRIENDS: "/invite-friends",
   QUANTIZIZATION: "/quantization",
   MY_TEAM: "/my-team",
+  QUANTITATIVE_RECORDS: "/quantitative-records"
 })

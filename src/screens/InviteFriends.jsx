@@ -41,7 +41,7 @@ function InviteFriends() {
           </p>
           <p
             onClick={copyLink}
-            className='bg-indigo-600 cursor-pointer text-center mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg cursor-pointer'>
+            className='bg-indigo-600 cursor-pointer text-center mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg '>
             Copy invite link
           </p>
         </div>

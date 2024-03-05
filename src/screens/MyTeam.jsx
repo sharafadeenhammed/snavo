@@ -212,7 +212,7 @@ function MyTeam() {
         {/* third geberation data */}
         <div className="w-full">
           <p className="text-indigo-600 text-xl font-semibold">
-            Third generation data
+            Three generation data
           </p>
 
           <div className="flex py-7 justify-between items-center" >

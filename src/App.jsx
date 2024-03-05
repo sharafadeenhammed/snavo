@@ -24,6 +24,7 @@ import BindMail from "./screens/BindMail"
 import FundingDetails from "./screens/FundingDetails"
 import Quantization from "./screens/Quantization"
 import MyTeam from "./screens/MyTeam"
+import Quantify from "./screens/Quantify"
 
 
 function App() {
@@ -31,11 +32,12 @@ function App() {
   return (
     <Router>
       <Navigation />
+      <BottomTabs />
     </Router>
     // <Screen>
     // <Router>
     //   <Routes>
-    //     <Route path="/" element={<MyTeam />} />
+    //     <Route path="/" element={<Quantify />} />
     //   </Routes>
     // </Router>
     // </Screen>

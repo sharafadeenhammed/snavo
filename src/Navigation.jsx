@@ -18,12 +18,17 @@ import FundingDetails from "./screens/FundingDetails"
 import InviteFriends from "./screens/InviteFriends"
 import Quantization from "./screens/Quantization"
 import MyTeam from "./screens/MyTeam"
+import Quantify from "./screens/Quantify"
+import App from "./App"
+import BottomTabs from "./components/BottomTabs"
+import QuantitativeRecords from "./screens/QuantitativeRecords"
 function Navigation() {
   const location = useLocation()
   return (
     <AnimatePresence mode="wait">
       <Routes key={location.pathname} location={location}>
-        <Route path={routesName.HOME} element={<Home />} />
+        {/* <Route element={<App />} > */}
+        <Route index={true} path={routesName.HOME} element={<Home />} />
         <Route path={routesName.COMPANY_PROFILE} element={<CompanyProfile />} />
         <Route path={routesName.COMPANY_RULES} element={<PlatformRules />} />
         <Route path={routesName.COMMON_PROBLEM} element={<CommonProblem />} />
@@ -35,6 +40,8 @@ function Navigation() {
         <Route path={routesName.INVITE_FRIENDS} element={<InviteFriends />} />
         <Route path={routesName.QUANTIZIZATION} element={<Quantization />} />
         <Route path={routesName.MY_TEAM} element={<MyTeam />} />
+        <Route path={routesName.QUANTIFY} element={<Quantify />} />
+        <Route path={routesName.QUANTITATIVE_RECORDS} element={<QuantitativeRecords />} />
 
 
 
@@ -43,6 +50,7 @@ function Navigation() {
         <Route path={routesName.PRIVACY_POLICY} element={<PrivacyPolicy />} />
         <Route path={routesName.FORGOT_PASSWORD} element={<ForgotPassword />} />
         <Route path={routesName.USER_AGREEMENT} element={<UserAgreement />} />
+        {/* </Route> */}
       </Routes>
 
     </AnimatePresence>
