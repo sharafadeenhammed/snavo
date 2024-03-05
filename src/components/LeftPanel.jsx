@@ -1,5 +1,5 @@
-import { AnimatePresence, motion } from "framer-motion"
-import { FaCopy, FaUser } from "react-icons/fa"
+import { motion } from "framer-motion"
+import { FaUser } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 

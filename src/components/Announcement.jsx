@@ -11,7 +11,6 @@ function Announcement({ close }) {
       id="ann"
       onClick={(e) => {
         if (e.target.id === "ann") {
-          console.log("close")
           close()
         }
       }} className=" sm:px-4 px-6 h-screen max-w-lg fixed right-1/2 top-0 w-full bg-black bg-opacity-75 translate-x-1/2 z-50 ">
@@ -19,7 +18,6 @@ function Announcement({ close }) {
         id="ann1"
         onClick={(e) => {
           if (e.target.id === "ann1") {
-            console.log("close")
             close()
           }
         }}

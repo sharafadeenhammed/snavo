@@ -1,14 +1,17 @@
 
 import { useEffect, useState } from 'react'
+import { Slide } from "react-slideshow-image"
+import { FaLock, FaLockOpen } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import 'react-slideshow-image/dist/styles.css'
+
 import Screen from '../components/Screen'
 import Back from '../components/Back'
 import ToastMessage from '../components/ToastMessage'
+import Announcement from '../components/Announcement'
 import pageAnimation from '../data/pageAnimation'
 import quantifyData from '../data/quantifyData'
-import { Slide } from "react-slideshow-image"
-import 'react-slideshow-image/dist/styles.css'
-import { FaLock, FaLockOpen } from 'react-icons/fa'
-import { useNavigate } from 'react-router-dom'
 import routesName from '../data/routesName'
 
 import history from "../assets/images/quantify/book-history.png"
@@ -19,12 +22,19 @@ import vipDiamond from "../assets/images/quantify/vip-diamond.png"
 function Quantify() {
   const textClass = "text-xl font-semibold mb-5"
   const [ currentItem, setCurrentItem ] = useState(0)
+  const [ showAnnouncement, setShowAnnouncement ] = useState(true);
   const navigate = useNavigate()
   return (
     <Screen
       {...pageAnimation}
     >
-      {/* <ToastMessage /> */}
+      <AnimatePresence>
+        {
+          showAnnouncement ? < Announcement close={() => setShowAnnouncement(false)} /> : null
+
+        }
+
+      </AnimatePresence>
       <div className='bg-gray-50 py-1 z-40 fixed top-0  w-full mx-auto max-w-md'>
         <div className=" w-full flex items-center justify-between" >
           <div>
