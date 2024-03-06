@@ -164,11 +164,56 @@ function Profile() {
             </p>
           </div>
         </div>
-
-
       </div>
 
 
+      <div
+        className="mb-5 w-full  rounded-xl bg-gradient-to-r from-orange-200 to-orange-300">
+        <div className='px-3 py-3'>
+          <p className='text-red-950 font-normal text-xl mb-2'>Next level</p>
+          <div className='flex justify-between'>
+            <div className='flex items-center'>
+              <p className='text-red-950 font-semibold text-3xl' >VIP1</p>
+              <img className='h-7' src={crown} />
+            </div>
+            <p className='text-red-950'>Effective amount(3.12/30.00)</p>
+          </div>
+        </div>
+
+        <div className='bg-white bg-opacity-20 px-3 py-3 text-white'>
+          <div className="flex justify-between mb-3 items-center" >
+            {/*Level one */}
+            <div className="flex items-center flex-col" >
+              <p className="font-bold text-xl">
+                1(0)
+              </p>
+              <p className="text-center font-normal">
+                Level one
+              </p>
+            </div>
+
+            {/*Secondary */}
+            <div className="flex items-center flex-col" >
+              <p className="font-bold text-xl">
+                0(0)
+              </p>
+              <p className=" text-center font-normal">
+                Secondary
+              </p>
+            </div>
+
+            {/* Level three */}
+            <div className="flex items-center flex-col" >
+              <p className="font-bold text-xl">
+                0(0)
+              </p>
+              <p className=" text-center font-normal">
+                Level three
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 

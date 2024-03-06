@@ -8,9 +8,12 @@ import ToastMessage from "../components/ToastMessage";
 import ThinSpinner from "../components/ThinSpinner";
 import pageAnimation from "../data/pageAnimation";
 import { FaArrowDown, FaAngleDown } from "react-icons/fa";
+import routesName from "../data/routesName";
+import { useNavigate } from "react-router-dom";
 function MyTeam() {
   const [ toastMessage, setToastMessage ] = useState("");
   const [ showToast, setShowToast ] = useState(false);
+  const navigate = useNavigate();
   return (
     <Screen
       {...pageAnimation}>
@@ -78,7 +81,7 @@ function MyTeam() {
             Cumulative team size: <span className="text-black">0</span>
           </p>
 
-          <p className="text-indigo-600 text-lg">
+          <p onClick={() => navigate(routesName.TEAM_LIST)} className="text-indigo-600 cursor-pointer text-lg">
             View team list
           </p>
         </div>

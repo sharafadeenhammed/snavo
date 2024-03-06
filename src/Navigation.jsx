@@ -23,6 +23,8 @@ import App from "./App"
 import BottomTabs from "./components/BottomTabs"
 import QuantitativeRecords from "./screens/QuantitativeRecords"
 import Profile from "./screens/Profile"
+import TeamList from "./screens/TeamList"
+import Miner from "./screens/Miner"
 function Navigation() {
   const location = useLocation()
   return (
@@ -44,6 +46,10 @@ function Navigation() {
         <Route path={routesName.QUANTIFY} element={<Quantify />} />
         <Route path={routesName.QUANTITATIVE_RECORDS} element={<QuantitativeRecords />} />
         <Route path={routesName.PROFILE} element={<Profile />} />
+        <Route path={routesName.TEAM_LIST} element={<TeamList />} />
+        <Route path={routesName.MINER} element={<Miner />} />
+
+
 
 
 

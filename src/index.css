@@ -20,6 +20,9 @@
 .custom-primary-color{
   color:#644fdd
 }
+body{
+  overflow-x: hidden;
+}
 /* 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
