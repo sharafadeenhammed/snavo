@@ -10,7 +10,7 @@ function Quantization() {
     <Screen
       {...pageAnimation}
     >
-      <div className='bg-gray-50 py-1 z-40 fixed top-0  w-full mx-auto max-w-md'>
+      <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <div>
             <Back />

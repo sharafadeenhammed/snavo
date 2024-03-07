@@ -91,7 +91,7 @@ function Home() {
       </AnimatePresence>
 
       {/* nav bar */}
-      <div className=' container px-5 bg-gray-50 py-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className=' bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className="justify-between w-full flex items-center mr-10" >
           <div className="p-2 bg-indigo-100 rounded-full bg-indigo-100'">
             <FaUser onClick={() => setShowLeftPanel(true)} size={20} color='#4f46e5' />

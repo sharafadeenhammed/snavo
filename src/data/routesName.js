@@ -24,5 +24,7 @@ export default Object.freeze({
   QUANTIZIZATION: "/quantization",
   MY_TEAM: "/my-team",
   QUANTITATIVE_RECORDS: "/quantitative-records",
-  TEAM_LIST: "/team-list"
+  TEAM_LIST: "/team-list",
+  MINER_ORDERS: "/miner-orders",
+  MINER_DETAILS: "/miner-details",
 })

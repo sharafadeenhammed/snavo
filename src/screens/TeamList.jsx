@@ -21,7 +21,7 @@ function TeamList() {
         paddingTop: "50px"
       }}
       {...pageAnimation}>
-      <div className='bg-gray-100 z-40  px-5 py-2 fixed top-0  w-full mx-auto max-w-lg'>
+      <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <Back />
           <div className="w-full text-center">

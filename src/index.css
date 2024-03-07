@@ -23,6 +23,9 @@
 body{
   overflow-x: hidden;
 }
+.scroolBar{
+  scrollbar-width: thin;
+}
 /* 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
