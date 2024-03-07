@@ -27,4 +27,5 @@ export default Object.freeze({
   TEAM_LIST: "/team-list",
   MINER_ORDERS: "/miner-orders",
   MINER_DETAILS: "/miner-details",
+  TASK_CENTER: "/task-center",
 })

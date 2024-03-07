@@ -1,19 +1,22 @@
 
 import { useState, useEffect } from "react"
 import { Slide } from "react-slideshow-image"
-import 'react-slideshow-image/dist/styles.css'
 import { AnimatePresence } from "framer-motion"
+import { useNavigate } from "react-router-dom"
 import { FaUser, FaHeadphones, FaEnvelope } from "react-icons/fa"
+import 'react-slideshow-image/dist/styles.css'
+
 import ThinSpinner from "../components/ThinSpinner"
 import ActionCard from "../components/ActionCard"
 import Coincard from "../components/Coincard"
 import Spinner from "../components/Spinner"
 import LeftPanel from "../components/LeftPanel"
+import Screen from "../components/Screen"
+import Announcement from "../components/Announcement"
 import { getCoinData } from "../api/homeFeed"
 
 
-import Screen from "../components/Screen"
-import Announcement from "../components/Announcement"
+
 import image1 from "../assets/images/1.jpg"
 import image2 from "../assets/images/2.jpg"
 import image3 from "../assets/images/3.jpg"
@@ -30,6 +33,7 @@ import pageAnimation from "../data/pageAnimation"
 
 const anouncementText = 'Dear SNAVO global participants Register as a new user and get 3 USDT (1) Invite subordinates to recharge 50USDT for the first time, and superiors can receive 3USDT (2) Invite subordinates to recharge 100 USDT for the first time, and superiors can receive 7 USDT For more details, please consult the SNAVO product manager!'
 function Home() {
+  const navigate = useNavigate();
   const [ showAnnouncement, setShowAnnouncement ] = useState(false);
   const [ isLoading, setIsLoading ] = useState(false);
   const [ showLeftPanel, setShowLeftPanel ] = useState(false);
@@ -152,7 +156,7 @@ function Home() {
       {/* action menu */}
       <div className=" rounded-lg mb-3 px-3 py-4 bg-white flex items-center justify-between w-full">
         {
-          actionData.map((item, index) => <ActionCard key={index} data={item} />)
+          actionData.map((item, index) => <ActionCard onClick={navigate} key={index} data={item} />)
         }
       </div>
       {/* coin list */}

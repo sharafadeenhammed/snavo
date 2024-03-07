@@ -27,6 +27,7 @@ import TeamList from "./screens/TeamList"
 import Miner from "./screens/Miner"
 import MinerOrders from "./screens/MinerOrders"
 import MinerDetails from "./screens/MinerDetails"
+import TaskCenter from "./screens/TaskCenter"
 function Navigation() {
   const location = useLocation()
   return (
@@ -52,6 +53,7 @@ function Navigation() {
         <Route path={routesName.MINER} element={<Miner />} />
         <Route path={routesName.MINER_ORDERS} element={<MinerOrders />} />
         <Route path={routesName.MINER_DETAILS} element={<MinerDetails />} />
+        <Route path={routesName.TASK_CENTER} element={<TaskCenter />} />
 
 
 
