@@ -104,7 +104,7 @@ function Home() {
             <div className='mr-2 p-2 rounded-full bg-indigo-100'>
               <FaHeadphones size={20} color='#4f46e5' />
             </div>
-            <div className='rounded-full bg-indigo-100 p-2'>
+            <div onClick={() => navigate(routesName.MESSAGE_CENTER)} className='rounded-full bg-indigo-100 p-2'>
               <FaEnvelope size={20} color='#4f46e5' />
             </div>
           </div>
