@@ -37,7 +37,7 @@ function MyTeam() {
           </div>
         </div>
 
-        <div className="flex px-10 py-7 justify-between items-center border-b-2 border-b-slate-200" >
+        <div className="flex py-4  justify-between items-center border-b-2 border-b-slate-200" >
           {/* registered members */}
           <div className="flex items-center flex-col" >
             <p className="text-slate-400 text-center font-normal text-xl">
@@ -77,7 +77,7 @@ function MyTeam() {
         </div>
         {/* cumulative team size */}
         <div className="flex py-5 justify-between items-center" >
-          <p className="text-slate-400 text-xl">
+          <p className="text-slate-400 text-base">
             Cumulative team size: <span className="text-black">0</span>
           </p>
 
@@ -110,7 +110,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 18%
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Team
                 <br />
                 commission
@@ -122,7 +122,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 0
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Registered
                 <br />
                 member
@@ -134,7 +134,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 0
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Valid
                 <br />
                 member
@@ -146,7 +146,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 0.00
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Team
                 <br />
                 income
@@ -167,7 +167,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 6%
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Team
                 <br />
                 commission
@@ -179,7 +179,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 0
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Registered
                 <br />
                 member
@@ -191,7 +191,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 0
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Valid
                 <br />
                 member
@@ -203,7 +203,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 0.00
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Team
                 <br />
                 income
@@ -224,7 +224,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 6%
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Team
                 <br />
                 commission
@@ -236,7 +236,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 0
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Registered
                 <br />
                 member
@@ -248,7 +248,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 0
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Valid
                 <br />
                 member
@@ -260,7 +260,7 @@ function MyTeam() {
               <p className="font-bold text-2xl">
                 0.00
               </p>
-              <p className="text-slate-400 text-center font-normal text-xl">
+              <p className="text-slate-400 text-center font-normal text-base">
                 Team
                 <br />
                 income

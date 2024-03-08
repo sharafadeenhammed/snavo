@@ -66,8 +66,8 @@ function MinerDetails() {
       {/* content */}
       <div className='w-full min-h-screen bg-slate-200 px-5 pt-5'>
 
-        <div className='  bg-white mb-10 w-full px-10 py-5 rounded-lg'>
-          <div className='flex items-center justify-between'>
+        <div className='  bg-white mb-10 w-full px-3 py-5 rounded-lg'>
+          <div className='flex items-start justify-between'>
             <p className='text-lg text-center text-slate-400  font-normal'>
               Dividend time
               <br />
@@ -88,12 +88,12 @@ function MinerDetails() {
 
         <div className='bg-white mb-5 min-h-full w-full px-10 py-5 rounded-lg'>
           <div className='flex items-end justify-between'>
-            <p className='text-xl text-start text-slate-400  font-normal'>
+            <p className='text-base text-start text-slate-400  font-normal'>
               Estimated <br /> income(USDT)
               <br />
               <span className=' text-indigo-600'>0.00</span>
             </p>
-            <p className='text-xl text-end text-slate-400  font-normal'>
+            <p className='text-base text-end text-slate-400  font-normal'>
               Available assets(USDT)
               <br />
               <span className=' text-black'>3.12</span>

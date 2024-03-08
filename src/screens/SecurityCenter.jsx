@@ -24,7 +24,7 @@ function SecurityCenter() {
 
       <div className="w-full">
         {/* transaction password */}
-        <div onClick={() => navigate(routesName.SET_TRANSACTION_PASSWORD)} className="w-full p-5 flex text-xl font-normal items-center justify-between border-b-2 border-b-slate-200" >
+        <div onClick={() => navigate(routesName.SET_TRANSACTION_PASSWORD)} className="w-full p-5 flex text-base font-normal items-center justify-between border-b-2 border-b-slate-200" >
           <p className="">
             Transction password
           </p>
@@ -47,7 +47,7 @@ function SecurityCenter() {
           </div>
         </div>
         {/* set mail */}
-        <div onClick={() => navigate(routesName.SET_MAIL)} className="w-full p-5 flex text-xl font-normal items-center justify-between border-b-2 border-b-slate-200" >
+        <div onClick={() => navigate(routesName.SET_MAIL)} className="w-full p-5 flex text-base font-normal items-center justify-between border-b-2 border-b-slate-200" >
           <p className="">
             Mail
           </p>

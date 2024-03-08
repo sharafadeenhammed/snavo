@@ -154,7 +154,7 @@ function Home() {
         <img className="cursor-pointer" onClick={() => console.log("goto message center ")} src={homeNoticeMore} alt="" />
       </div>
       {/* action menu */}
-      <div className=" rounded-lg mb-3 px-3 py-4 bg-white flex items-center justify-between w-full">
+      <div className=" rounded-lg mb-3 px-3 py-4 bg-white flex place-items-start justify-between w-full">
         {
           actionData.map((item, index) => <ActionCard onClick={navigate} key={index} data={item} />)
         }

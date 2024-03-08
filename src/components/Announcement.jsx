@@ -13,7 +13,7 @@ function Announcement({ close }) {
         if (e.target.id === "ann") {
           close()
         }
-      }} className=" sm:px-4 px-6 h-screen max-w-lg fixed right-1/2 top-0 w-full bg-black bg-opacity-75 translate-x-1/2 z-50 ">
+      }} className=" px-6 h-screen max-w-lg fixed right-1/2 top-0 w-full bg-black bg-opacity-75 translate-x-1/2 z-50 ">
       <div
         id="ann1"
         onClick={(e) => {
@@ -21,31 +21,31 @@ function Announcement({ close }) {
             close()
           }
         }}
-        className="relative p-20 w-full h-full flex items-center justify-center">
-        <div className="bg-white absolute pt-28 rounded-md">
-          <div className="mb-20 absolute -top-16  -left-1">
+        className="relative px-32 p-20 w-full h-full flex items-center justify-center">
+        <div className="bg-white absolute pt-16 rounded-md">
+          <div className=" absolute -top-16  -left-1">
             <img src={headerImage} alt="" />
           </div>
           <p className="px-5 font-bold text-lg">
             Register as a new user and get <span className="text-red-500">3 USDT</span>
 
-            <br /><br />
+            <div className="mb-3"></div>
             (1) Invite subordinates to recharge 50USDT for the first time, and superiors can receive <span className="text-red-500">3USDT!</span>
 
-            <br /><br />
+            <div className="mb-3"></div>
 
             (2) Invite subordinates to recharge 100 USDT for the first time, and superiors can receive <span className="text-red-500">7 USDT!</span>
 
-            <br /><br />
+            <div className="mb-3"></div>
 
             (3) Please contact the product manager to receive the reward!
 
 
 
-            <br /><br />
+            <div className="mb-3"></div>
 
             &nbsp; Please consult SNAVO online customer service for more details!
-            <br /><br />
+            <div className="mb-3"></div>
           </p>
           <div onClick={() => close()} className=" text-white absolute h-7 w-7 -bottom-8 left-1/2 flex items-center justify-center border-2 border-white rounded-full">
             <FaTimes />

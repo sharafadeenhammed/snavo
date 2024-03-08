@@ -51,7 +51,7 @@ function Quantify() {
       {/* section one */}
       <div className='relative mb-5' >
         <img className='block h-48 w-full object-cover rounded-xl' src={topInset} alt="" />
-        <div className='absolute flex flex-col justify-between px-7 py-5 top-0 left-0 bg-transparent w-full h-full'>
+        <div className='absolute flex flex-col justify-between px-3 py-5 top-0 left-0 bg-transparent w-full h-full'>
           <p className='text-white font-normal text-2xl'>
             Funds
           </p>
@@ -61,10 +61,10 @@ function Quantify() {
           <div className='w-full flex justify-between '>
             <p
               onClick={() => navigate(routesName.QUANTITATIVE_RECORDS)}
-              className='text-white font-normal text-2xl border-2 border-white px-10 py-1 rounded-3xl ' >
+              className='text-white font-normal text-xl border-2 border-white px-10 py-1 rounded-3xl ' >
               Details
             </p>
-            <p onClick={() => navigate(routesName.MY_TEAM)} className='text-white font-normal text-2xl border-2 border-white px-10 py-1 rounded-3xl ' >
+            <p onClick={() => navigate(routesName.MY_TEAM)} className='text-white font-normal text-xl border-2 border-white px-10 py-1 rounded-3xl ' >
               Team
             </p>
           </div>
@@ -160,7 +160,6 @@ function Quantify() {
           arrows={false}
           pauseOnHover={false}
           onChange={(oldIndex, newIndex) => {
-            console.log(newIndex)
             setCurrentItem(newIndex)
           }}
           duration={3000}

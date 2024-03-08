@@ -31,13 +31,13 @@ function TeamList() {
         </div>
       </div>
 
-      <div className="w-full min-h-screen bg-white px-5 py-2">
+      <div className="w-full min-h-screen bg-white px-2 py-2">
         <div className="flex items-center mb-5">
-          <p className={"mr-10 font-semibold text-lg cursor-pointer " + (currentTab === "teamMembers" ? "text-indigo-700" : "")} onClick={() => setCurrentTab("teamMembers")}>
+          <p className={"mr-10 font-semibold text-base cursor-pointer " + (currentTab === "teamMembers" ? "text-indigo-700" : "")} onClick={() => setCurrentTab("teamMembers")}>
             Team members
           </p>
 
-          <p className={"font-semibold text-lg cursor-pointer " + (currentTab === "teamContribution" ? "text-indigo-700" : "")} onClick={() => {
+          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "teamContribution" ? "text-indigo-700" : "")} onClick={() => {
             setCurrentTab("teamContribution")
           }
           }>
@@ -48,8 +48,8 @@ function TeamList() {
         {currentTab === "teamMembers" ?
           < div className="w-full ">
             {/* team members */}
-            <div className="flex items-center justify-between relative mb-5">
-              <p className="text-lg">
+            <div className="flex items-center py-2 justify-between relative mb-5">
+              <p className="text-base">
                 Registered people today: <span className="text-indigo-700">0</span>
               </p>
               <button className=" bg-white shadow rounded shadow-gray-200 flex items-center px-7 py-2">
@@ -58,17 +58,17 @@ function TeamList() {
             </div>
 
             {/* table header */}
-            <div className="bg-indigo-600 mb-2 text-white h-12 rounded-lg flex items-center w-full">
+            <div className="bg-indigo-600 mb-2 text-white h-12 rounded-lg text-sm flex items-center w-full">
               <div className="w-1/4 text-center">Account</div>
               <div className="w-1/4 text-center">Level</div>
               <div className="w-1/4 text-center">Grade</div>
-              <div className="w-1/4 text-center">Registration time</div>
+              <div className="w-1/4 text-start">Registration time</div>
             </div>
 
             {/* team item card */}
-            <div className="bg-white mb-1 font-semibold  text-black px-2 rounded-lg flex items-center w-full">
-              <div className="w-1/4 text-center">+234123456789</div>
-              <div className="w-1/4 text-center">Level one</div>
+            <div className="bg-white mb-1 font-semibold  text-black text-sm rounded-lg flex items-center w-full">
+              <div className="w-1/4 text-start">+2348073191813</div>
+              <div className="w-1/4 text-end">Level one</div>
               <div className="w-1/4 text-center">VIP0</div>
               <div className="w-1/4 text-center">12/12/2022</div>
             </div>

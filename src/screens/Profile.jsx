@@ -68,7 +68,7 @@ function Profile() {
 
       {/* profile stats */}
       <div className="mb-5 w-full px-5 py-7 rounded-xl bg-white">
-        <div className="flex justify-between mb-3 items-center" >
+        <div className="flex justify-between mb-3 items-start" >
           {/* balance */}
           <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">

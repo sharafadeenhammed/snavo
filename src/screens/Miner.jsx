@@ -37,7 +37,7 @@ function Miner() {
         <div className="px-3 flex items-center absolute top-20 left-0 ">
           <p className="text-white text-3xl">0.00 <span className="text-xl font-semibold">USDT</span></p>
         </div>
-        <div className="px-3 border-t-2 border-b-2 border-l-2 rounded-l-3xl  flex items-center absolute top-12 right-0 ">
+        <div className="px-3 border-t-2 border-b-2 border-l-2 rounded-l-3xl  flex items-center absolute top-16 right-0 ">
           <p onClick={() => setShowIllustrate(true)} className="text-white text-2xl">Illustrate</p>
           <FaAngleRight color="ffffff" size={40} className="ml-1" />
         </div>

@@ -32,7 +32,6 @@ function FundingDetails() {
         paddingLeft: 0
       }}
       {...pageAnimation}>
-      {/* <ToastMessage message={toastMessge} showToast={showToast} handleRemoveToast={() => setShowToast(false)} /> */}
       <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <Back />
@@ -43,13 +42,13 @@ function FundingDetails() {
         </div>
       </div>
       <div className="px-3 w-full">
-        <div className=" mb-5 border-2 border-slate-200 w-full flex rounded-lg justify-between" >
+        <div className=" mb-5 border-2 border-slate-300 w-full flex rounded-lg justify-between" >
           <p
             onClick={fetchRewards}
             className={
               fundDetail === "reward" ?
-                "text-center text-lg rounded-lg py-3 w-1/3 text-white bg-indigo-600" :
-                "text-center text-lg rounded-lg py-3 w-1/3 text-black"
+                "text-center text-base rounded-lg py-3 w-1/3 text-white bg-indigo-600" :
+                "text-center text-base rounded-lg py-3 w-1/3 text-black"
             }>
             Reward record
           </p>
@@ -57,8 +56,8 @@ function FundingDetails() {
             onClick={fetchDeposits}
             className={
               fundDetail === "deposit" ?
-                "text-center text-lg rounded-lg py-3 w-1/3 text-white bg-indigo-600" :
-                "text-center text-lg rounded-lg py-3 w-1/3 text-black"
+                "text-center text-base rounded-lg py-3 w-1/3 text-white bg-indigo-600" :
+                "text-center text-base rounded-lg py-3 w-1/3 text-black"
             }>
             Deposit record
           </p>
@@ -66,8 +65,8 @@ function FundingDetails() {
             onClick={fetchWithdraws}
             className={
               fundDetail === "withdraw" ?
-                "text-center text-lg rounded-lg py-3 w-1/3 text-white bg-indigo-600" :
-                "text-center text-lg rounded-lg py-3 w-1/3 text-black"
+                "text-center text-base rounded-lg py-3 w-1/3 text-white bg-indigo-600" :
+                "text-center text-base rounded-lg py-3 w-1/3 text-black"
             }>
             Withdraw...
           </p>
