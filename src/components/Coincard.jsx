@@ -7,8 +7,8 @@ function Coincard({ data, icon }) {
         <p className=" text-sm font-bold ">{icon.shortName}</p>
       </div>
 
-      <p className="font-bold text-xl text-indigo-700">{data.usd}</p>
-      <p className="font-bold text-xl w-28 py-2 text-center text-indigo-700 bg-indigo-100 rounded ">{String(data.usd_24h_change).slice(0, 5)}%</p>
+      <p className="font-bold text-lg text-indigo-700">{data.usd}</p>
+      <p className="font-bold text-lg w-28 py-2 text-center text-indigo-700 bg-indigo-100 rounded ">{String(data.usd_24h_change).slice(0, 5)}%</p>
 
     </div>
   )
