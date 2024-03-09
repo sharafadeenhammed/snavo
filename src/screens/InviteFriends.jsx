@@ -1,10 +1,9 @@
 import { QRCode } from 'react-qrcode-logo';
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import Screen from "../components/Screen";
 import Back from "../components/Back";
 import ToastMessage from "../components/ToastMessage";
-import ThinSpinner from "../components/ThinSpinner";
 import pageAnimation from "../data/pageAnimation";
 function InviteFriends() {
   const [ toastMessage, setToastMessage ] = useState("");

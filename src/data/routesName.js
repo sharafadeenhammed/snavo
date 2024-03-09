@@ -29,7 +29,9 @@ export default Object.freeze({
   MINER_DETAILS: "/miner-details",
   TASK_CENTER: "/task-center",
   MESSAGE_CENTER: "/message-center",
-  MESSAGE_DETAILS: "/message-details/",
-  RECHARGE_METHOD: "/recharge-method",
+  MESSAGE_DETAILS: "/message-details",
+  RECHARGE_METHOD: "/recharge-methods",
   RECHARGE_RECORDS: "/recharge-records",
+  WITHDRAW_METHOD:"/withdraw-methods",
+  WITHDRAW_RECORDS:"/withdraw-records"
 })

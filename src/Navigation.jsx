@@ -31,6 +31,11 @@ import TaskCenter from "./screens/TaskCenter"
 import MessageCenter from "./screens/MessageCenter"
 import MessageDetails from "./screens/MessageDetails"
 import RechargeMethod from "./screens/RechargeMethod"
+import Recharge from "./screens/Recharge"
+import RechargeRecords from "./screens/RechargeRecords"
+import WithdrawalMethod from "./screens/WithdrawalMethod"
+import WithdrawalRecords from "./screens/WithdrawalRecords"
+import Withdraw from "./screens/Withdraw"
 function Navigation() {
   const location = useLocation()
   return (
@@ -60,6 +65,11 @@ function Navigation() {
         <Route path={routesName.MESSAGE_CENTER} element={<MessageCenter />} />
         <Route path={routesName.MESSAGE_DETAILS + "/:id"} element={<MessageDetails />} />
         <Route path={routesName.RECHARGE_METHOD} element={<RechargeMethod />} />
+        <Route path={routesName.RECHARGE} element={<Recharge />} />
+        <Route path={routesName.RECHARGE_RECORDS} element={<RechargeRecords />} />
+        <Route path={routesName.WITHDRAW_METHOD} element={<WithdrawalMethod />} />
+        <Route path={routesName.WITHDRAW_RECORDS} element={<WithdrawalRecords />} />
+        <Route path={routesName.WITHDRAW} element={<Withdraw />} />
 
 
 

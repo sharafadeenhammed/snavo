@@ -12,7 +12,7 @@ export default Object.freeze([
   }, {
     text: "Withdraw",
     image: withdraw,
-    path:routesName.WITHDRAW
+    path:routesName.WITHDRAW_METHOD
   }, {
     text: "Team",
     image: team,
