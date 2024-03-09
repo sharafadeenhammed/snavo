@@ -30,6 +30,7 @@ import MinerDetails from "./screens/MinerDetails"
 import TaskCenter from "./screens/TaskCenter"
 import MessageCenter from "./screens/MessageCenter"
 import MessageDetails from "./screens/MessageDetails"
+import RechargeMethod from "./screens/RechargeMethod"
 function Navigation() {
   const location = useLocation()
   return (
@@ -58,6 +59,7 @@ function Navigation() {
         <Route path={routesName.TASK_CENTER} element={<TaskCenter />} />
         <Route path={routesName.MESSAGE_CENTER} element={<MessageCenter />} />
         <Route path={routesName.MESSAGE_DETAILS + "/:id"} element={<MessageDetails />} />
+        <Route path={routesName.RECHARGE_METHOD} element={<RechargeMethod />} />
 
 
 

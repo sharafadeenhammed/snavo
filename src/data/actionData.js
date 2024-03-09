@@ -8,7 +8,7 @@ export default Object.freeze([
   {
     text: "Recharge",
     image: recharge,
-    path:routesName.RECHARGE
+    path:routesName.RECHARGE_METHOD
   }, {
     text: "Withdraw",
     image: withdraw,
