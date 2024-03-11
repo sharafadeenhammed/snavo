@@ -1,7 +1,7 @@
 
 
 
-import { useEffect, useState } from 'react'
+import { useState, useContext } from 'react'
 import { FaUser } from "react-icons/fa"
 import { useNavigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
@@ -10,15 +10,13 @@ import Screen from '../components/Screen'
 import pageAnimation from '../data/pageAnimation'
 import routesName from '../data/routesName'
 import ToastMessage from '../components/ToastMessage'
+import UserContext from '../context/user'
 
-import history from "../assets/images/quantify/book-history.png"
 import vip from "../assets/images/profile_vip.png"
 import crown from "../assets/images/profile_crown.png"
 
 import homeNoticeMore from "../assets/images/home_notice_more.png"
 import copy from "../assets/images/copy.png"
-import recharge from "../assets/images/leftpanel/recharge.png"
-import withdraw from "../assets/images/leftpanel/withdraw.png"
 import info from "../assets/images/leftpanel/info.png"
 import message from "../assets/images/leftpanel/message.png"
 import question from "../assets/images/leftpanel/question.png"
@@ -31,9 +29,10 @@ function Profile() {
   const navigate = useNavigate();
   const [ showToast, setShowToast ] = useState(false);
   const [ toastMessage, setToastMessage ] = useState("");
+  const { user } = useContext(UserContext);
   const uid = 2219980;
   function copyUid() {
-    navigator.clipboard.writeText(uid)
+    navigator.clipboard.writeText(user.uid)
     setToastMessage("Copy successfully");
     setShowToast(true);
   }
@@ -53,7 +52,9 @@ function Profile() {
       </AnimatePresence>
       <div className=" px-3 py-4 mb-5 rounded-xl relative w-full min-h-full bg-white">
         <div className='flex mb-4'>
-          <p className='text-2xl font-bold mr-4'>+234****5364</p>
+          <p className='text-2xl font-bold mr-4'>
+            {`${user.phone.slice(0, 6)}**** ${user.phone.slice(-3)}`}
+          </p>
           <div className=' relative'>
             <img src={vip} alt="" />
             <p className="absolute top-1.5 right-3 text-xl font-bold">
@@ -62,7 +63,7 @@ function Profile() {
           </div>
         </div>
         <p className='text-slate-400'>
-          UUID: {uid} <img className='inline h-5' onClick={copyUid} src={copy} />
+          UUID: {user.uid} <img className='inline h-5' onClick={copyUid} src={copy} />
         </p>
       </div>
 

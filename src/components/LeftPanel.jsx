@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { FaUser } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useContext } from "react"
 
 import homeNoticeMore from "../assets/images/home_notice_more.png"
 import copy from "../assets/images/leftpanel/copy.png"
@@ -17,19 +17,20 @@ import users from "../assets/images/leftpanel/users.png"
 import book from "../assets/images/leftpanel/book.png"
 import routesName from "../data/routesName"
 import ToastMessage from "./ToastMessage"
+import UserContext from "../context/user"
 
 
 function LeftPanel({ hadleClosePanel, panelOpen = false }) {
   const [ showToast, setShowToast ] = useState(false);
   const [ toastMessage, setToastMessage ] = useState("");
   const navigate = useNavigate();
+  const { user, userDispatch } = useContext(UserContext);
   return (
     <motion.div
       id="close-left-panel"
       className='container min-h-screen mx-auto max-w-lg bg-black bg-opacity-75 fixed top-0 bottom-0  z-40 overflow-auto'
       // className="container mx-auto fixed top-0 bottom-0 box-border left-50 z-40 h-full max-w-lg overflow-visible bg-black bg-opacity-75"
       onClick={(e) => {
-        console.log("close panel", e.target.id)
         e.target.id === "close-left-panel" && hadleClosePanel()
       }}
       initial={{ x: "-20%" }}
@@ -41,19 +42,21 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
         className=" relative w-9/12 min-h-full bg-white pt-5 pb-5">
         {/* security center */}
         <div
-          onClick={() => {
+          onClick={(e) => {
             // TODO: close panel and navigate to security center
-            console.log("goto security center ")
+            if (e.target.id === "copy-uid") return;
+            navigate(routesName.SECURITY_CENTER);
           }}
           className="flex px-2 justify-between items-center mb-5">
           <div className="p-3 rounded-full border-2 border-slate-200">
             <FaUser color={"#4f46e5"} size={30} />
           </div>
           <div className=" flex flex-col items-center">
-            <p>+23455****9034</p>
+            <p>{`${user.phone.slice(0, 6)}**** ${user.phone.slice(-3)}`}</p>
             <div className="flex items-center justify-center">
-              <p className="mr-2">12363477 </p>
+              <p className="mr-2">{user.uid} </p>
               <img
+                id="copy-uid"
                 className="cursor-pointer h-4"
                 src={copy}
                 onClick={() => {

@@ -81,8 +81,8 @@ function Home() {
 
   useEffect(() => {
     getCoinDataList()
-    const coinDataUpdateInternal = setInterval(coinDataUpdate, 5000)
-    return clearInterval(coinDataUpdateInternal)
+    const coinDataUpdateInternal = setInterval(coinDataUpdate, 10000)
+    return () => clearInterval(coinDataUpdateInternal)
   }, [])
   return (
     <Screen

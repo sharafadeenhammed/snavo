@@ -1,21 +1,51 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { FaArrowLeft, FaHeadphones, FaGlobe, FaArrowRight, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import AppInput from "../components/AppInput";
+import ThinSpinner from "../components/ThinSpinner"
+import ToastMessage from "../components/ToastMessage"
 import CountryPicker from "../components/CountryPicker";
 import routesName from "../data/routesName";
 import pageAnimation from "../data/pageAnimation";
+import useApi from "../hooks/useApi";
+import * as auth from "../api/auth";
+import UserContext from "../context/user";
 
 
 function Login() {
   const [ passwordType, setPasswordType ] = useState("password")
-  const [ countryCode, setCountryCode ] = useState("+234")
+  const [ password, setPassword ] = useState("")
+  const [ phone, setPhone ] = useState("")
+  const [ countryCode, setCountryCode ] = useState("+1")
   const [ openCountryPicker, setOpenCountryPicker ] = useState(false);
+  const [ showLoginMessage, setShowLoginMessage ] = useState(false);
+  const api = useApi(auth.login);
+  const navigate = useNavigate();
+  const { user, userDispatch } = useContext(UserContext);
+
+  // set password states
+  const setPasswordState = (e) => {
+    setPassword(e.target.value);
+  }
+  // set phone states
+  const setPhoneState = (e) => {
+    setPhone(e.target.value);
+  }
+  // set country code
   const handleCountryChange = (idd) => {
     setCountryCode(idd)
     setOpenCountryPicker(false)
+  }
+
+  // submit login form
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const response = await api.callApi({ phone: `${countryCode}${phone}`, password });
+    if (!response.ok) return
+    userDispatch({ type: "SET_USER", payload: api?.data?.user });
+    setShowLoginMessage(true)
   }
   return (
     <motion.div
@@ -24,6 +54,14 @@ function Login() {
       <AnimatePresence>
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
 
+      </AnimatePresence>
+      <ToastMessage message={api.data?.message} showToast={api.error} handleRemoveToast={() => api.setError(false)} />
+      <ToastMessage message={"logged in successfully"} showToast={showLoginMessage} handleRemoveToast={() => {
+        setShowLoginMessage(false);
+        navigate(routesName.HOME);
+      }} />
+      <AnimatePresence>
+        {api.isLoading ? <ThinSpinner /> : null}
       </AnimatePresence>
       <div className=' container bg-gray-50 py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
         <div className="justify-between flex items-center" >
@@ -49,14 +87,14 @@ function Login() {
         Phone login
       </h1>
       {/* input */}
-      <div className='mb-5'>
-        <AppInput LeftIcon={<p onClick={() => setOpenCountryPicker(true)} className="cursor-pointer flex items-center text-indigo-600 font-bold text-lg mr-2 bg-gray-50">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" />
+      <form onSubmit={handleSubmit} className='mb-5'>
+        <AppInput LeftIcon={<p onClick={() => setOpenCountryPicker(true)} className="cursor-pointer flex items-center text-indigo-600 font-bold text-lg mr-2 bg-gray-50">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" handleOnChange={setPhoneState} />
 
-        <AppInput LeftIcon={<FaLock size={20} className="mr-2" />} type={passwordType} placeholder='Please enter password' RightIcon={passwordType === "password" ? < FaEyeSlash color="lightgray" onClick={() => setPasswordType("text")} size={25} /> : <FaEye color="lightgray" onClick={() => setPasswordType("password")} size={25} />} />
+        <AppInput handleOnChange={setPasswordState} LeftIcon={<FaLock size={20} className="mr-2" />} type={passwordType} placeholder='Please enter password' RightIcon={passwordType === "password" ? < FaEyeSlash color="lightgray" onClick={() => setPasswordType("text")} size={25} /> : <FaEye color="lightgray" onClick={() => setPasswordType("password")} size={25} />} />
 
 
         <input className='bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg cursor-pointer' type='submit' value="Log in" />
-      </div>
+      </form>
 
       <div className='flex justify-between'>
         <p className='text-black font-medium text-lg'>Don't you have an account?</p>

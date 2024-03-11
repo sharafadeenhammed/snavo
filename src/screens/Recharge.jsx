@@ -3,8 +3,6 @@
 
 import { useState } from 'react'
 import { QRCode } from 'react-qrcode-logo';
-import { FaAngleRight } from 'react-icons/fa'
-
 
 import Screen from '../components/Screen'
 import Back from '../components/Back'
@@ -44,9 +42,7 @@ function Recharge() {
           </div>
         </div>
       </div>
-      {/* <p className='font-bold text-lg' >
-        Please select a deposit currency
-      </p> */}
+
       <p className='text-xl font-bold'>Chain name</p>
       <p className='ml-10 my-2 text-lg text-center w-28 bg-indigo-600 text-white p-2'>
         {chainName}
@@ -58,13 +54,17 @@ function Recharge() {
         <p className='text-lg font-semibold'>
           Scan QR code transfer to recharge
         </p>
+      </div>
 
-        <div className='w-full px-10' >
-          <div className='flex px-2 py-5 w-full items-center justify-between bg-indigo-600 text-white' >
-            <p className='text-xl font-semibold'>{rechargeAddress}</p>
-            <img className='cursor-pointer' onClick={copyLink} src={copy} alt="" />
+      <div className='w-full px-4 mb-5' >
+        <div className='flex flex-wrap px-2 py-3 w-full box-border
+        items-center justify-between bg-indigo-600 text-white' >
+          <p className=' text-lg text-wrap text-left'>
+            {rechargeAddress}
+          </p>
+          <div className=''>
+            <img className='h-5 cursor-pointer block' onClick={copyLink} src={copy} alt="" />
           </div>
-
         </div>
       </div>
 
