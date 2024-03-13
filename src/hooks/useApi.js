@@ -10,7 +10,6 @@ const useApi = (apiCall) => {
     setError(false);
     setData(null);
     const response = await apiCall(...data);
-    console.log("response from useApi", response);
     if (!response.ok) setError(true);
     setData(response.data);
     setIsLoading(false);

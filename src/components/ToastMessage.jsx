@@ -1,11 +1,11 @@
 
 import { useEffect } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-function ToastMessage({ message, showToast = false, handleRemoveToast }) {
+function ToastMessage({ message, showToast = false, handleRemoveToast, time = 5000 }) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       handleRemoveToast()
-    }, 5000)
+    }, time)
     return () => {
       clearTimeout(timeout)
     }

@@ -24,7 +24,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
   const [ showToast, setShowToast ] = useState(false);
   const [ toastMessage, setToastMessage ] = useState("");
   const navigate = useNavigate();
-  const { user, userDispatch } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   return (
     <motion.div
       id="close-left-panel"
@@ -52,9 +52,9 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <FaUser color={"#4f46e5"} size={30} />
           </div>
           <div className=" flex flex-col items-center">
-            <p>{`${user.phone.slice(0, 6)}**** ${user.phone.slice(-3)}`}</p>
+            <p>{`${user.user.phone.slice(0, 6)}**** ${user.user.phone.slice(-3)}`}</p>
             <div className="flex items-center justify-center">
-              <p className="mr-2">{user.uid} </p>
+              <p className="mr-2">{user.user.uid} </p>
               <img
                 id="copy-uid"
                 className="cursor-pointer h-4"

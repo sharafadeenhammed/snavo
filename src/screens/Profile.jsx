@@ -1,8 +1,7 @@
 
 
 
-import { useState, useContext } from 'react'
-import { FaUser } from "react-icons/fa"
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
@@ -10,7 +9,6 @@ import Screen from '../components/Screen'
 import pageAnimation from '../data/pageAnimation'
 import routesName from '../data/routesName'
 import ToastMessage from '../components/ToastMessage'
-import UserContext from '../context/user'
 
 import vip from "../assets/images/profile_vip.png"
 import crown from "../assets/images/profile_crown.png"
@@ -25,17 +23,24 @@ import memo from "../assets/images/leftpanel/memo.png"
 import userlove from "../assets/images/leftpanel/userlove.png"
 import users from "../assets/images/leftpanel/users.png"
 import book from "../assets/images/leftpanel/book.png"
+import useUserContext from '../hooks/useUserContext'
+
 function Profile() {
   const navigate = useNavigate();
   const [ showToast, setShowToast ] = useState(false);
   const [ toastMessage, setToastMessage ] = useState("");
-  const { user } = useContext(UserContext);
-  const uid = 2219980;
+  const { user, userDispatch } = useUserContext();
   function copyUid() {
     navigator.clipboard.writeText(user.uid)
     setToastMessage("Copy successfully");
     setShowToast(true);
   }
+
+  function signOut() {
+    userDispatch({ type: "CLEAR_USER" });
+    navigate(routesName.LOGIN);
+  }
+
   return (
     <Screen
       {...pageAnimation}
@@ -53,7 +58,7 @@ function Profile() {
       <div className=" px-3 py-4 mb-5 rounded-xl relative w-full min-h-full bg-white">
         <div className='flex mb-4'>
           <p className='text-2xl font-bold mr-4'>
-            {`${user.phone.slice(0, 6)}**** ${user.phone.slice(-3)}`}
+            {`${user?.user?.phone?.slice(0, 6)}**** ${user?.user?.phone?.slice(-3)}`}
           </p>
           <div className=' relative'>
             <img src={vip} alt="" />
@@ -63,7 +68,7 @@ function Profile() {
           </div>
         </div>
         <p className='text-slate-400'>
-          UUID: {user.uid} <img className='inline h-5' onClick={copyUid} src={copy} />
+          UUID: {user?.user?.uid} <img className='inline h-5' onClick={copyUid} src={copy} />
         </p>
       </div>
 
@@ -83,7 +88,7 @@ function Profile() {
           {/* available funds */}
           <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
-              3.12
+              {user?.user?.balance}
             </p>
             <p className="text-slate-400 text-center font-normal">
               Available <br /> funds
@@ -310,7 +315,9 @@ function Profile() {
 
         </div>
         <div className=" mt-2 w-full px-2">
-          <button className="text-white text-lg font-semibold bg-indigo-700 cursor-pointer rounded-lg w-full py-3">Sign out</button>
+          <button
+            onClick={signOut}
+            className="text-white text-lg font-semibold bg-indigo-700 cursor-pointer rounded-lg w-full py-3">Sign out</button>
         </div>
       </div>
     </Screen>

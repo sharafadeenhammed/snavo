@@ -3,17 +3,19 @@ import { BrowserRouter as Router } from "react-router-dom"
 import Navigation from "./Navigation"
 import BottomTabs from "./components/BottomTabs"
 import { UserProvider } from "./context/user"
+import Authenticator from "./components/Authenticator"
 
 
 function App() {
 
   return (
-    <UserProvider>
-      <Router>
-        <Navigation />
+    <Router>
+      <UserProvider>
+        {/* <Navigation /> */}
         <BottomTabs />
-      </Router>
-    </UserProvider>
+        <Authenticator />
+      </UserProvider>
+    </Router>
   )
 }
 

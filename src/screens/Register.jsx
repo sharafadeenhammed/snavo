@@ -2,14 +2,18 @@ import { useState, useEffect } from "react";
 import { FaHeadphones, FaGlobe, FaArrowRight, FaLock, FaEye, FaEyeSlash, FaShieldAlt, FaEnvelope } from "react-icons/fa";
 import { loadCaptchaEnginge, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import AppInput from "../components/AppInput";
 import CountryPicker from "../components/CountryPicker";
 import Back from "../components/Back";
 import routesName from "../data/routesName";
 import pageAnimation from "../data/pageAnimation";
-
+import useUserContext from "../hooks/useUserContext";
+import useApi from "../hooks/useApi";
+import * as auth from "../api/auth"
+import ToastMessage from "../components/ToastMessage";
+import ThinSpinner from "../components/ThinSpinner"
 
 
 
@@ -17,15 +21,22 @@ function Register() {
   useEffect(() => {
     loadCaptchaEnginge(4);
   }, [])
+  const queryString = new URLSearchParams(window.location.href);
+  const ref = queryString.get("ref")
   const [ passwordType, setPasswordType ] = useState("password");
   const [ confirmPasswordType, setConfirmPasswordType ] = useState("password");
   const [ phone, setPhone ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ confirmPassword, setConfirmPassword ] = useState("");
-  const [ code, setCode ] = useState("EJFDS");
+  const [ code, setCode ] = useState(ref || "EJFDS");
   const [ captcha, setCaptcha ] = useState("")
-  const [ countryCode, setCountryCode ] = useState("+234")
+  const [ countryCode, setCountryCode ] = useState("+1")
   const [ openCountryPicker, setOpenCountryPicker ] = useState(false);
+  const [ message, setMessage ] = useState("");
+  const [ showToast, setShowToast ] = useState(false);
+  const { userDispatch } = useUserContext();
+  const api = useApi(auth.register);
+  const navigate = useNavigate();
 
   const handleCountryChange = (idd) => {
     setCountryCode(idd)
@@ -34,11 +45,26 @@ function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log("captcha: ", captcha);
     const captchValidate = validateCaptcha(captcha)
-    console.log(captchValidate)
-    if (!captchValidate) return;
-    console.log({ phone, password, confirmPassword, code });
+    if (!captchValidate) {
+      setMessage("Captcha not correct!");
+      setShowToast(true);
+      return
+    }
+    const formData = {
+      phone: countryCode + phone,
+      password,
+      confirmPassword,
+      referalCode: code,
+    }
+    const response = await api.callApi(formData);
+    if (!response.ok) return;
+    setMessage("Account created successfully!");
+    setShowToast(true);
+    setTimeout(() => {
+      userDispatch({ type: "SET_USER", payload: response.data });
+      navigate(routesName.HOME)
+    }, 2500);
   }
   return (
     <motion.div
@@ -46,7 +72,11 @@ function Register() {
       className="container px-4 py-0.050  pt-20 border-x-2 border-slate-100 h-screen mx-auto max-w-lg bg-gray-50">
       <AnimatePresence>
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
-
+      </AnimatePresence>
+      <ToastMessage time={2000} message={api?.data?.message} showToast={api.error} handleRemoveToast={() => api.setError(false)} />
+      <ToastMessage time={2000} showToast={showToast} message={message} handleRemoveToast={() => setShowToast(false)} />
+      <AnimatePresence>
+        {api.isLoading ? <ThinSpinner /> : null}
       </AnimatePresence>
 
       <div className=' container bg-gray-50 py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>

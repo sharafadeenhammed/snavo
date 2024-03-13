@@ -12,6 +12,7 @@ import pageAnimation from "../data/pageAnimation";
 import useApi from "../hooks/useApi";
 import * as auth from "../api/auth";
 import UserContext from "../context/user";
+import useUserContext from "../hooks/useUserContext";
 
 
 function Login() {
@@ -23,8 +24,8 @@ function Login() {
   const [ showLoginMessage, setShowLoginMessage ] = useState(false);
   const api = useApi(auth.login);
   const navigate = useNavigate();
-  const { user, userDispatch } = useContext(UserContext);
-
+  const { user, userDispatch } = useUserContext();
+  // console.log("user from login: ", user);
   // set password states
   const setPasswordState = (e) => {
     setPassword(e.target.value);
@@ -44,8 +45,11 @@ function Login() {
     e.preventDefault();
     const response = await api.callApi({ phone: `${countryCode}${phone}`, password });
     if (!response.ok) return
-    userDispatch({ type: "SET_USER", payload: api?.data?.user });
+    userDispatch({ type: "SET_USER", payload: response.data });
     setShowLoginMessage(true)
+    setTimeout(() => {
+      navigate(routesName.HOME)
+    }, 4000);
   }
   return (
     <motion.div
@@ -55,10 +59,9 @@ function Login() {
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
 
       </AnimatePresence>
-      <ToastMessage message={api.data?.message} showToast={api.error} handleRemoveToast={() => api.setError(false)} />
-      <ToastMessage message={"logged in successfully"} showToast={showLoginMessage} handleRemoveToast={() => {
+      <ToastMessage time={3000} message={api.data?.message} showToast={api.error} handleRemoveToast={() => api.setError(false)} />
+      <ToastMessage time={3000} message={"logged in successfully"} showToast={showLoginMessage} handleRemoveToast={() => {
         setShowLoginMessage(false);
-        navigate(routesName.HOME);
       }} />
       <AnimatePresence>
         {api.isLoading ? <ThinSpinner /> : null}

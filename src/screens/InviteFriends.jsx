@@ -5,7 +5,9 @@ import Screen from "../components/Screen";
 import Back from "../components/Back";
 import ToastMessage from "../components/ToastMessage";
 import pageAnimation from "../data/pageAnimation";
+import useUserContext from '../hooks/useUserContext';
 function InviteFriends() {
+  const { user } = useUserContext();
   const [ toastMessage, setToastMessage ] = useState("");
   const [ showToast, setShowToast ] = useState(false);
   function copyLink() {
@@ -33,10 +35,10 @@ function InviteFriends() {
       <div className='w-full bg-blue-500 min-h-screen flex items-center justify-center '>
         <div className=' p-5 w-11/12 rounded-lg bg-white h-8/12 flex flex-col items-center'>
           <div className='p-1 border-2 border-indigo-500 mb-20'>
-            <QRCode size={200} value="https://www.google.com" />
+            <QRCode size={200} value={`${import.meta.env.VITE_FRONTEND_URL}?uid=${user.user.referalCode}`} />
           </div>
           <p className='rounded w-full my-10 text-center px-5 py-2 bg-slate-300 text-black text-lg'>
-            https://google.com
+            {`${import.meta.env.VITE_FRONTEND_URL}?uid=${user.user.referalCode}`}
           </p>
           <p
             onClick={copyLink}
