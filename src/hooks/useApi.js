@@ -10,7 +10,13 @@ const useApi = (apiCall) => {
     setError(false);
     setData(null);
     const response = await apiCall(...data);
-    if (!response.ok) setError(true);
+    if (!response.ok) {
+      setError(true);
+      if (response?.data?.message === undefined) response.data = {
+        ...response.data,
+        message:"Something went wrong try again"
+      };
+    }
     setData(response.data);
     setIsLoading(false);
     return response;
