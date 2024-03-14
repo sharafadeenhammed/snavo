@@ -45,11 +45,11 @@ function Login() {
     e.preventDefault();
     const response = await api.callApi({ phone: `${countryCode}${phone}`, password });
     if (!response.ok) return
-    userDispatch({ type: "SET_USER", payload: response.data });
     setShowLoginMessage(true)
     setTimeout(() => {
+      userDispatch({ type: "SET_USER", payload: response.data });
       navigate(routesName.HOME)
-    }, 4000);
+    }, 2500);
   }
   return (
     <motion.div
@@ -59,8 +59,8 @@ function Login() {
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
 
       </AnimatePresence>
-      <ToastMessage time={3000} message={api.data?.message} showToast={api.error} handleRemoveToast={() => api.setError(false)} />
-      <ToastMessage time={3000} message={"logged in successfully"} showToast={showLoginMessage} handleRemoveToast={() => {
+      <ToastMessage time={2000} message={api.data?.message} showToast={api.error} handleRemoveToast={() => api.setError(false)} />
+      <ToastMessage time={2000} message={"logged in successfully"} showToast={showLoginMessage} handleRemoveToast={() => {
         setShowLoginMessage(false);
       }} />
       <AnimatePresence>

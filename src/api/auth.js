@@ -27,3 +27,8 @@ export const register = async (data)=>{
   return response;
 }
 
+export const requestPasswordResetToken =  async (data)=>{
+  const response = await request.post("/auth/get-token", data);
+  return response;
+}
+

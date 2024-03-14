@@ -9,6 +9,8 @@ import Screen from '../components/Screen'
 import pageAnimation from '../data/pageAnimation'
 import routesName from '../data/routesName'
 import ToastMessage from '../components/ToastMessage'
+import useUserContext from '../hooks/useUserContext'
+import ThinSpinner from "../components/ThinSpinner"
 
 import vip from "../assets/images/profile_vip.png"
 import crown from "../assets/images/profile_crown.png"
@@ -23,12 +25,12 @@ import memo from "../assets/images/leftpanel/memo.png"
 import userlove from "../assets/images/leftpanel/userlove.png"
 import users from "../assets/images/leftpanel/users.png"
 import book from "../assets/images/leftpanel/book.png"
-import useUserContext from '../hooks/useUserContext'
 
 function Profile() {
   const navigate = useNavigate();
   const [ showToast, setShowToast ] = useState(false);
   const [ toastMessage, setToastMessage ] = useState("");
+  const [ isLoading, setIsLoading ] = useState(false);
   const { user, userDispatch } = useUserContext();
   function copyUid() {
     navigator.clipboard.writeText(user.uid)
@@ -37,14 +39,18 @@ function Profile() {
   }
 
   function signOut() {
-    userDispatch({ type: "CLEAR_USER" });
-    navigate(routesName.LOGIN);
+    setIsLoading(true);
+    setTimeout(() => {
+      userDispatch({ type: "CLEAR_USER" });
+      navigate(routesName.LOGIN);
+    }, 2000)
   }
 
   return (
     <Screen
       {...pageAnimation}
     >
+      {isLoading ? <ThinSpinner /> : null}
       <AnimatePresence>
         {
           showToast ?

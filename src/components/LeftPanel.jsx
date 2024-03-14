@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { FaUser } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
-import { useState, useContext } from "react"
+import { useState } from "react"
 
 import homeNoticeMore from "../assets/images/home_notice_more.png"
 import copy from "../assets/images/leftpanel/copy.png"
@@ -17,14 +17,24 @@ import users from "../assets/images/leftpanel/users.png"
 import book from "../assets/images/leftpanel/book.png"
 import routesName from "../data/routesName"
 import ToastMessage from "./ToastMessage"
-import UserContext from "../context/user"
-
+import useUserContext from "../hooks/useUserContext"
+import ThinSpinner from "./ThinSpinner"
 
 function LeftPanel({ hadleClosePanel, panelOpen = false }) {
   const [ showToast, setShowToast ] = useState(false);
+  const [ isLoading, setIsloading ] = useState(false);
   const [ toastMessage, setToastMessage ] = useState("");
   const navigate = useNavigate();
-  const { user } = useContext(UserContext);
+  const { user, userDispatch } = useUserContext();
+  function logout() {
+    setIsloading(true);
+    setTimeout(() => {
+      setIsloading(false);
+      userDispatch({ type: "CLEAR_USER" });
+      navigate(routesName.LOGIN);
+
+    }, 2000)
+  }
   return (
     <motion.div
       id="close-left-panel"
@@ -37,7 +47,10 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
       animate={{ x: 0 }}
       exit={{ x: "-100%", width: 0 }}
       transition={{ duration: 0.3 }} >
+
+      {isLoading ? <ThinSpinner /> : null}
       <ToastMessage showToast={showToast} handleRemoveToast={() => setShowToast(false)} message={toastMessage} />
+
       <div
         className=" relative w-9/12 min-h-full bg-white pt-5 pb-5">
         {/* security center */}
@@ -52,15 +65,15 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <FaUser color={"#4f46e5"} size={30} />
           </div>
           <div className=" flex flex-col items-center">
-            <p>{`${user.user.phone.slice(0, 6)}**** ${user.user.phone.slice(-3)}`}</p>
+            <p>{`${user?.user?.phone?.slice(0, 6)}**** ${user?.user?.phone?.slice(-3)}`}</p>
             <div className="flex items-center justify-center">
-              <p className="mr-2">{user.user.uid} </p>
+              <p className="mr-2">{user?.user?.uid} </p>
               <img
                 id="copy-uid"
                 className="cursor-pointer h-4"
                 src={copy}
                 onClick={() => {
-                  navigator.clipboard.writeText("12363477")
+                  navigator.clipboard.writeText(user?.user?.uid)
                   setToastMessage("Copied!")
                   setShowToast(true);
                 }}
@@ -153,7 +166,11 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
 
         </div>
         <div className=" my-10  sticky bottom-0 w-full px-2">
-          <button className="text-white text-lg font-semibold bg-indigo-700 cursor-pointer rounded-lg w-full py-5">Sign out</button>
+          <button
+            onClick={logout}
+            className="text-white text-lg font-semibold bg-indigo-700 cursor-pointer rounded-lg w-full py-5">
+            Sign out
+          </button>
         </div>
       </div>
 

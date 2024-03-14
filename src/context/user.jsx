@@ -12,7 +12,11 @@ export function UserProvider({ children }) {
   const [ user, userDispatch ] = useReducer(userReducer, userReducer(null, { type: "GET_USER" }));
   async function onLoad() {
     const response = await auth.getMe();
-    if (!response.ok) navigate(routesName.LOGIN);
+    if (!response.ok) {
+      userDispatch({ type: "CLEAR_USER" });
+      navigate(routesName.LOGIN);
+      return;
+    }
     //else {
     userDispatch({ type: "SET_USER", payload: response?.data });
     //}

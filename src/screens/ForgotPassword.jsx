@@ -7,6 +7,10 @@ import AppInput from "../components/AppInput";
 import Back from "../components/Back";
 import CountryPicker from "../components/CountryPicker";
 import pageAnimation from "../data/pageAnimation";
+import ThinSpinner from "../components/ThinSpinner";
+import * as auth from "../api/auth"
+import useApi from "../hooks/useApi"
+import ToastMessage from "../components/ToastMessage";
 
 
 function ForgotPassword() {
@@ -16,11 +20,15 @@ function ForgotPassword() {
   const [ email, setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ confirmPassword, setConfirmPassword ] = useState("");
-  const [ code, setCode ] = useState("")
-  const [ countryCode, setCountryCode ] = useState("+234")
-  const [ recoveryType, setRecoveryType ] = useState("phone")
-  const [ reqestCodeText, setRequestCodeText ] = useState("Send the verification code")
+  const [ code, setCode ] = useState("");
+  const [ countryCode, setCountryCode ] = useState("+1");
+  const [ recoveryType, setRecoveryType ] = useState("phone");
+  const [ reqestCodeText, setRequestCodeText ] = useState("Send verification code")
+  const [ countDown, setCountDown ] = useState(60);
   const [ openCountryPicker, setOpenCountryPicker ] = useState(false);
+  const [ message, setMessage ] = useState("");
+  const [ showToast, setShowToast ] = useState(false);
+  const requestTokenApi = useApi(auth.requestPasswordResetToken)
   const handleCountryChange = (idd) => {
     setCountryCode(idd)
     setOpenCountryPicker(false)
@@ -28,6 +36,16 @@ function ForgotPassword() {
   const [ reqestCode, setRequestCode ] = useState(false)
   async function handleSubmit(e) {
     e.preventDefault();
+  }
+
+  async function requestCode() {
+    const data = {
+      channel: recoveryType === "phone" ? "generic" : "email",
+      to: recoveryType === "phone" ? phone : email,
+    }
+    const response = await requestTokenApi.callApi(data);
+    if (response.ok) console.log("jg jhfhfh");
+
   }
   return (
     <motion.div
@@ -37,6 +55,10 @@ function ForgotPassword() {
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
 
       </AnimatePresence>
+
+      {showToast ? <ToastMessage message={message} showToast={showToast} handleRemoveToast={() => setShowToast(false)} /> : null}
+
+      {requestTokenApi.isLoading ? <ThinSpinner /> : null}
 
       <div className=' container  bg-gray-200  py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
         <div className=" flex items-center" >
