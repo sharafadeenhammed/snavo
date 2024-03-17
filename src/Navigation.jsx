@@ -36,6 +36,7 @@ import RechargeRecords from "./screens/RechargeRecords"
 import WithdrawalMethod from "./screens/WithdrawalMethod"
 import WithdrawalRecords from "./screens/WithdrawalRecords"
 import Withdraw from "./screens/Withdraw"
+import PageNotFound from "./screens/PageNotFound"
 function Navigation() {
   const location = useLocation()
   return (
@@ -70,6 +71,7 @@ function Navigation() {
         <Route path={routesName.WITHDRAW_METHOD} element={<WithdrawalMethod />} />
         <Route path={routesName.WITHDRAW_RECORDS} element={<WithdrawalRecords />} />
         <Route path={routesName.WITHDRAW} element={<Withdraw />} />
+        <Route path="/*" element={<PageNotFound />} />
 
 
 

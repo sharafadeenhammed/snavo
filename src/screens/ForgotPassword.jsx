@@ -39,14 +39,36 @@ function ForgotPassword() {
   }
 
   async function requestCode() {
+    console.log("requesting for otp code")
+    if (reqestCodeText !== "Send verification code") return;
+    setCountDown(60);
     const data = {
-      channel: recoveryType === "phone" ? "generic" : "email",
-      to: recoveryType === "phone" ? phone : email,
+      channel: recoveryType === "phone" ? "phone" : "email",
+      to: recoveryType === "phone" ? countryCode + phone : email,
     }
+    console.log(data);
     const response = await requestTokenApi.callApi(data);
-    if (response.ok) console.log("jg jhfhfh");
+    if (!response.ok) {
+      setShowToast(true);
+      setMessage(response.data.message);
+      setRequestCodeText("Send verification code");
+      return;
+    }
+    const timeOut = setInterval(() => {
+      const altCountDown = countDown - 1;
+      setCountDown(countDown - 1);
+      setRequestCodeText(`Send verification code in ${altCountDown}s`);
+      if (countDown <= 0) {
+        clearInterval(timeOut);
+        setCountDown(60);
+
+        setRequestCodeText("Resend verification code");
+      }
+    }, 1000)
 
   }
+
+
   return (
     <motion.div
       {...pageAnimation}
@@ -108,7 +130,7 @@ function ForgotPassword() {
           <h1 className='text-xl mb-2 '>
             Verification code
           </h1>
-          <AppInput value={code} handleOnChange={(e) => setCode(e.target.value)} LeftIcon={<FaShieldAlt className="scale-125 mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<button disabled={reqestCode} onClick={() => console.log("request code")} className="text-indigo-600 px-1 text-sm w-full bg-white font-bold cursor-pointer outline-none">{reqestCodeText}</button>} />
+          <AppInput value={code} handleOnChange={(e) => setCode(e.target.value)} LeftIcon={<FaShieldAlt className="scale-125 mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<button onClick={requestCode} className="text-indigo-600 px-1 text-sm w-full bg-white font-bold cursor-pointer outline-none">{reqestCodeText}</button>} />
 
           <input className=' cursor-pointer bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg' type='submit' value="Confirm submission" />
 

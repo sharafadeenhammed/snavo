@@ -1,5 +1,5 @@
 import "./index.css"
-import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter, HashRouter as Router } from "react-router-dom"
 import Navigation from "./Navigation"
 import BottomTabs from "./components/BottomTabs"
 import { UserProvider } from "./context/user"
