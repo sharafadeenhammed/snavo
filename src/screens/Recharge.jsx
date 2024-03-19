@@ -28,7 +28,7 @@ function Recharge() {
   async function getCoinAddress() {
     const response = await api.callApi({ coin: location.state.coinName });
     if (response.ok) {
-      console.log(response.data.address);
+      console.log(response.data);
       setRechargeAddress(response.data.address);
       setChainName(location.state.coinName);
     }

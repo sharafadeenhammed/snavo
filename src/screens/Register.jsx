@@ -54,7 +54,7 @@ function Register() {
       phone: countryCode + phone,
       password,
       confirmPassword,
-      referalCode: code,
+      referalCode: refCode,
     }
     const response = await api.callApi(formData);
     if (!response.ok) return;
