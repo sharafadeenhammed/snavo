@@ -68,7 +68,7 @@ function ForgotPassword() {
   return (
     <motion.div
       {...pageAnimation}
-      className="container px-4 py-0.050  pt-20 border-x-2 border-slate-100 h-screen mx-auto max-w-lg  bg-gray-200 ">
+      className="container px-4 py-0.050  pt-20 border-x-2 border-slate-100 h-screen mx-auto max-w-lg  bg-slate-800 text-white">
       <AnimatePresence>
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
 
@@ -78,7 +78,7 @@ function ForgotPassword() {
 
       {requestTokenApi.isLoading ? <ThinSpinner /> : null}
 
-      <div className=' container  bg-gray-200  py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
+      <div className=' container  bg-slate-800 text-white  py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
         <div className=" flex items-center" >
           <div>
             <Back />
@@ -94,20 +94,20 @@ function ForgotPassword() {
       {/* header */}
       {/* tagline */}
       <h1 className='text-2xl font-medium mb-10 '>
-        <span className={recoveryType === "phone" ? "text-indigo-600 cursor-pointer" : "cursor-pointer"} onClick={() => setRecoveryType("phone")} >Find your phone</span> &nbsp; <span onClick={() => setRecoveryType("email")} className={recoveryType === "email" ? "text-indigo-600 cursor-pointer" : "cursor-pointer"}> Email recovery </span>
+        <span className={recoveryType === "phone" ? "text-indigo-600 cursor-pointer" : "cursor-pointer text-white"} onClick={() => setRecoveryType("phone")} >Find your phone</span> &nbsp; <span onClick={() => setRecoveryType("email")} className={recoveryType === "email" ? "text-indigo-600 cursor-pointer" : "cursor-pointer text-white"}> Email recovery </span>
       </h1>
       <form onSubmit={handleSubmit}>
         {/* input */}
         <div className='mb-5'>
           {recoveryType === "phone" ?
             (<>
-              <h1 className='text-xl mb-2 '>
+              <h1 className='text-xl mb-2 text-white '>
                 Phone number
               </h1>
               <AppInput value={phone} handleOnChange={(e) => setPhone(e.target.value)} LeftIcon={<p onClick={() => setOpenCountryPicker(true)} className="flex items-center font-bold text-lg mr-2 cursor-pointer">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" /> </>)
             :
             (<>
-              <h1 className='text-xl mb-2 '>
+              <h1 className='text-xl mb-2 text-white '>
                 Mail
               </h1>
               <AppInput placeholder="Please input the email address" value={email} handleOnChange={(e) => setEmail(e.target.value)} LeftIcon={<FaEnvelope size={20} className="mr-2" />} type="email" />
@@ -118,12 +118,12 @@ function ForgotPassword() {
             New Password
           </h1>
           <AppInput value={password} handleOnChange={(e) => setPassword(e.target.value)} LeftIcon={<FaLock size={20} className="mr-2" />} type={passwordType} placeholder='Please enter new password' RightIcon={passwordType === "password" ? < FaEyeSlash color="darkgray" onClick={() => setPasswordType("text")} size={25} /> : <FaEye color="darkgray" onClick={() => setPasswordType("password")} size={25} />} />
-          <h1 className='text-xl mb-2 '>
+          <h1 className='text-xl mb-2 text-white '>
             Confirm Password
           </h1>
           <AppInput value={confirmPassword} handleOnChange={(e) => setConfirmPassword(e.target.value)} LeftIcon={<FaLock size={20} className="mr-2" />} type={confirmPasswordType} placeholder='Enter password again' RightIcon={confirmPasswordType === "password" ? < FaEyeSlash color="darkgray" onClick={() => setConfirmPasswordType("text")} size={25} /> : <FaEye color="darkgray" onClick={() => setConfirmPasswordType("password")} size={25} />} />
 
-          <h1 className='text-xl mb-2 '>
+          <h1 className='text-xl mb-2 text-white '>
             Verification code
           </h1>
           <AppInput value={code} handleOnChange={(e) => setCode(e.target.value)} LeftIcon={<FaShieldAlt className="scale-125 mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<button onClick={requestCode} className="text-indigo-600 px-1 text-sm w-full bg-white font-bold cursor-pointer outline-none">{reqestCodeText}</button>} />
