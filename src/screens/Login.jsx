@@ -54,7 +54,7 @@ function Login() {
   return (
     <motion.div
       {...pageAnimation}
-      className="container px-4 py-0.050  border-x-2 border-slate-100 h-screen mx-auto max-w-lg bg-gray-50">
+      className="container px-4 py-0.050  border-x-2 border-slate-900 h-screen mx-auto max-w-lg bg-slate-800 text-white">
       <AnimatePresence>
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
 
@@ -66,7 +66,7 @@ function Login() {
       <AnimatePresence>
         {api.isLoading ? <ThinSpinner /> : null}
       </AnimatePresence>
-      <div className=' container bg-gray-50 py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
+      <div className=' container text-white bg-slate-800 py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
         <div className="justify-between flex items-center" >
           <div>
             <FaArrowLeft size={20} />
@@ -100,7 +100,7 @@ function Login() {
       </form>
 
       <div className='flex justify-between'>
-        <p className='text-black font-medium text-lg'>Don't you have an account?</p>
+        <p className='text-white font-medium text-lg'>Don't you have an account?</p>
         <Link to={routesName.REGISTER} className='text-indigo-600 font-medium text-lg outline-none border-none' >To register</Link>
         <Link to={routesName.FORGOT_PASSWORD} className=' border-none outline-none text-indigo-600 font-medium text-lg'>Forgot the password?</Link>
       </div>

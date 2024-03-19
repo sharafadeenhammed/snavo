@@ -19,12 +19,9 @@ function WithdrawalMethod() {
   const navigate = useNavigate();
   return (
     <Screen
-      objectStyle={{
-        backgroundColor: "#ffffff"
-      }}
       {...pageAnimation}
     >
-      <div className=' bg-white  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className=' bg-slate-800 text-white  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" w-full flex items-center justify-between" >
           <div>
             <Back />
@@ -40,7 +37,7 @@ function WithdrawalMethod() {
 
       <div
         onClick={() => navigate(routesName.WITHDRAW)}
-        className="w-full cursor-pointer flex items-center justify-between  mb-14 mt-3 px-5 py-3 border-b-2 border-b-slate-200">
+        className="w-full cursor-pointer flex items-center justify-between  mb-14 mt-3 px-5 py-3 border-b-2 border-b-slate-700">
         <div className="flex items-center">
           <img className='block h-8  mr-3' src={usdt} alt="" />
           <p className='font-normal text-lg'>digital currency</p>

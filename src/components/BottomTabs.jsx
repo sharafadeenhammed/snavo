@@ -11,7 +11,7 @@ function BottomTabs() {
 
   {
     return user?.user?._id !== undefined && user !== null ?
-      (< div className=' container bg-white py-2 z-30 fixed bottom-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2' >
+      (< div className=' container bg-slate-800 py-2 z-30 fixed bottom-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2' >
         <div className=" cursor-pointer px-5 flex items-center w-full justify-between" >
           {/* home */}
           <div
@@ -34,14 +34,14 @@ function BottomTabs() {
             <p className="text-sm font-semibold ">Quantify</p>
           </div>
           {/* team */}
-          <div onClick={() => navigate(routesName.MY_TEAM)} className={"cursor-pointer flex flex-col items-center " + (location.pathname === routesName.MY_TEAM ? "text-indigo-600" : "text-slate-500")}>
+          {/* <div onClick={() => navigate(routesName.MY_TEAM)} className={"cursor-pointer flex flex-col items-center " + (location.pathname === routesName.MY_TEAM ? "text-indigo-600" : "text-slate-500")}>
             <div
               className="mb-1 "
             >
               <FaUsers size={iconSize} />
             </div>
             <p className="text-sm font-semibold ">Team</p>
-          </div>
+          </div> */}
           <div onClick={() => navigate(routesName.MINER)} className={"cursor-pointer flex flex-col items-center " + (location.pathname === routesName.MINER ? "text-indigo-600" : "text-slate-500")}>
             <div
               className="mb-1 "

@@ -24,7 +24,7 @@ function ForgotPassword() {
   const [ countryCode, setCountryCode ] = useState("+1");
   const [ recoveryType, setRecoveryType ] = useState("phone");
   const [ reqestCodeText, setRequestCodeText ] = useState("Send verification code")
-  const [ countDown, setCountDown ] = useState(60);
+  const [ countDown, setCountDown ] = useState(10);
   const [ openCountryPicker, setOpenCountryPicker ] = useState(false);
   const [ message, setMessage ] = useState("");
   const [ showToast, setShowToast ] = useState(false);
@@ -33,38 +33,34 @@ function ForgotPassword() {
     setCountryCode(idd)
     setOpenCountryPicker(false)
   }
-  const [ reqestCode, setRequestCode ] = useState(false)
   async function handleSubmit(e) {
     e.preventDefault();
   }
 
   async function requestCode() {
-    console.log("requesting for otp code")
     if (reqestCodeText !== "Send verification code") return;
-    setCountDown(60);
+    console.log("requesting code...");
+    setCountDown(10);
     const data = {
       channel: recoveryType === "phone" ? "phone" : "email",
       to: recoveryType === "phone" ? countryCode + phone : email,
     }
-    console.log(data);
     const response = await requestTokenApi.callApi(data);
-    if (!response.ok) {
-      setShowToast(true);
-      setMessage(response.data.message);
-      setRequestCodeText("Send verification code");
-      return;
-    }
+    setShowToast(true);
+    setMessage(response.data.message);
+    setRequestCodeText("Send verification code");
+    if (!response.ok) return;
     const timeOut = setInterval(() => {
-      const altCountDown = countDown - 1;
-      setCountDown(countDown - 1);
-      setRequestCodeText(`Send verification code in ${altCountDown}s`);
+      setCountDown((initial) => initial - 1);
+      setRequestCodeText(`Send verification code in ${countDown}s`);
+      console.log(countDown);
       if (countDown <= 0) {
-        clearInterval(timeOut);
-        setCountDown(60);
-
-        setRequestCodeText("Resend verification code");
+        console.log("interval cleared...")
+        clearInterval(2000);
+        setCountDown(10);
+        setRequestCodeText("Send verification code");
       }
-    }, 1000)
+    }, 2000)
 
   }
 

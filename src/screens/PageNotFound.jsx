@@ -7,8 +7,6 @@ function PageNotFound() {
     <Screen
       {...pageAnimation}
       objectStyle={{
-        backgroundColor: "#505050",
-        // color: "ffffff",
         padding: 0,
         paddingTop: "50px"
       }}

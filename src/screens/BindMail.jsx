@@ -41,7 +41,7 @@ function BindMail() {
     <Screen
       {...pageAnimation}>
       <ToastMessage message={toastMessage} showToast={showToast} handleRemoveToast={() => setShowToast(false)} />
-      <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className='bg-slate-800 text-white py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <Back />
           <div className="w-full text-center">
@@ -50,9 +50,11 @@ function BindMail() {
           </div>
         </div>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form className="" onSubmit={handleSubmit}>
+        <p className="text-xl text-white">New email</p>
         <AppInput placeholder="Please input the email address" value={email} handleOnChange={(e) => setEmail(e.target.value)} LeftIcon={<FaEnvelope size={20} className="mr-2" />} type="email" />
 
+        <p className="text-xl text-white">Verify code</p>
         <AppInput value={captcha} handleOnChange={(e) => setCaptcha(e.target.value)} LeftIcon={<FaShieldAlt className="mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<LoadCanvasTemplateNoReload className="bg-slate-400" />} />
         <input className='bg-indigo-600 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none text-white text-lg cursor-pointer' type='submit' value="Submit" />
       </form>

@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Slide } from "react-slideshow-image"
 import { FaLock, FaLockOpen } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
@@ -13,6 +13,7 @@ import Announcement from '../components/Announcement'
 import pageAnimation from '../data/pageAnimation'
 import quantifyData from '../data/quantifyData'
 import routesName from '../data/routesName'
+import useUserContext from '../hooks/useUserContext'
 
 import history from "../assets/images/quantify/book-history.png"
 import topInset from "../assets/images/quantify/quantify_top_inset.png"
@@ -24,6 +25,7 @@ function Quantify() {
   const [ currentItem, setCurrentItem ] = useState(0)
   const [ showAnnouncement, setShowAnnouncement ] = useState(true);
   const navigate = useNavigate()
+  const { user } = useUserContext();
   return (
     <Screen
       {...pageAnimation}
@@ -35,7 +37,7 @@ function Quantify() {
         }
 
       </AnimatePresence>
-      <div className=' bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className=' bg-slate-800 text-white py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" w-full flex items-center justify-between" >
           <div>
             <Back />
@@ -64,15 +66,15 @@ function Quantify() {
               className='text-white font-normal text-xl border-2 border-white px-10 py-1 rounded-3xl ' >
               Details
             </p>
-            <p onClick={() => navigate(routesName.MY_TEAM)} className='text-white font-normal text-xl border-2 border-white px-10 py-1 rounded-3xl ' >
+            {/* <p onClick={() => navigate(routesName.MY_TEAM)} className='text-white font-normal text-xl border-2 border-white px-10 py-1 rounded-3xl ' >
               Team
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
 
       {/* section two */}
-      <div className="mb-5 w-full px-5 py-7 rounded-xl bg-white">
+      <div className="mb-5 w-full px-5 py-7 rounded-xl bg-slate-900">
         <div className="flex py-7 justify-between items-center" >
           {/* todays earning */}
           <div className="flex items-center flex-col" >
@@ -187,7 +189,7 @@ function Quantify() {
       </div>
 
       {/* quatization level */}
-      <div className='w-full bg-white p-5 rounded-xl mb-5'>
+      <div className='w-full text-white bg-slate-900 p-5 rounded-xl mb-5'>
         <p className='font-bold text-2xl mb-5 '>
           {quantifyData[ currentItem ].data.header}
         </p>
@@ -203,7 +205,7 @@ function Quantify() {
       </div>
 
       {/* benefits */}
-      <div className='w-full bg-white py-5 px-7 rounded-xl'>
+      <div className='w-full text-white bg-slate-900 py-5 px-7 rounded-xl'>
         <p className='font-bold text-2xl mb-5 '>
           {quantifyData[ currentItem ].data.benefits.header}
         </p>
@@ -211,7 +213,7 @@ function Quantify() {
           <p className='text-slate-500'>
             Minimum Quantization Quantity
           </p>
-          <p className=' font-normal '>
+          <p className=' font-normal  '>
             {quantifyData[ currentItem ].data.benefits.minQuantity}
           </p>
         </div>

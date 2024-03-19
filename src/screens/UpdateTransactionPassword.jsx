@@ -50,7 +50,7 @@ function UpdateTransactionPassword() {
     <Screen
       {...pageAnimation}>
       <ToastMessage message={toastMessge} showToast={showToast} handleRemoveToast={() => setShowToast(false)} />
-      <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className='bg-slate-800 py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <Back />
           <div className="w-full text-center">

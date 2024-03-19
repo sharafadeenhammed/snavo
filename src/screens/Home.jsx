@@ -63,7 +63,6 @@ function Home() {
 
   // get coin data from api every 5 seconds
   async function coinDataUpdate() {
-    console.log("refresh running...")
     const response = await getCoinData();
     if (response == null) {
       return;
@@ -95,7 +94,7 @@ function Home() {
       </AnimatePresence>
 
       {/* nav bar */}
-      <div className=' bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className=' bg-slate-800  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className="justify-between w-full flex items-center mr-10" >
           <div className="p-2 bg-indigo-100 rounded-full bg-indigo-100'">
             <FaUser onClick={() => setShowLeftPanel(true)} size={20} color='#4f46e5' />
@@ -148,13 +147,13 @@ function Home() {
         <div onClick={() => setShowAnnouncement(true)} className="bg-white  bg-inherit px-1">
           <img className="h-6" src={news_icon} alt="" />
         </div>
-        <marquee onClick={() => setShowAnnouncement(true)} behaviour="scrool" direction="left" className="w-full font-medium">
+        <marquee onClick={() => setShowAnnouncement(true)} behaviour="scrool" direction="left" className="w-full  text-white font-medium">
           {anouncementText}
         </marquee>
         <img className="cursor-pointer" onClick={() => console.log("goto message center ")} src={homeNoticeMore} alt="" />
       </div>
       {/* action menu */}
-      <div className=" rounded-lg mb-3 px-3 py-4 bg-white flex place-items-start justify-between w-full">
+      <div className=" rounded-lg mb-3 px-3 py-4 bg-slate-800 flex place-items-start justify-between w-full">
         {
           actionData.map((item, index) => <ActionCard onClick={navigate} key={index} data={item} />)
         }
@@ -162,7 +161,7 @@ function Home() {
       {/* coin list */}
       {
         isLoading ? <Spinner /> : (
-          <div className=" bg-white px-1 py-3 rounded-md w-full">
+          <div className=" bg-slate-800 px-1 py-3 rounded-md w-full">
             <div className=" flex justify-between items-center">
               <p className="text-gray-400 font-semibold">Trading pair
               </p>

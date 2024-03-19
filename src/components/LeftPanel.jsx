@@ -52,7 +52,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
       <ToastMessage showToast={showToast} handleRemoveToast={() => setShowToast(false)} message={toastMessage} />
 
       <div
-        className=" relative w-9/12 min-h-full bg-white pt-5 pb-5">
+        className=" relative w-9/12 min-h-full text-white bg-slate-900 pt-5 pb-5">
         {/* security center */}
         <div
           onClick={(e) => {
@@ -86,11 +86,11 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
         </div>
         {/* section 2 withdraw and recharge */}
         <div className="flex px-2 items-center justify-between w-full mb-5">
-          <div className="w-6/12 mr-1 bg-indigo-600 px-3 py-2 rounded-lg flex items-center flex-col">
+          <div onClick={() => navigate(routesName.RECHARGE_METHOD)} className="w-6/12 mr-1 bg-indigo-600 px-3 py-2 rounded-lg flex items-center flex-col">
             <img className="h-10 inline-block mb-1 w-10" src={recharge} alt="recharge" />
             <p className="text-white font-bold text-sm">Recharge</p>
           </div>
-          <div className="w-6/12 bg-indigo-600 px-3 py-2 rounded-lg flex items-center flex-col">
+          <div onClick={() => navigate(routesName.WITHDRAW_METHOD)} className="w-6/12 bg-indigo-600 px-3 py-2 rounded-lg flex items-center flex-col">
             <img className="inline-block mb-1 h-10 w-10" src={withdraw} alt="recharge" />
             <p className="text-white font-bold text-sm">Withdraw</p>
           </div>
@@ -98,7 +98,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
         {/* other links */}
         <div className="w-full">
           {/* company profile */}
-          <div onClick={() => navigate(routesName.COMPANY_PROFILE)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.COMPANY_PROFILE)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={info} alt="" />
               <p className="font-normal text-lg" >Company Profile</p>
@@ -106,7 +106,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* platform rules */}
-          <div onClick={() => navigate(routesName.COMPANY_RULES)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.COMPANY_RULES)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={message} alt="" />
               <p className="font-normal text-lg" >Platform Rules</p>
@@ -114,7 +114,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* common problems */}
-          <div onClick={() => navigate(routesName.COMMON_PROBLEM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.COMMON_PROBLEM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={question} alt="" />
               <p className="font-normal text-lg" >Common Problems</p>
@@ -122,7 +122,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* security center */}
-          <div onClick={() => navigate(routesName.SECURITY_CENTER)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.SECURITY_CENTER)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={shield} alt="" />
               <p className="font-normal text-lg" >Security Center</p>
@@ -132,7 +132,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
           {/* funding details */}
           <div
             onClick={() => navigate(routesName.FUNDING_DETAILS)}
-            className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+            className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={memo} alt="" />
               <p className="font-normal text-lg" >Funding Details</p>
@@ -140,7 +140,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* invite friends */}
-          <div onClick={() => navigate(routesName.INVITE_FRIENDS)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.INVITE_FRIENDS)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={userlove} alt="" />
               <p className="font-normal text-lg" >Invite Friends</p>
@@ -148,7 +148,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* my team */}
-          <div onClick={() => navigate(routesName.MY_TEAM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.MY_TEAM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={users} alt="" />
               <p className="font-normal text-lg" >My Team</p>
@@ -156,7 +156,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* quantization tutorial */}
-          <div onClick={() => navigate(routesName.QUANTIZIZATION)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.QUANTIZIZATION)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={book} alt="" />
               <p className="font-normal text-lg" >Quantization Tutorial</p>

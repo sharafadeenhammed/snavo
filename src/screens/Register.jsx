@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FaHeadphones, FaGlobe, FaArrowRight, FaLock, FaEye, FaEyeSlash, FaShieldAlt, FaEnvelope } from "react-icons/fa";
 import { loadCaptchaEnginge, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { AnimatePresence, motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 import AppInput from "../components/AppInput";
 import CountryPicker from "../components/CountryPicker";
@@ -18,26 +18,25 @@ import ThinSpinner from "../components/ThinSpinner"
 
 
 function Register() {
-  useEffect(() => {
-    loadCaptchaEnginge(4);
-  }, [])
-  const queryString = new URLSearchParams(window.location.href);
-  const ref = queryString.get("ref")
+  const [ searchParams, setSearchParams ] = useSearchParams();
   const [ passwordType, setPasswordType ] = useState("password");
   const [ confirmPasswordType, setConfirmPasswordType ] = useState("password");
   const [ phone, setPhone ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ confirmPassword, setConfirmPassword ] = useState("");
-  const [ code, setCode ] = useState(ref || "EJFDS");
+  const [ refCode, setRefCode ] = useState(searchParams.get("ref") || "EJFDS");
   const [ captcha, setCaptcha ] = useState("")
   const [ countryCode, setCountryCode ] = useState("+1")
   const [ openCountryPicker, setOpenCountryPicker ] = useState(false);
   const [ message, setMessage ] = useState("");
   const [ showToast, setShowToast ] = useState(false);
+
   const { userDispatch } = useUserContext();
   const api = useApi(auth.register);
   const navigate = useNavigate();
-
+  useEffect(() => {
+    loadCaptchaEnginge(4);
+  }, [])
   const handleCountryChange = (idd) => {
     setCountryCode(idd)
     setOpenCountryPicker(false)
@@ -69,7 +68,7 @@ function Register() {
   return (
     <motion.div
       {...pageAnimation}
-      className="container px-4 py-0.050  pt-20 border-x-2 border-slate-100 h-screen mx-auto max-w-lg bg-gray-50">
+      className="container bg-slate-800 px-4 py-0.050  pt-20 border-x-2 border-slate-900 h-screen mx-auto max-w-lg text-white">
       <AnimatePresence>
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
       </AnimatePresence>
@@ -79,7 +78,7 @@ function Register() {
         {api.isLoading ? <ThinSpinner /> : null}
       </AnimatePresence>
 
-      <div className=' container bg-gray-50 py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
+      <div className=' container bg-slate-800 text-white py-5 z-30 fixed top-0 w-full box-border max-w-lg px-2 left-1/2 -translate-x-1/2'>
         <div className="justify-between flex items-center" >
           <div>
             <Back />
@@ -111,8 +110,7 @@ function Register() {
 
           <AppInput value={confirmPassword} handleOnChange={(e) => setConfirmPassword(e.target.value)} LeftIcon={<FaLock size={20} className="mr-2" />} type={confirmPasswordType} placeholder='Enter password again' RightIcon={confirmPasswordType === "password" ? < FaEyeSlash color="darkgray" onClick={() => setConfirmPasswordType("text")} size={25} /> : <FaEye color="darkgray" onClick={() => setConfirmPasswordType("password")} size={25} />} />
 
-          <AppInput LeftIcon={<FaEnvelope className="mr-2" size={20} />} disabled value={code} />
-
+          <AppInput LeftIcon={<FaEnvelope className="mr-2" size={20} />} disabled value={refCode} />
 
           <AppInput value={captcha} handleOnChange={(e) => setCaptcha(e.target.value)} LeftIcon={<FaShieldAlt className="mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<LoadCanvasTemplateNoReload className="bg-slate-400" />} />
 
@@ -121,11 +119,11 @@ function Register() {
         </div>
       </form>
       <div className="pb-5">
-        <p className='text-black mb-10  text-lg'>
+        <p className='text-white mb-10  text-lg'>
           Already have an account? &nbsp;
           <Link to={routesName.LOGIN} className=' outline-none border-none text-indigo-600 font-medium text-lg' >To log in</Link>
         </p>
-        <p className='text-black'>
+        <p className='text-white'>
           By registering you agree <Link to="/agreement" className='outline-none border-none text-indigo-600' > Terms of use </Link> And <Link to="/privacy" className='outline-none border-none text-indigo-600' > Privacy Policy </Link>
         </p>
       </div>

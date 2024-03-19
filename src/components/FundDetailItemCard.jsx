@@ -1,7 +1,7 @@
 
 function FundDetailItemCard({ data }) {
   return (
-    <div className="w-full px-3  py-5 border-b-2 border-b-slate-200">
+    <div className="w-full px-3 text-white py-5 border-b-2 border-b-slate-200">
       <div className="flex justify-between">
         <p className="text-2xl font-normal">
           USDT

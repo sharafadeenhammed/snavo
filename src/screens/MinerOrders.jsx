@@ -10,7 +10,7 @@ function MinerOrders() {
     <Screen
       {...pageAnimation}
     >
-      <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className='bg-slate-800  text-white py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" w-full flex items-center justify-between" >
           <div>
             <Back />
@@ -24,7 +24,7 @@ function MinerOrders() {
         </div>
       </div>
 
-      <div className="w-full text-center ">
+      <div className="w-full text-center text-white ">
         no  more
       </div>
     </Screen>

@@ -25,7 +25,7 @@ function Miner() {
         padding: 0,
         marginTop: 0,
         paddingBottom: "80px",
-        backgroundColor: "#ffffff"
+        // backgroundColor: "#ffffff"
       }}
     >
       <div className="h-80 w-full relative mb-5">
@@ -75,7 +75,7 @@ function Miner() {
         <MinerCard />
       </div>
 
-      <div className="w-full px-5">
+      <div className=" text-white w-full px-5">
         <p className="text-2xl font-semibold mb-5">Common problem</p>
         {commonProblem.map((data, index) => <MinerCommonProblemCard data={data} key={index} />)}
       </div>
@@ -96,12 +96,12 @@ function Miner() {
                 onClick={(e) => {
                   e.target.id === "illustrate" && setShowIllustrate(false)
                 }}
-                className=" rounded-t-3xl h-full relative w-full pt-20">
+                className="  rounded-t-3xl h-full relative w-full pt-20">
 
                 <div
-                  className=" text-slate-400 text-lg py-5 px-5 pt-16  bottom-0 overflow-y-scroll left-0 w-full absolute h-5/6 rounded-t-3xl bg-white  scroolBar ">
+                  className="  text-lg py-5 px-5 pt-16  bottom-0 overflow-y-scroll left-0 w-full absolute h-5/6 rounded-t-3xl text-white bg-slate-800 scroolBar ">
 
-                  <p className="mb-4 text-black font-bold text-3xl">
+                  <p className="mb-4 text-white font-bold text-3xl">
                     What is Snavo Cloud Miner?
                   </p>
                   <p>
@@ -109,41 +109,41 @@ function Miner() {
                     Snavo cloud mining machine is a tool product created by the company to help users quickly pledge on the chain to obtain rewards. By staking digital assets on the blockchain network, and obtaining rewards based on the POS (Proof of Stake) mechanism. In this mechanism, users entrust digital assets to nodes, and nodes exercise rights such as producing blocks and packaging transactions on the blockchain and receive rewards. Users share the rewards obtained by nodes in proportion to the number of locked positions.
                   </p>
                   <br />
-                  <p className="mb-4 text-black font-bold text-3xl">
+                  <p className="mb-4 text-white font-bold text-3xl">
                     Product advantages
                   </p>
                   <div className="flex items-center">
-                    <div className="h-2 w-2 bg-black mr-3"></div>
-                    <p className="text-black font-xl">Robust</p>
+                    <div className="h-2 w-2 bg-white mr-3"></div>
+                    <p className="text-white font-xl">Robust</p>
                   </div>
                   <p>
                     Snavo cloud mining machines can obtain relatively stable rewards from third parties, and the product term is diverse.
                   </p>
                   <br />
-                  <p className="mb-4 text-black font-bold text-3xl">
+                  <p className="mb-4 text-white font-bold text-3xl">
                     Investing in interest-earning assets
                   </p>
                   <p>
                     Snavo cloud mining machine is to pledge your digital assets on the blockchain to support the operation of the blockchain network and get corresponding rewards.
                   </p>
                   <br />
-                  <p className="mb-4 text-black font-bold text-3xl">
+                  <p className="mb-4 text-white font-bold text-3xl">
                     Income statement
                   </p>
                   <p>
                     After successful subscription on T day, the interest rate will start at 00:00 on T+1 day, and the interest will be settled at 02:00.
                   </p>
 
-                  <p className="mb-4 text-black font-bold text-3xl">
+                  <p className="mb-4 text-white font-bold text-3xl">
                     Transaction description
                   </p>
                   <div className="flex items-center">
-                    <div className="h-2 w-2 bg-black mr-3"></div>
-                    <p className="text-black font-xl">Buying rules</p>
+                    <div className="h-2 w-2 bg-white mr-3"></div>
+                    <p className="text-white font-xl">Buying rules</p>
                   </div>
                   <p>Subscription is supported at any time.</p>
                   <br />
-                  <p className="mb-4 text-black font-bold text-3xl">
+                  <p className="mb-4 text-white font-bold text-3xl">
                     Risk warning
                   </p>
                   <p>
@@ -151,8 +151,8 @@ function Miner() {
                   </p>
 
                 </div>
-                <div className="flex px-3 justify-end py-5 items-center rounded-t-3xl absolute top-204 bg-white w-full">
-                  <FaTimes size={30} onClick={() => setShowIllustrate(false)} />
+                <div className="flex px-3 justify-end py-5 items-center rounded-t-3xl absolute top-204 bg-slate-800 w-full">
+                  <FaTimes color="white" size={30} onClick={() => setShowIllustrate(false)} />
                 </div>
 
               </div>

@@ -33,7 +33,7 @@ function RechargeRecords() {
       <AnimatePresence>
         {isLoading ? <ThinSpinner /> : null}
       </AnimatePresence>
-      <div className='bg-white  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className='bg-slate-800 text-white  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <Back />
           <div className="w-full text-center">
@@ -44,8 +44,8 @@ function RechargeRecords() {
         </div>
       </div>
 
-      <div className="w-full min-h-screen bg-white px-0 py-2">
-        <div className=" bg-gray-200 py-3 px-4 w-full flex items-center justify-between mb-5">
+      <div className="w-full min-h-screen bg-slate-800 text-white px-0 py-2">
+        <div className=" bg-slate-800 py-3 px-4 w-full flex items-center justify-between mb-5">
           <p className={"mr-10 font-semibold text-base cursor-pointer " + (currentTab === "all" ? "text-indigo-700" : "")} onClick={() => setCurrentTab("all")}>
             All
           </p>

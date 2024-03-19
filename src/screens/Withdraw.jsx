@@ -16,12 +16,9 @@ function Withdraw() {
 
   return (
     <Screen
-      objectStyle={{
-        backgroundColor: "#ffffff"
-      }}
       {...pageAnimation}
     >
-      <div className='bg-white py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className='bg-slate-800 text-white py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <div>
             <Back />

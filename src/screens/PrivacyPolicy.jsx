@@ -3,12 +3,12 @@ import Screen from '../components/Screen'
 import Back from '../components/Back'
 import pageAnimation from '../data/pageAnimation'
 function PrivacyPolicy() {
-  const [ textClass, setTextClass ] = useState("text-lg mb-5")
+  const [ textClass, setTextClass ] = useState("text-lg mb-5 text-white")
   return (
     <Screen
       {...pageAnimation}
     >
-      <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className='bg-slate-800 text-white py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <div>
             <Back />

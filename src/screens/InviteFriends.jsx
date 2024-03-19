@@ -6,12 +6,14 @@ import Back from "../components/Back";
 import ToastMessage from "../components/ToastMessage";
 import pageAnimation from "../data/pageAnimation";
 import useUserContext from '../hooks/useUserContext';
+import * as constants from "../data/constants";
+import routesName from '../data/routesName';
 function InviteFriends() {
   const { user } = useUserContext();
   const [ toastMessage, setToastMessage ] = useState("");
   const [ showToast, setShowToast ] = useState(false);
   function copyLink() {
-    navigator.clipboard.writeText("https://www.google.com");
+    navigator.clipboard.writeText(`${import.meta.env.VITE_FRONTEND_URL}/#${routesName.REGISTER}?uid=${user.user.referalCode}`);
     setToastMessage("Copy successfully");
     setShowToast(true);
   }
@@ -38,7 +40,7 @@ function InviteFriends() {
             <QRCode size={200} value={`${import.meta.env.VITE_FRONTEND_URL}?uid=${user.user.referalCode}`} />
           </div>
           <p className='rounded w-full my-10 text-center px-5 py-2 bg-slate-300 text-black text-lg'>
-            {`${import.meta.env.VITE_FRONTEND_URL}?uid=${user.user.referalCode}`}
+            {`${import.meta.env.VITE_FRONTEND_URL}/#${routesName.REGISTER}?ref=${user.user.referalCode}`}
           </p>
           <p
             onClick={copyLink}

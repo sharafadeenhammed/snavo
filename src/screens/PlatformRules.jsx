@@ -5,16 +5,12 @@ import pageAnimation from '../data/pageAnimation'
 
 import rulesImage from '../assets/images/platform-rules.png'
 function PlatformRules() {
-  const [ textClass, setTextClass ] = useState("text-xl mb-5")
+  const [ textClass, setTextClass ] = useState("text-xl text-white mb-5")
   return (
     <Screen
-      objectStyle={{
-        backgroundColor: "#f8f9fa"
-
-      }}
       {...pageAnimation}
     >
-      <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className='bg-slate-800 text-white  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <div>
             <Back />
@@ -24,7 +20,7 @@ function PlatformRules() {
       <div className='w-full mb-5' >
         <img src={rulesImage} alt="" />
       </div>
-      <div className='rounded-lg w-full px-5 py-3 bg-white'>
+      <div className='rounded-lg w-full px-5 py-3 bg-slate-800'>
         <p className={textClass}>【Platform Rules】</p>
         <p className={textClass}>
           (1) New users who join SNAVO need to complete 12 quantifications before they can withdraw money.

@@ -39,18 +39,18 @@ function UpdateLoginPassword() {
       return;
     }
     if (password !== confirmPassword) {
-      setToastMessge("Password is not same");
+      setToastMessge("Passwords does not match");
       setShowToast(true);
       isLoading(false);
       return;
     }
-    console.log("update transactionpassword");
+    console.log("update login password");
   }
   return (
     <Screen
       {...pageAnimation}>
       <ToastMessage message={toastMessge} showToast={showToast} handleRemoveToast={() => setShowToast(false)} />
-      <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className='bg-slate-800 text-white  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <Back />
           <div className="w-full text-center">
@@ -60,7 +60,7 @@ function UpdateLoginPassword() {
         </div>
       </div>
       <form onSubmit={handleSubmit} >
-        <div className="w-full">
+        <div className="w-full text-white">
           <p className="text-xl">Old Password</p>
           <AppInput
             value={oldPAssword}

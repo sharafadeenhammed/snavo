@@ -61,8 +61,8 @@ function Profile() {
             />) : null
         }
       </AnimatePresence>
-      <div className=" px-3 py-4 mb-5 rounded-xl relative w-full min-h-full bg-white">
-        <div className='flex mb-4'>
+      <div className=" px-3 py-4 mb-5 rounded-xl relative w-full min-h-full bg-slate-800">
+        <div className=' px-1 text-white bg-slate-800 rounded-xl flex mb-4'>
           <p className='text-2xl font-bold mr-4'>
             {`${user?.user?.phone?.slice(0, 6)}**** ${user?.user?.phone?.slice(-3)}`}
           </p>
@@ -79,7 +79,7 @@ function Profile() {
       </div>
 
       {/* profile stats */}
-      <div className="mb-5 w-full px-5 py-7 rounded-xl bg-white">
+      <div className="mb-5 text-white bg-slate-900 w-full px-5 py-7 rounded-xl">
         <div className="flex justify-between mb-3 items-start" >
           {/* balance */}
           <div className="flex items-center flex-col" >
@@ -231,12 +231,12 @@ function Profile() {
 
       {/* profile links */}
       <div
-        className=" rounded-xl relative w-full bg-white pt-5 pb-5">
+        className=" text-white rounded-xl relative w-full bg-slate-900 pt-5 pb-5">
 
         {/* other links */}
         <div className="w-full">
           {/* company profile */}
-          <div onClick={() => navigate(routesName.COMPANY_PROFILE)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.COMPANY_PROFILE)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="  inline-block h-6 w-6" src={info} alt="" />
@@ -246,7 +246,7 @@ function Profile() {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* platform rules */}
-          <div onClick={() => navigate(routesName.COMPANY_RULES)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.COMPANY_RULES)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="inline-block h-6 w-6" src={message} alt="" />
@@ -257,7 +257,7 @@ function Profile() {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* common problems */}
-          <div onClick={() => navigate(routesName.COMMON_PROBLEM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.COMMON_PROBLEM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="inline-block h-6 w-6" src={question} alt="" />
@@ -267,7 +267,7 @@ function Profile() {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* security center */}
-          <div onClick={() => navigate(routesName.SECURITY_CENTER)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.SECURITY_CENTER)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="inline-block h-6 w-6 mr-1" src={shield} alt="" />
@@ -279,7 +279,7 @@ function Profile() {
           {/* funding details */}
           <div
             onClick={() => navigate(routesName.FUNDING_DETAILS)}
-            className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+            className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="inline-block h-6 w-6 mr-1" src={memo} alt="" />
@@ -289,7 +289,7 @@ function Profile() {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* invite friends */}
-          <div onClick={() => navigate(routesName.INVITE_FRIENDS)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.INVITE_FRIENDS)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="inline-block h-6 w-6 mr-1" src={userlove} alt="" />
@@ -299,7 +299,7 @@ function Profile() {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* my team */}
-          <div onClick={() => navigate(routesName.MY_TEAM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.MY_TEAM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="inline-block h-6 w-6 mr-1" src={users} alt="" />
@@ -309,7 +309,7 @@ function Profile() {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* quantization tutorial */}
-          <div onClick={() => navigate(routesName.QUANTIZIZATION)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-100 py-4 ">
+          <div onClick={() => navigate(routesName.QUANTIZIZATION)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="inline-block h-6 w-6 mr-1" src={book} alt="" />

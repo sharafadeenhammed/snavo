@@ -22,7 +22,7 @@ function Announcement({ close }) {
           }
         }}
         className="relative px-32 p-20 w-full h-full flex items-center justify-center">
-        <div className="bg-white absolute pt-16 rounded-md">
+        <div className="bg-slate-800 text-white absolute pt-16 rounded-md">
           <div className=" absolute -top-16  -left-1">
             <img src={headerImage} alt="" />
           </div>

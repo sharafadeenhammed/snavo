@@ -18,18 +18,18 @@ import { FaAngleRight } from 'react-icons/fa'
 
 function RechargeMethod() {
   const navigate = useNavigate();
-  const [] = useState("all")
+  const [ coinName, setCoinName ] = useState("USDT");
   return (
     <Screen
       {...pageAnimation}
     >
-      <div className=' bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className=' bg-slate-800 text-white  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" w-full flex items-center justify-between" >
           <div>
             <Back />
           </div>
           <h1 className='text-center text-2xl font-medium'>
-            Recharge
+            Recharge method
           </h1>
           <div onClick={() => navigate(routesName.RECHARGE_RECORDS)}>
             <img className='h-8' src={history} alt="" />
@@ -39,8 +39,8 @@ function RechargeMethod() {
       {/* section one */}
       <p className='text-xl text-slate-500'>Choose</p>
       <div
-        onClick={() => navigate(routesName.RECHARGE)}
-        className="w-full cursor-pointer flex items-center justify-between rounded-lg bg-white shadow shadow-slate-300 mb-14 mt-3 px-5 py-3">
+        onClick={() => navigate(routesName.RECHARGE, { state: { coinName: coinName } })}
+        className="w-full text-white cursor-pointer flex items-center justify-between rounded-lg bg-slate-900 shadow mb-14 mt-3 px-5 py-3">
         <div className="flex items-center">
           <img className='block h-8  mr-2' src={usdt} alt="" />
           <p className='font-semibold text-lg'>Pay</p>

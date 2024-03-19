@@ -12,7 +12,7 @@ function QuantitativeRecords() {
     <Screen
       {...pageAnimation}
     >
-      <div className='bg-gray-200  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className='bg-slate-800 text-white py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
         <div className=" flex items-center mr-10" >
           <div>
             <Back />
@@ -24,7 +24,7 @@ function QuantitativeRecords() {
         </div>
       </div>
       {/* quantitative card */}
-      <div className='w-full bg-white p-3 rounded-xl '>
+      <div className='w-full text-white bg-slate-900 p-3 rounded-xl '>
 
         <div className='flex items-center justify-between mb-5'>
           <div className='flex items-center justify-between'>

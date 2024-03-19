@@ -64,29 +64,29 @@ function MinerDetails() {
       </div>
 
       {/* content */}
-      <div className='w-full min-h-screen bg-slate-200 px-5 pt-5'>
+      <div className='w-full min-h-screen bg-slate-800 px-5 pt-5'>
 
-        <div className='  bg-white mb-10 w-full px-3 py-5 rounded-lg'>
+        <div className='  bg-slate-900 mb-10 w-full px-3 py-5 rounded-lg'>
           <div className='flex items-start justify-between'>
             <p className='text-lg text-center text-slate-400  font-normal'>
               Dividend time
               <br />
-              <span className='text-lg text-black'>Daily</span>
+              <span className='text-lg text-white'>Daily</span>
             </p>
             <p className='text-lg text-center text-slate-400  font-normal'>
               Escrow funds
               <br />
-              <span className='text-lg text-black'>Return due</span>
+              <span className='text-lg text-white'>Return due</span>
             </p>
             <p className='text-lg text-center text-slate-400  font-normal'>
               Early redemption
               <br />
-              <span className='text-lg text-black'>55.00%</span>
+              <span className='text-lg text-white'>55.00%</span>
             </p>
           </div>
         </div>
 
-        <div className='bg-white mb-5 min-h-full w-full px-10 py-5 rounded-lg'>
+        <div className='bg-slate-900 mb-5 min-h-full w-full px-10 py-5 rounded-lg'>
           <div className='flex items-end justify-between'>
             <p className='text-base text-start text-slate-400  font-normal'>
               Estimated <br /> income(USDT)
@@ -96,19 +96,19 @@ function MinerDetails() {
             <p className='text-base text-end text-slate-400  font-normal'>
               Available assets(USDT)
               <br />
-              <span className=' text-black'>3.12</span>
+              <span className=' text-white'>3.12</span>
             </p>
           </div>
         </div>
 
-        <div className='bg-white mb-5 min-h-full w-full px-5 py-5 rounded-lg'>
+        <div className='bg-slate-900 text-white mb-5 min-h-full w-full px-5 py-5 rounded-lg'>
           <p className='text-xl mb-5'>Escrow amount</p>
           <div className='rounded-lg relative flex w-full border-2 border-slate-300'>
-            <input placeholder='0.00' pla className=' text-lg rounded-lg w-full outline-none  placeholder-slate-300 h-full px-2 py-3' type="text" />
+            <input placeholder='0.00' pla className=' text-lg rounded-lg w-full outline-none text-black  placeholder-slate-300 h-full px-2 py-3' type="text" />
 
             <div className=' bg-white flex items-center -translate-y-1/2 absolute right-0 pr-10 top-1/2 text-slate-400 font-semibold text-lg'>
-              <p className='px-4 border-r-2 border-r-slate-300 mr-2 '>USDT</p>
-              <p className='text-black cursor-pointer'>All</p>
+              <p className='px-4 border-r-2  border-r-slate-300 mr-2 '>USDT</p>
+              <p className=' underline  text-indigo-700 cursor-pointer'>All</p>
 
             </div>
           </div>
