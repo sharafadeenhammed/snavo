@@ -74,11 +74,11 @@ function Quantify() {
       </div>
 
       {/* section two */}
-      <div className="mb-5 w-full px-5 py-7 rounded-xl bg-slate-900">
+      <div className="mb-5 text-white w-full px-5 py-7 rounded-xl bg-slate-900">
         <div className="flex py-7 justify-between items-center" >
           {/* todays earning */}
           <div className="flex items-center flex-col" >
-            <p className="font-bold text-2xl">
+            <p className="font-bold text-xl">
               0.06
             </p>
             <p className="text-slate-400 text-center font-normal">
@@ -88,7 +88,7 @@ function Quantify() {
 
           {/* monthly income */}
           <div className="flex items-center flex-col" >
-            <p className="font-bold text-2xl">
+            <p className="font-bold text-xl">
               0.09
             </p>
             <p className="text-slate-400 text-center font-normal">
@@ -111,7 +111,7 @@ function Quantify() {
         <div className="flex py-7 justify-between items-center" >
           {/* todays team */}
           <div className="flex items-center flex-col" >
-            <p className="font-bold text-2xl">
+            <p className="font-bold text-xl">
               0.00
             </p>
             <p className="text-slate-400 text-center font-normal">
@@ -121,7 +121,7 @@ function Quantify() {
 
           {/* team of the month */}
           <div className="flex items-center flex-col" >
-            <p className="font-bold text-2xl">
+            <p className="font-bold text-xl">
               0.09
             </p>
             <p className="text-slate-400 text-center font-normal">
