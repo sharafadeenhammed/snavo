@@ -64,8 +64,8 @@ function CountryPicker({ showPicker, handleChange, handleClosePicker, data = [] 
       transition={{ duration: 0.5, ease: [ 0, 0.71, 0.2, 1.01 ] }}
       className={'container min-h-screen mx-auto max-w-lg bg-black bg-opacity-70 pl-16 fixed top-0 bottom-0  z-50 overflow-auto'}>
       {isLoading ? <Spinner /> :
-        <div className='bg-white min-h-screen'>
-          <div className='sticky top-0 bg-white px-5'>
+        <div className='bg-slate-800 text-white min-h-screen'>
+          <div className='sticky top-0 bg-slate-800 px-5'>
             <div className='flex justify-between items-center mb-5 '>
               <p className='text-xl'>Select country or region</p>
               <div className='cursor-pointer' onClick={() => handleClosePicker()}>
@@ -74,9 +74,9 @@ function CountryPicker({ showPicker, handleChange, handleClosePicker, data = [] 
             </div>
             {/* search */}
             <div className='rounded h-10 flex items-center justify-center pl-2 bg-gray-100 w-full '>
-              <FaSearch size={30} color='lightgray ' className='mr-5' />
+              <FaSearch size={30} color='black ' className='mr-5' />
               <input
-                className='w-full h-full bg-inherit outline-none'
+                className='w-full text-black h-full bg-inherit outline-none'
                 type="text"
                 value={countryInput}
                 onChange={(e) => {
@@ -91,11 +91,11 @@ function CountryPicker({ showPicker, handleChange, handleClosePicker, data = [] 
                   setCountryData(dataRef.current)
                 }
                 } className=' bg-gray-300 rounded-full cursor-pointer'>
-                  <FaTimes size={15} color='white' />
+                  <FaTimes size={15} color='red' />
                 </div>
                 : null
               }
-              <p onClick={search} className=' flex items-center text-xl cursor-pointer ml-2 h-full px-2 bg-white'>
+              <p onClick={search} className=' text-black flex items-center text-xl cursor-pointer ml-2 h-full px-2 bg-slate-300 rounded-tr-md rounded-br-md'>
                 Search
               </p>
             </div>
@@ -105,7 +105,7 @@ function CountryPicker({ showPicker, handleChange, handleClosePicker, data = [] 
               return (
                 <div key={index} onClick={() => handleChange && handleChange(item.idd)
                 }>
-                  <div className='w-full flex justify-between px-5 py-3 border-b-2 border-slate-200'>
+                  <div className='w-full flex justify-between px-5 py-3 border-b-2 border-slate-700'>
                     <div className='flex items-center justify-start'>
                       <p className='mr-5'>
                         <img className='' height="15px" width="30px" src={item.flag} />
