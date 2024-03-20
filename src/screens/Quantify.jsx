@@ -149,7 +149,7 @@ function Quantify() {
       </div>
 
       {/* section three */}
-      <div className='w-full flex my-5 items-center'>
+      <div className='w-full text-white flex my-5 items-center'>
         <img className='h-8' src={vipDiamond} alt="" />
         <p className='ml-2 font-semibold text-xl'>VIP level</p>
       </div>
