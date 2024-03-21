@@ -215,7 +215,7 @@ function Quantify() {
         </p>
         <div className="flex justify-between text-xl">
           <p className='text-slate-500'>
-            Minimum Quantization Quantity
+            Minimum Investment Quantity
           </p>
           <p className=' font-normal  '>
             {quantifyData[ currentItem ].data.benefits.minQuantity}
@@ -223,7 +223,7 @@ function Quantify() {
         </div>
         <div className="flex justify-between text-xl">
           <p className='text-slate-500'>
-            Maximum Quantization Quantity
+            Maximum Investment Quantity
           </p>
           <p className=' font-normal '>
             {quantifyData[ currentItem ].data.benefits.maxQuantity}
@@ -231,7 +231,7 @@ function Quantify() {
         </div>
         <div className="flex justify-between text-xl">
           <p className='text-slate-500'>
-            Quantification times per day
+            ROI times per day
           </p>
           <p className=' font-normal '>
             {quantifyData[ currentItem ].data.benefits.quantPerDay}
@@ -239,7 +239,7 @@ function Quantify() {
         </div>
         <div className="flex justify-between text-xl">
           <p className='text-slate-500'>
-            Daily rate
+            Daily rate of ROI
           </p>
           <p className=' font-normal text-xl '>
             {quantifyData[ currentItem ].data.benefits.dailyRate}

@@ -1,7 +1,7 @@
 export default Object.freeze([
   {
     title:"What is Investment? Where will the income from ?",
-    body:"Pledge mining is a tool product created by the ATMASLIFE company to help users quickly stake on the chain to obtain rewards. By Investmentl assets on the blockchain network, and obtaining rewards based on the POS (Proof of Stake) mechanism. In this mechanism, users entrust digital assets to nodes, and nodes exercise rights such as producing blocks and packaging transactions on the blockchain and receive rewards. Users share the rewards obtained by nodes in proportion to the number of locked positions."
+    body:"Pledge mining is a tool product created by the ATMASLIFE company to help users quickly stake on the chain to obtain rewards. By Investment assets on the blockchain network, and obtaining rewards based on the POS (Proof of Stake) mechanism. In this mechanism, users entrust digital assets to nodes, and nodes exercise rights such as producing blocks and packaging transactions on the blockchain and receive rewards. Users share the rewards obtained by nodes in proportion to the number of locked positions."
   }
   , {
     title: "What is reference Investment? How to...",
