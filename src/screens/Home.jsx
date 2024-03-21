@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom"
 import { FaUser, FaHeadphones, FaEnvelope } from "react-icons/fa"
 import 'react-slideshow-image/dist/styles.css'
 
-import ThinSpinner from "../components/ThinSpinner"
 import ActionCard from "../components/ActionCard"
 import Coincard from "../components/Coincard"
 import Spinner from "../components/Spinner"
@@ -44,7 +43,6 @@ function Home() {
     const response = await getCoinData();
     if (response == null) {
       setIsLoading(false);
-      setShowAnnouncement(true);
       setCoinApiData([]);
       return;
     }
@@ -57,7 +55,6 @@ function Home() {
       })
     }
     setCoinApiData(responseArray);
-    setShowAnnouncement(true);
     setIsLoading(false);
   }
 
@@ -94,7 +91,7 @@ function Home() {
       </AnimatePresence>
 
       {/* nav bar */}
-      <div className=' bg-slate-800  py-3 px-3 z-30 fixed top-0 w-full box-border mx-auto max-w-lg left-1/2 -translate-x-1/2'>
+      <div className=' container bg-slate-800  py-3 px-3 z-30 max-w-lg w-screen fixed top-0 right-1/2  translate-x-1/2'>
         <div className="justify-between w-full flex items-center mr-10" >
           <div className="p-2 bg-indigo-100 rounded-full bg-indigo-100'">
             <FaUser onClick={() => setShowLeftPanel(true)} size={20} color='#4f46e5' />

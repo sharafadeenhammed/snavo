@@ -1,7 +1,7 @@
 
 import { useState } from 'react'
 import { Slide } from "react-slideshow-image"
-import { FaLock, FaLockOpen } from 'react-icons/fa'
+import { FaCircleNotch, FaLock, FaLockOpen, FaTools } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import 'react-slideshow-image/dist/styles.css'
@@ -24,6 +24,7 @@ function Quantify() {
   const textClass = "text-xl font-semibold mb-5"
   const [ currentItem, setCurrentItem ] = useState(0)
   const [ showAnnouncement, setShowAnnouncement ] = useState(true);
+  const [ showTradingBotSpinner, setShowTradingBotSpinner ] = useState(false);
   const navigate = useNavigate()
   const { user } = useUserContext();
   return (
@@ -141,9 +142,16 @@ function Quantify() {
         </div>
         <div className=' w-full flex justify-center'>
           <p
-            className="text-indigo-600 cursor-pointer text-xl px-5 py-3 rounded-3xl bg-indigo-100">
-            Initiate Trading Bot
+            className="text-indigo-600 flex cursor-pointer text-xl px-5 py-3 rounded-3xl bg-indigo-100 items-center">
+            <span className='inline-block mx-1'>Initiate Trading Bot</span>
+            <div className='animate-spin'>
+              {
+                showTradingBotSpinner ?
+                  <FaCircleNotch /> : null
+              }
+            </div>
           </p>
+
 
         </div>
       </div>

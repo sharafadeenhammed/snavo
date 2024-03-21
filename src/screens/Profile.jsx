@@ -240,7 +240,7 @@ function Profile() {
 
       {/* profile links */}
       <div
-        className=" text-white rounded-xl relative w-full bg-slate-900 pt-5 pb-5">
+        className=" text-white rounded-xl  bg-slate-900 pt-5 pb-5">
 
         {/* other links */}
         <div className="w-full">

@@ -38,8 +38,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
   return (
     <motion.div
       id="close-left-panel"
-      className='container min-h-screen mx-auto max-w-lg bg-black bg-opacity-75 fixed top-0 bottom-0  z-40 overflow-auto'
-      // className="container mx-auto fixed top-0 bottom-0 box-border left-50 z-40 h-full max-w-lg overflow-visible bg-black bg-opacity-75"
+      className=' w-screen min-h-screen mx-auto max-w-lg bg-black bg-opacity-75 fixed top-0 bottom-0 z-40 overflow-auto'
       onClick={(e) => {
         e.target.id === "close-left-panel" && hadleClosePanel()
       }}

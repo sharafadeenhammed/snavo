@@ -2,9 +2,16 @@
 import Screen from '../components/Screen'
 import Back from '../components/Back'
 import pageAnimation from '../data/pageAnimation'
+import useUserContext from '../hooks/useUserContext'
+import { useState } from "react";
 
 import minerLogo from "../assets/images/miner-logo.png"
 function MinerDetails() {
+  const { user } = useUserContext();
+  const [ price, setPrice ] = useState("");
+  const userTotalBalance = () => {
+    setPrice(parseFloat(user.user.balance).toFixed(2));
+  }
   return (
     <Screen
       {...pageAnimation}
@@ -53,12 +60,12 @@ function MinerDetails() {
           <p className='text-2xl font-normal'>
             100.00
             <br />
-            <span className='text-slate-400 text-lg'>Single minimum</span>
+            <span className='text-slate-400 text-lg'>minimum</span>
           </p>
           <p className='text-2xl font-normal'>
             1000.00
             <br />
-            <span className='text-slate-400 text-lg'>Single most</span>
+            <span className='text-slate-400 text-lg'>maximum</span>
           </p>
         </div>
       </div>
@@ -96,7 +103,9 @@ function MinerDetails() {
             <p className='text-base text-end text-slate-400  font-normal'>
               Available assets(USDT)
               <br />
-              <span className=' text-white'>3.12</span>
+              <span className=' text-white'>
+                {parseFloat(user.user.balance).toFixed(2)}
+              </span>
             </p>
           </div>
         </div>
@@ -104,11 +113,16 @@ function MinerDetails() {
         <div className='bg-slate-900 text-white mb-5 min-h-full w-full px-5 py-5 rounded-lg'>
           <p className='text-xl mb-5'>Escrow amount</p>
           <div className='rounded-lg relative flex w-full border-2 border-slate-300'>
-            <input placeholder='0.00' pla className=' text-lg rounded-lg w-full outline-none text-black  placeholder-slate-300 h-full px-2 py-3' type="text" />
+            <input
+              value={price}
+              onChange={e => setPrice(e.target.value)}
+              placeholder='0.00'
+              type="number"
+              className=' text-lg rounded-lg w-full outline-none text-black  placeholder-slate-300 h-full px-2 py-3' />
 
             <div className=' bg-white flex items-center -translate-y-1/2 absolute right-0 pr-10 top-1/2 text-slate-400 font-semibold text-lg'>
               <p className='px-4 border-r-2  border-r-slate-300 mr-2 '>USDT</p>
-              <p className=' underline  text-indigo-700 cursor-pointer'>All</p>
+              <p onClick={userTotalBalance} className=' underline  text-indigo-700 cursor-pointer'>All</p>
 
             </div>
           </div>

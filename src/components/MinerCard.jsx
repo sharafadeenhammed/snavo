@@ -8,9 +8,9 @@ function MinerCard() {
     <div
       className="w-full text-white py-8" >
       <div className="w-full rounded-lg py-8 px-2 bg-slate-900">
-        <div className="flex mb-5">
+        <div className="flex mb-5 items-center">
           <img className="h-10 block mr-2" src={minerLogo} alt="" />
-          <p className="font-semibold text-2xl">LVL0 mining machine</p>
+          <p className="font-semibold text-lg">LVL0 AUTO TRADING BOT</p>
         </div>
 
         <div className="mb-3 flex justify-between items-start w-full">
@@ -22,7 +22,7 @@ function MinerCard() {
           </div>
           <div className="w-1/3 text-center">
             <p>
-              Daily rate of return
+              Daily ROI
             </p>
             <p className=" text-xl font-semibold">2.00%</p>
           </div>
