@@ -7,7 +7,6 @@ import ThinSpinner from "../components/ThinSpinner";
 import pageAnimation from "../data/pageAnimation";
 import noREcord from "../assets/images/no-record.png"
 import { AnimatePresence } from "framer-motion";
-
 import NoRecord from "../components/NoRecord";
 
 function RechargeRecords() {
@@ -38,7 +37,7 @@ function RechargeRecords() {
           <Back />
           <div className="w-full text-center">
             <h1 className='text-center text-2xl font-medium'>
-              Recharge record
+              Deposit record
             </h1>
           </div>
         </div>

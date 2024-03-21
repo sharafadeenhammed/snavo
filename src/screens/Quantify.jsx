@@ -151,7 +151,7 @@ function Quantify() {
       {/* section three */}
       <div className='w-full text-white flex my-5 items-center'>
         <img className='h-8' src={vipDiamond} alt="" />
-        <p className='ml-2 font-semibold text-xl'>VIP level</p>
+        <p className='ml-2 font-semibold text-xl'>Investment level</p>
       </div>
       <div className='w-full px-2 mb-5'>
         <Slide
@@ -175,7 +175,11 @@ function Quantify() {
                 key={index}
               >
                 <div className='absolute top-5 left-10'>
-                  <FaLock size={20} color='#ffffff' />
+                  {
+                    user.user.rank === index ?
+                      <FaLockOpen size={20} color='#ffffff' /> :
+                      <FaLock size={20} color='#ffffff' />
+                  }
                 </div>
                 <img
                   className="inline-block w-11/12 rounded-xl"

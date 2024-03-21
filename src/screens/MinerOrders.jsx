@@ -4,6 +4,7 @@
 import Screen from '../components/Screen'
 import Back from '../components/Back'
 import pageAnimation from '../data/pageAnimation'
+import NoRecord from '../components/NoRecord'
 
 function MinerOrders() {
   return (
@@ -25,7 +26,7 @@ function MinerOrders() {
       </div>
 
       <div className="w-full text-center text-white ">
-        no  more
+        <NoRecord />
       </div>
     </Screen>
   )

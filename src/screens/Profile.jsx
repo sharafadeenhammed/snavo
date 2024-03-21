@@ -63,7 +63,7 @@ function Profile() {
       </AnimatePresence>
       <div className=" text-white px-3 py-4 mb-5 rounded-xl relative w-full min-h-full bg-slate-800">
         <p className='text-3xl font-thin  mr-4 pl-2 mb-2'>
-          Hello' {user?.user?.fullname} 👋
+          Hello &#x275C; {user?.user?.fullname} 👋
         </p>
         <div className=' px-1 text-white bg-slate-800 rounded-xl flex mb-2'>
           <p className='text-2xl font-bold mr-4'>
@@ -72,7 +72,7 @@ function Profile() {
           <div className=' relative'>
             <img src={vip} alt="" />
             <p className="absolute top-1.5 right-3 text-xl font-bold">
-              VIP{user?.user?.rank}
+              LVL{user?.user?.rank}
             </p>
           </div>
         </div>
@@ -194,7 +194,7 @@ function Profile() {
           <p className='text-slate-400 font-normal text-xl mb-2'>Next level</p>
           <div className='flex justify-between'>
             <div className='flex items-center'>
-              <p className='text-slate-400 font-semibold text-3xl' >VIP{`${user?.user.rank < 6 ? user?.user?.rank + 1 : user?.user?.rank}`}</p>
+              <p className='text-slate-400 font-semibold text-3xl' >LVL{`${user?.user.rank < 6 ? user?.user?.rank + 1 : user?.user?.rank}`}</p>
               <img className='h-7' src={crown} />
             </div>
             <p className='text-slate-400'>Effective amount({`${quantifyData[ user?.user?.rank < 6 ? user?.user?.rank + 1 : user?.user?.rank ]?.data?.balance}`})</p>

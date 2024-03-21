@@ -88,7 +88,7 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
         <div className="flex px-2 items-center justify-between w-full mb-5">
           <div onClick={() => navigate(routesName.RECHARGE_METHOD)} className="w-6/12 mr-1 bg-indigo-600 px-3 py-2 rounded-lg flex items-center flex-col">
             <img className="h-10 inline-block mb-1 w-10" src={recharge} alt="recharge" />
-            <p className="text-white font-bold text-sm">Recharge</p>
+            <p className="text-white font-bold text-sm">Deposit</p>
           </div>
           <div onClick={() => navigate(routesName.WITHDRAW_METHOD)} className="w-6/12 bg-indigo-600 px-3 py-2 rounded-lg flex items-center flex-col">
             <img className="inline-block mb-1 h-10 w-10" src={withdraw} alt="recharge" />

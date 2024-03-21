@@ -29,7 +29,7 @@ function RechargeMethod() {
             <Back />
           </div>
           <h1 className='text-center text-2xl font-medium'>
-            Recharge method
+            Deposit method
           </h1>
           <div onClick={() => navigate(routesName.RECHARGE_RECORDS)}>
             <img className='h-8' src={history} alt="" />

@@ -28,7 +28,6 @@ function Recharge() {
   async function getCoinAddress() {
     const response = await api.callApi({ coin: location.state.coinName });
     if (response.ok) {
-      console.log(response);
       setRechargeAddress(response.data.address);
       setChainName(location.state.coinName);
     }
@@ -59,7 +58,7 @@ function Recharge() {
           </div>
           <div className="w-full text-center">
             <h1 className='text-center text-2xl font-medium'>
-              Recharge </h1>
+              Deposit </h1>
           </div>
         </div>
       </div>

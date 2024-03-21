@@ -10,11 +10,11 @@ export default Object.freeze([
   {
     image:vip0,
     data: {
-      header: "VIP0 Upgrade conditions",
+      header: "LVL0 Upgrade conditions",
       balance: "3~30 U",
       notice:"",
       benefits: {
-        header:"VIP0 benefits",
+        header:"LVL0 benefits",
         minQuantity: "3",
         maxQuantity: "30",
         quantPerDay: "2 times",
@@ -25,11 +25,11 @@ export default Object.freeze([
   {
     image:vip1,
     data: {
-      header: "VIP1 Upgrade conditions",
+      header: "LVL1 Upgrade conditions",
       balance: "30~500 U",
       notice:"",
       benefits: {
-        header:"VIP1 benefits",
+        header:"LVL1 benefits",
         minQuantity: "30",
         maxQuantity: "500",
         quantPerDay: "4 times",
@@ -40,11 +40,11 @@ export default Object.freeze([
   {
     image: vip2,
     data: {
-      header: "VIP2 Upgrade conditions",
+      header: "LVL2 Upgrade conditions",
       balance: "500~3000 U",
       notice: "Notice: Invite 5 direct members. The accumulated stored value and balance of each member is greater than 100USDT.",
       benefits: {
-        header:"VIP2 benefits",
+        header:"LVL2 benefits",
         minQuantity: "500",
         maxQuantity: "3000",
         quantPerDay: "5 times",
@@ -55,11 +55,11 @@ export default Object.freeze([
   {
     image:vip3,
     data: {
-      header: "VIP3 Upgrade conditions",
+      header: "LVL3 Upgrade conditions",
       balance: "3000~10000 U",
       notice:"Notice: Invite 10 direct members. The accumulated stored value and balance of each member is greater than 100USDT.",
       benefits: {
-        header:"VIP3 benefits",
+        header:"LVL3 benefits",
         minQuantity: "3000",
         maxQuantity: "10000",
         quantPerDay: "6 times",
@@ -70,11 +70,11 @@ export default Object.freeze([
   {
     image:vip4,
     data: {
-      header: "VIP4 Upgrade conditions",
+      header: "LVL4 Upgrade conditions",
       balance: "10000~30000 U",
       notice:"Notice: Invite 20 direct members. The accumulated stored value and balance of each member is greater than 100USDT.",
       benefits: {
-        header:"VIP4 benefits",
+        header:"LVL4 benefits",
         minQuantity: "10000",
         maxQuantity: "30000",
         quantPerDay: "7 times",
@@ -85,11 +85,11 @@ export default Object.freeze([
   {
     image:vip5,
     data: {
-      header: "VIP5 Upgrade conditions",
+      header: "LVL5 Upgrade conditions",
       balance: "30000~100000 U",
       notice:"Notice: Invite 30 direct members. The accumulated stored value and balance of each member is greater than 100USDT.",
       benefits: {
-        header:"VIP5 benefits",
+        header:"LVL5 benefits",
         minQuantity: "30000",
         maxQuantity: "100000",
         quantPerDay: "8 times",
@@ -100,11 +100,11 @@ export default Object.freeze([
   {
     image:vip6,
     data: {
-      header: "VIP6 Upgrade conditions",
+      header: "LVL6 Upgrade conditions",
       balance: "100000~999999 U",
       notice:"Notice: Invite 50 direct members. The accumulated stored value and balance of each member is greater than 100USDT.",
       benefits: {
-        header:"VIP6 benefits",
+        header:"LVL6 benefits",
         minQuantity: "30000",
         maxQuantity: "100000",
         quantPerDay: "8 times",
@@ -112,21 +112,4 @@ export default Object.freeze([
       }
     }
   },
-  // {
-  //   image:null,
-  //   data: {
-  //     header: "VIP6 Upgrade conditions",
-  //     balance: "100000~999999 U",
-  //     notice:"Notice: Invite 50 direct members. The accumulated stored value and balance of each member is greater than 100USDT.",
-  //     benefits: {
-  //       minQuantity: "30000",
-  //       maxQuantity: "100000",
-  //       quantPerDay: "8 times",
-  //       dailyRate:"4.50% ~ 5.50%"
-  //     }
-  //   }
-  // },
-
-
-
 ])

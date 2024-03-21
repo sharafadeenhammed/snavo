@@ -6,7 +6,7 @@ import routesName from "./routesName"
 import invite from "../assets/images/actions/invite.png"
 export default Object.freeze([
   {
-    text: "Recharge",
+    text: "Deposit",
     image: recharge,
     path:routesName.RECHARGE_METHOD
   }, {

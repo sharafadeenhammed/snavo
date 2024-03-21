@@ -1,11 +1,11 @@
 export default Object.freeze([
   {
-    title:"What is staking mining? Where will the incom...",
-    body:"Pledge mining is a tool product created by the company to help users quickly stake on the chain to obtain rewards. By staking digital assets on the blockchain network, and obtaining rewards based on the POS (Proof of Stake) mechanism. In this mechanism, users entrust digital assets to nodes, and nodes exercise rights such as producing blocks and packaging transactions on the blockchain and receive rewards. Users share the rewards obtained by nodes in proportion to the number of locked positions."
+    title:"What is Investment? Where will the income from ?",
+    body:"Pledge mining is a tool product created by the ATMASLIFE company to help users quickly stake on the chain to obtain rewards. By Investmentl assets on the blockchain network, and obtaining rewards based on the POS (Proof of Stake) mechanism. In this mechanism, users entrust digital assets to nodes, and nodes exercise rights such as producing blocks and packaging transactions on the blockchain and receive rewards. Users share the rewards obtained by nodes in proportion to the number of locked positions."
   }
   , {
-    title: "What is reference annualization? How to...",
-    body:"The reference annualized rate is the reference annualized rate of return of the product you subscribed for, which will be dynamically updated according to the actual earnings on the chain, and is for your reference only. Reference annualization = income on the chain / amount locked on the chain / time locked on the chain * 365 * 100%."
+    title: "What is reference Investment? How to...",
+    body:"The reference Investment rate is the reference annualized rate of return of the product you subscribed for, which will be dynamically updated according to the actual earnings on the chain, and is for your reference only. Reference annualization = income on the chain / amount locked on the chain / time locked on the chain * 365 * 100%."
   }, {
     title: "What is expected return? How to calculate?",
     body:"The expected income is the estimated daily income calculated based on your subscription quantity and product reference annualization, and is for your reference only. Daily expected income = number of subscriptions * reference annualization / 365."
