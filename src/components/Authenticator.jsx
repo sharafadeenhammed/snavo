@@ -22,7 +22,7 @@ function Authenticator() {
 
   if ((user?.user?._id === undefined || user === null) && !authRoutes.includes(location.pathname)) {
     navigate(routesName.LOGIN)
-    return <AuthNavigation loginRoute={"/ "} />
+    return <AuthNavigation loginRoute={"/"} />
   }
   else {
     if (user?.user?._id && authRoutes.includes(location.pathname)) navigate(routesName.HOME)

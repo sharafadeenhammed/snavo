@@ -14,7 +14,6 @@ export function UserProvider({ children }) {
     const response = await auth.getMe();
     if (!response.ok) {
       userDispatch({ type: "CLEAR_USER" });
-      navigate(routesName.LOGIN);
       return;
     }
     //else {
