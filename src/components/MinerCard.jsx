@@ -10,7 +10,7 @@ function MinerCard() {
       <div className="w-full rounded-lg py-8 px-2 bg-slate-900">
         <div className="flex mb-5">
           <img className="h-10 block mr-2" src={minerLogo} alt="" />
-          <p className="font-semibold text-2xl">AI mining machine</p>
+          <p className="font-semibold text-2xl">LVL0 mining machine</p>
         </div>
 
         <div className="mb-3 flex justify-between items-start w-full">
