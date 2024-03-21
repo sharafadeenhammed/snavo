@@ -194,7 +194,7 @@ function Profile() {
           <p className='text-slate-400 font-normal text-xl mb-2'>Next level</p>
           <div className='flex justify-between'>
             <div className='flex items-center'>
-              <p className='text-slate-400 font-semibold text-3xl' >VIP{`${user.user.rank < 6 ? user?.user?.rank + 1 : user?.user?.rank}`}</p>
+              <p className='text-slate-400 font-semibold text-3xl' >VIP{`${user?.user.rank < 6 ? user?.user?.rank + 1 : user?.user?.rank}`}</p>
               <img className='h-7' src={crown} />
             </div>
             <p className='text-slate-400'>Effective amount({`${quantifyData[ user?.user?.rank < 6 ? user?.user?.rank + 1 : user?.user?.rank ]?.data?.balance}`})</p>

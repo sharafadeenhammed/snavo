@@ -13,6 +13,7 @@
   "dependencies": {
     "apisauce": "^3.0.1",
     "framer-motion": "^11.0.6",
+    "moment": "^2.30.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-emoji-country-code-selector": "^1.0.3",

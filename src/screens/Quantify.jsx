@@ -142,7 +142,7 @@ function Quantify() {
         <div className=' w-full flex justify-center'>
           <p
             className="text-indigo-600 cursor-pointer text-xl px-5 py-3 rounded-3xl bg-indigo-100">
-            Start Quantization(1/2)
+            Initiate Trading Bot
           </p>
 
         </div>
