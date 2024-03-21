@@ -68,7 +68,7 @@ function ForgotPassword() {
   return (
     <motion.div
       {...pageAnimation}
-      className="container px-4 py-0.050  pt-20 border-x-2 border-slate-100 h-screen mx-auto max-w-lg  bg-slate-800 text-white">
+      className="container px-4 py-0.050  pt-20 border-x-2 border-slate-900 h-screen mx-auto max-w-lg  bg-slate-800 text-white">
       <AnimatePresence>
         {openCountryPicker ? <CountryPicker showPicker={openCountryPicker} handleChange={handleCountryChange} handleClosePicker={() => setOpenCountryPicker(false)} /> : null}
 

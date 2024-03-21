@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaHeadphones, FaGlobe, FaArrowRight, FaLock, FaEye, FaEyeSlash, FaShieldAlt, FaEnvelope } from "react-icons/fa";
+import { FaHeadphones, FaUser, FaGlobe, FaArrowRight, FaLock, FaEye, FaEyeSlash, FaShieldAlt, FaEnvelope, FaUsers } from "react-icons/fa";
 import { loadCaptchaEnginge, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
@@ -24,6 +24,8 @@ function Register() {
   const [ phone, setPhone ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ confirmPassword, setConfirmPassword ] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ fullname, setFullname ] = useState("");
   const [ refCode, setRefCode ] = useState(searchParams.get("ref") || "EJFDS");
   const [ captcha, setCaptcha ] = useState("")
   const [ countryCode, setCountryCode ] = useState("+1")
@@ -55,6 +57,8 @@ function Register() {
       password,
       confirmPassword,
       referalCode: refCode,
+      email,
+      fullname
     }
     const response = await api.callApi(formData);
     if (!response.ok) return;
@@ -96,21 +100,25 @@ function Register() {
       </div>
 
       {/* header */}
-      <h1 className='text-center text-3xl font-medium mb-10'>Create Account</h1>
+      <h1 className='text-center text-3xl font-medium mb-5'>Create Account</h1>
       {/* tagline */}
-      <h1 className='text-2xl font-medium mb-2 text-indigo-600 '>
-        Register your phone
+      <h1 className='text-2xl font-medium mb-1 text-indigo-600 '>
+        Register
       </h1>
       <form onSubmit={handleSubmit}>
         {/* input */}
         <div className='mb-5'>
           <AppInput value={phone} handleOnChange={(e) => setPhone(e.target.value)} LeftIcon={<p onClick={() => setOpenCountryPicker(true)} className=" cursor-pointer flex items-center text-indigo-600 font-bold text-lg mr-2">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" />
 
+          <AppInput value={fullname} handleOnChange={(e) => setFullname(e.target.value)} LeftIcon={<FaUser size={20} className="mr-2" />} placeholder='Please enter full name' />
+
+          <AppInput value={email} handleOnChange={(e) => setEmail(e.target.value)} LeftIcon={<FaEnvelope className="mr-2" size={20} />} placeholder='Please enter email' />
+
           <AppInput value={password} handleOnChange={(e) => setPassword(e.target.value)} LeftIcon={<FaLock size={20} className="mr-2" />} type={passwordType} placeholder='Please enter password' RightIcon={passwordType === "password" ? < FaEyeSlash color="darkgray" onClick={() => setPasswordType("text")} size={25} /> : <FaEye color="darkgray" onClick={() => setPasswordType("password")} size={25} />} />
 
           <AppInput value={confirmPassword} handleOnChange={(e) => setConfirmPassword(e.target.value)} LeftIcon={<FaLock size={20} className="mr-2" />} type={confirmPasswordType} placeholder='Enter password again' RightIcon={confirmPasswordType === "password" ? < FaEyeSlash color="darkgray" onClick={() => setConfirmPasswordType("text")} size={25} /> : <FaEye color="darkgray" onClick={() => setConfirmPasswordType("password")} size={25} />} />
 
-          <AppInput LeftIcon={<FaEnvelope className="mr-2" size={20} />} disabled value={refCode} />
+          <AppInput LeftIcon={<FaUsers className="mr-2" size={20} />} disabled value={refCode} />
 
           <AppInput value={captcha} handleOnChange={(e) => setCaptcha(e.target.value)} LeftIcon={<FaShieldAlt className="mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<LoadCanvasTemplateNoReload className="bg-slate-400" />} />
 

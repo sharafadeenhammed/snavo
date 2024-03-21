@@ -275,12 +275,12 @@ export default [
       "flag": "https://flagcdn.com/cy.svg"
   },
   {
-      "name": "Czechia",
+      "name": "Czech Republic (Czechia)",
       "idd": "+420",
       "flag": "https://flagcdn.com/cz.svg"
   },
   {
-      "name": "DR Congo",
+      "name": "Democratic Republic of the Congo",
       "idd": "+243",
       "flag": "https://flagcdn.com/cd.svg"
   },
@@ -333,11 +333,6 @@ export default [
       "name": "Estonia",
       "idd": "+372",
       "flag": "https://flagcdn.com/ee.svg"
-  },
-  {
-      "name": "Eswatini",
-      "idd": "+268",
-      "flag": "https://flagcdn.com/sz.svg"
   },
   {
       "name": "Ethiopia",
@@ -424,11 +419,7 @@ export default [
       "idd": "+1473",
       "flag": "https://flagcdn.com/gd.svg"
   },
-  {
-      "name": "Guadeloupe",
-      "idd": "+590",
-      "flag": "https://flagcdn.com/gp.svg"
-  },
+
   {
       "name": "Guam",
       "idd": "+1671",
@@ -551,7 +542,7 @@ export default [
   },
   {
       "name": "Kazakhstan",
-      "idd": "+76",
+      "idd": "+7",
       "flag": "https://flagcdn.com/kz.svg"
   },
   {
@@ -871,7 +862,7 @@ export default [
   },
   {
       "name": "Puerto Rico",
-      "idd": "+1787",
+      "idd": "+1",
       "flag": "https://flagcdn.com/pr.svg"
   },
   {
@@ -891,7 +882,7 @@ export default [
   },
   {
       "name": "Russia",
-      "idd": "+73",
+      "idd": "+7",
       "flag": "https://flagcdn.com/ru.svg"
   },
   {
@@ -900,7 +891,7 @@ export default [
       "flag": "https://flagcdn.com/rw.svg"
   },
   {
-      "name": "Réunion",
+      "name": "Reunion (Réunion)",
       "idd": "+262",
       "flag": "https://flagcdn.com/re.svg"
   },
@@ -1041,7 +1032,7 @@ export default [
   },
   {
       "name": "Svalbard and Jan Mayen",
-      "idd": "+4779",
+      "idd": "+47",
       "flag": "https://flagcdn.com/sj.svg"
   },
   {
@@ -1053,7 +1044,17 @@ export default [
       "name": "Switzerland",
       "idd": "+41",
       "flag": "https://flagcdn.com/ch.svg"
-  },
+    },
+    {
+        "name": "Swaziland (Eswatini)",
+        "idd": "+268",
+        "flag": "https://flagcdn.com/sz.svg"
+    },
+    {
+        "name": "Saint Barthelemy (Guadeloupe)",
+        "idd": "+590",
+        "flag": "https://flagcdn.com/gp.svg"
+    },
   {
       "name": "Syria",
       "idd": "+963",
@@ -1156,7 +1157,7 @@ export default [
   },
   {
       "name": "United States",
-      "idd": "+1201",
+      "idd": "+1",
       "flag": "https://flagcdn.com/us.svg"
   },
   {
@@ -1206,7 +1207,7 @@ export default [
   },
   {
       "name": "Western Sahara",
-      "idd": "+2125288",
+      "idd": "+212",
       "flag": "https://flagcdn.com/eh.svg"
   },
   {
@@ -1226,7 +1227,7 @@ export default [
   },
   {
       "name": "Åland Islands",
-      "idd": "+35818",
+      "idd": "+358",
       "flag": "https://flagcdn.com/ax.svg"
   }
 ]

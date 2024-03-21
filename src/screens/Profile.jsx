@@ -61,7 +61,10 @@ function Profile() {
             />) : null
         }
       </AnimatePresence>
-      <div className=" px-3 py-4 mb-5 rounded-xl relative w-full min-h-full bg-slate-800">
+      <div className=" text-white px-3 py-4 mb-5 rounded-xl relative w-full min-h-full bg-slate-800">
+        <p className='text-3xl font-thin  mr-4 pl-2 mb-2'>
+          Hello' {user?.user?.fullname} 👋
+        </p>
         <div className=' px-1 text-white bg-slate-800 rounded-xl flex mb-4'>
           <p className='text-2xl font-bold mr-4'>
             {`${user?.user?.phone?.slice(0, 6)}**** ${user?.user?.phone?.slice(-3)}`}
