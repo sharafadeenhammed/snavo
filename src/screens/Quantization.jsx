@@ -17,7 +17,7 @@ function Quantization() {
           </div>
           <div className="w-full text-center">
             <h1 className='text-center text-2xl font-medium'>
-              Quantization Tutorial</h1>
+              Investment Tutorial</h1>
           </div>
         </div>
       </div>

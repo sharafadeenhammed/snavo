@@ -13,11 +13,13 @@ export default Object.freeze([
     text: "Withdraw",
     image: withdraw,
     path:routesName.WITHDRAW_METHOD
-  }, {
-    text: "Team",
-    image: team,
-    path:routesName.MY_TEAM
-  }, {
+   },
+  // {
+  //   text: "Team",
+  //   image: team,
+  //   path:routesName.MY_TEAM
+    // }
+    , {
     text: "Task center",
     image: task,
     path:routesName.TASK_CENTER

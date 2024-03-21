@@ -299,7 +299,7 @@ function Profile() {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* my team */}
-          <div onClick={() => navigate(routesName.MY_TEAM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
+          {/* <div onClick={() => navigate(routesName.MY_TEAM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="inline-block h-6 w-6 mr-1" src={users} alt="" />
@@ -307,14 +307,14 @@ function Profile() {
               <p className="font-normal text-lg" >My Team</p>
             </div>
             <img className="h-4" src={homeNoticeMore} alt="" />
-          </div>
+          </div> */}
           {/* quantization tutorial */}
           <div onClick={() => navigate(routesName.QUANTIZIZATION)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <div className='mr-1 bg-indigo-200 p-2 rounded-full flex items-center justify-center'>
                 <img className="inline-block h-6 w-6 mr-1" src={book} alt="" />
               </div>
-              <p className="font-normal text-lg" >Quantization Tutorial</p>
+              <p className="font-normal text-lg" >Investment Tutorial</p>
             </div>
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>

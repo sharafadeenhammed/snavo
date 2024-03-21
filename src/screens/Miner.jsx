@@ -102,11 +102,11 @@ function Miner() {
                   className="  text-lg py-5 px-5 pt-16  bottom-0 overflow-y-scroll left-0 w-full absolute h-5/6 rounded-t-3xl text-white bg-slate-800 scroolBar ">
 
                   <p className="mb-4 text-white font-bold text-3xl">
-                    What is Snavo Cloud Miner?
+                    What is ATMASLIFE Cloud Miner?
                   </p>
                   <p>
 
-                    Snavo cloud mining machine is a tool product created by the company to help users quickly pledge on the chain to obtain rewards. By staking digital assets on the blockchain network, and obtaining rewards based on the POS (Proof of Stake) mechanism. In this mechanism, users entrust digital assets to nodes, and nodes exercise rights such as producing blocks and packaging transactions on the blockchain and receive rewards. Users share the rewards obtained by nodes in proportion to the number of locked positions.
+                    ATMASLIFE cloud mining machine is a tool product created by the company to help users quickly pledge on the chain to obtain rewards. By staking digital assets on the blockchain network, and obtaining rewards based on the POS (Proof of Stake) mechanism. In this mechanism, users entrust digital assets to nodes, and nodes exercise rights such as producing blocks and packaging transactions on the blockchain and receive rewards. Users share the rewards obtained by nodes in proportion to the number of locked positions.
                   </p>
                   <br />
                   <p className="mb-4 text-white font-bold text-3xl">
@@ -117,14 +117,14 @@ function Miner() {
                     <p className="text-white font-xl">Robust</p>
                   </div>
                   <p>
-                    Snavo cloud mining machines can obtain relatively stable rewards from third parties, and the product term is diverse.
+                    ATMASLIFE cloud mining machines can obtain relatively stable rewards from third parties, and the product term is diverse.
                   </p>
                   <br />
                   <p className="mb-4 text-white font-bold text-3xl">
                     Investing in interest-earning assets
                   </p>
                   <p>
-                    Snavo cloud mining machine is to pledge your digital assets on the blockchain to support the operation of the blockchain network and get corresponding rewards.
+                    ATMASLIFE cloud mining machine is to pledge your digital assets on the blockchain to support the operation of the blockchain network and get corresponding rewards.
                   </p>
                   <br />
                   <p className="mb-4 text-white font-bold text-3xl">

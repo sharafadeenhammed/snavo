@@ -31,7 +31,7 @@ import routesName from "../data/routesName"
 import pageAnimation from "../data/pageAnimation"
 
 
-const anouncementText = 'Dear SNAVO global participants Register as a new user and get 3 USDT (1) Invite subordinates to recharge 50USDT for the first time, and superiors can receive 3USDT (2) Invite subordinates to recharge 100 USDT for the first time, and superiors can receive 7 USDT For more details, please consult the SNAVO product manager!'
+const anouncementText = 'Dear ATMASLIFE global participants Register as a new user and get 3 USDT (1) Invite subordinates to recharge 50USDT for the first time, and superiors can receive 3USDT (2) Invite subordinates to recharge 100 USDT for the first time, and superiors can receive 7 USDT For more details, please consult the ATMASLIFE product manager!'
 function Home() {
   const navigate = useNavigate();
   const [ showAnnouncement, setShowAnnouncement ] = useState(false);

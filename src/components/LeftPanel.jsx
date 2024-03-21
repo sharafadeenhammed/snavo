@@ -148,18 +148,18 @@ function LeftPanel({ hadleClosePanel, panelOpen = false }) {
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>
           {/* my team */}
-          <div onClick={() => navigate(routesName.MY_TEAM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
+          {/* <div onClick={() => navigate(routesName.MY_TEAM)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={users} alt="" />
               <p className="font-normal text-lg" >My Team</p>
             </div>
             <img className="h-4" src={homeNoticeMore} alt="" />
-          </div>
+          </div> */}
           {/* quantization tutorial */}
           <div onClick={() => navigate(routesName.QUANTIZIZATION)} className="px-3 flex items-center justify-between w-full border-b-2 border-b-slate-800 py-4 ">
             <div className="flex items-center">
               <img className="inline-block h-6 w-6 mr-1" src={book} alt="" />
-              <p className="font-normal text-lg" >Quantization Tutorial</p>
+              <p className="font-normal text-lg" >Investment Tutorial</p>
             </div>
             <img className="h-4" src={homeNoticeMore} alt="" />
           </div>

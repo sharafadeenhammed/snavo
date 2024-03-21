@@ -33,7 +33,7 @@ function MinerDetails() {
             <p className=' font-normal text-xl'>
               AI mining machine
               <br />
-              Snavo Cloud Miner
+              ATMASLIFE Cloud Miner
             </p>
           </div>
           <p className='text-right font-normal text-xl'>

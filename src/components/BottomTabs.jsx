@@ -31,7 +31,7 @@ function BottomTabs() {
             >
               <FaRegChartBar size={iconSize} />
             </div>
-            <p className="text-sm font-semibold ">Quantify</p>
+            <p className="text-sm font-semibold ">Harvest</p>
           </div>
           {/* team */}
           {/* <div onClick={() => navigate(routesName.MY_TEAM)} className={"cursor-pointer flex flex-col items-center " + (location.pathname === routesName.MY_TEAM ? "text-indigo-600" : "text-slate-500")}>
@@ -48,7 +48,7 @@ function BottomTabs() {
             >
               <FaStopwatch size={iconSize} />
             </div>
-            <p className="text-sm font-semibold ">Miner</p>
+            <p className="text-sm font-semibold ">Invest</p>
           </div>
           {/* profile */}
           <div onClick={() => navigate(routesName.PROFILE)} className={" cursor-pointer flex flex-col items-center " + (location.pathname === routesName.PROFILE ? "text-indigo-600" : "text-slate-500")}>
@@ -57,7 +57,7 @@ function BottomTabs() {
             >
               <FaUser size={iconSize} />
             </div>
-            <p className="text-sm font-semibold ">Mine</p>
+            <p className="text-sm font-semibold ">Profile</p>
           </div>
 
         </div>

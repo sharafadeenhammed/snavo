@@ -23,9 +23,9 @@ function Announcement({ close }) {
         }}
         className="relative px-32 p-20 w-full h-full flex items-center justify-center">
         <div className="bg-slate-800 text-white absolute pt-16 rounded-md">
-          <div className=" absolute -top-16  -left-1">
+          {/* <div className=" absolute -top-16  -left-1">
             <img src={headerImage} alt="" />
-          </div>
+          </div> */}
           <p className="px-5 font-bold text-lg">
             Register as a new user and get <span className="text-red-500">3 USDT</span>
 
@@ -44,7 +44,7 @@ function Announcement({ close }) {
 
             <div className="mb-3"></div>
 
-            &nbsp; Please consult SNAVO online customer service for more details!
+            &nbsp; Please consult ATMASLIFE online customer service for more details!
             <div className="mb-3"></div>
           </p>
           <div onClick={() => close()} className=" text-white absolute h-7 w-7 -bottom-8 left-1/2 flex items-center justify-center border-2 border-white rounded-full">
