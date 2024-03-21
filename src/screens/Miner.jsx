@@ -72,7 +72,7 @@ function Miner() {
         {/* <MinerCard /> */}
         <MinerCard />
 
-        <MinerCard />
+        {/* <MinerCard /> */}
       </div>
 
       <div className=" text-white w-full px-5">
