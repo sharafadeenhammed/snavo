@@ -30,18 +30,18 @@ function Miner() {
     >
       <div className="h-80 w-full relative mb-5">
         <img className=" h-full inline-block object-cover" src={headerImg} />
-        <div onClick={() => navigate(-1)} className=" px-3 flex items-center absolute top-5 left-0 ">
-          <FaAngleLeft color="ffffff" size={40} className="mr-2" />
+        <div className=" px-3 flex items-center absolute top-5 left-0 ">
+          <FaAngleLeft onClick={() => navigate(-1)} color="ffffff" size={40} className="mr-2" />
           <p className="text-white text-xl">Funds in custody</p>
         </div>
-        <div className="px-3 flex items-center absolute top-20 left-0 ">
+        <div className="px-3 flex items-center absolute top-28 left-0 ">
           <p className="text-white text-3xl">0.00 <span className="text-xl font-semibold">USDT</span></p>
         </div>
         <div className="px-3 border-t-2 border-b-2 border-l-2 rounded-l-3xl  flex items-center absolute top-16 right-0 ">
-          <p onClick={() => setShowIllustrate(true)} className="text-white text-2xl">Illustrate</p>
+          <p onClick={() => setShowIllustrate(true)} className="text-white text-lg">ATMASLIFE INVESTMENTS </p>
           <FaAngleRight color="ffffff" size={40} className="ml-1" />
         </div>
-        <div className="text-white absolute top-36 left-0 flex justify-between items-start w-full">
+        <div className="text-white absolute top-40 left-0 flex justify-between items-start w-full">
           <div className="w-1/3 text-center">
             <p>
               Estimated Earnings Today
@@ -61,7 +61,7 @@ function Miner() {
             <p className="text-white text-xl font-semibold">0</p>
           </div>
         </div>
-        <div className="w-full px-5 absolute bottom-5 left-0 bg-transparent">
+        <div className="w-full px-5 absolute bottom-2 left-0 bg-transparent">
           <div onClick={() => navigate(routesName.MINER_ORDERS)} className="border-2 border-white rounded-xl py-3 flex justify-center">
             <p className="text-white text-xl font-semibold">Order details</p>
           </div>
@@ -102,11 +102,11 @@ function Miner() {
                   className="  text-lg py-5 px-5 pt-16  bottom-0 overflow-y-scroll left-0 w-full absolute h-5/6 rounded-t-3xl text-white bg-slate-800 scroolBar ">
 
                   <p className="mb-4 text-white font-bold text-3xl">
-                    What is ATMASLIFE Cloud Miner?
+                    What is ATMASLIFE INVESTMENT?
                   </p>
                   <p>
 
-                    ATMASLIFE cloud mining machine is a tool product created by the company to help users quickly pledge on the chain to obtain rewards. By staking digital assets on the blockchain network, and obtaining rewards based on the POS (Proof of Stake) mechanism. In this mechanism, users entrust digital assets to nodes, and nodes exercise rights such as producing blocks and packaging transactions on the blockchain and receive rewards. Users share the rewards obtained by nodes in proportion to the number of locked positions.
+                    ATMASLIFE INVESTMENT machines is a tool product created by the company to help users quickly pledge on the chain to obtain rewards. By staking digital assets on the blockchain network, and obtaining rewards based on the POS (Proof of Stake) mechanism. In this mechanism, users entrust digital assets to nodes, and nodes exercise rights such as producing blocks and packaging transactions on the blockchain and receive rewards. Users share the rewards obtained by nodes in proportion to the number of locked positions.
                   </p>
                   <br />
                   <p className="mb-4 text-white font-bold text-3xl">
@@ -117,14 +117,14 @@ function Miner() {
                     <p className="text-white font-xl">Robust</p>
                   </div>
                   <p>
-                    ATMASLIFE cloud mining machines can obtain relatively stable rewards from third parties, and the product term is diverse.
+                    ATMASLIFE INVESTMENT machines can obtain relatively stable rewards from third parties, and the product term is diverse.
                   </p>
                   <br />
                   <p className="mb-4 text-white font-bold text-3xl">
                     Investing in interest-earning assets
                   </p>
                   <p>
-                    ATMASLIFE cloud mining machine is to pledge your digital assets on the blockchain to support the operation of the blockchain network and get corresponding rewards.
+                    ATMASLIFE INVESTMENT machine is to pledge your digital assets on the blockchain to support the operation of the blockchain network and get corresponding rewards.
                   </p>
                   <br />
                   <p className="mb-4 text-white font-bold text-3xl">
