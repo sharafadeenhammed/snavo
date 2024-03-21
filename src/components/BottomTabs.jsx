@@ -31,7 +31,7 @@ function BottomTabs() {
             >
               <FaRegChartBar size={iconSize} />
             </div>
-            <p className="text-sm font-semibold ">Harvest</p>
+            <p className="text-sm font-semibold ">ROI</p>
           </div>
           {/* team */}
           {/* <div onClick={() => navigate(routesName.MY_TEAM)} className={"cursor-pointer flex flex-col items-center " + (location.pathname === routesName.MY_TEAM ? "text-indigo-600" : "text-slate-500")}>

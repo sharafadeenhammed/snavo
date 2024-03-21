@@ -23,8 +23,8 @@ import question from "../assets/images/leftpanel/question.png"
 import shield from "../assets/images/leftpanel/shield.png"
 import memo from "../assets/images/leftpanel/memo.png"
 import userlove from "../assets/images/leftpanel/userlove.png"
-import users from "../assets/images/leftpanel/users.png"
 import book from "../assets/images/leftpanel/book.png"
+import quantifyData from '../data/quantifyData'
 
 function Profile() {
   const navigate = useNavigate();
@@ -65,20 +65,26 @@ function Profile() {
         <p className='text-3xl font-thin  mr-4 pl-2 mb-2'>
           Hello' {user?.user?.fullname} 👋
         </p>
-        <div className=' px-1 text-white bg-slate-800 rounded-xl flex mb-4'>
+        <div className=' px-1 text-white bg-slate-800 rounded-xl flex mb-2'>
           <p className='text-2xl font-bold mr-4'>
             {`${user?.user?.phone?.slice(0, 6)}**** ${user?.user?.phone?.slice(-3)}`}
           </p>
           <div className=' relative'>
             <img src={vip} alt="" />
             <p className="absolute top-1.5 right-3 text-xl font-bold">
-              VIP0
+              VIP{user?.user?.rank}
             </p>
           </div>
         </div>
-        <p className='text-slate-400'>
-          UUID: {user?.user?.uid} <img className='inline h-5' onClick={copyUid} src={copy} />
-        </p>
+        <div className='w-full pl-4'>
+
+          <p className='text-slate-400'>
+            UUID: {user?.user?.uid} <img className='inline h-5' onClick={copyUid} src={copy} />
+          </p>
+          <p className='text-slate-400'>
+            Email: {user?.user?.email}
+          </p>
+        </div>
       </div>
 
       {/* profile stats */}
@@ -87,7 +93,7 @@ function Profile() {
           {/* balance */}
           <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
-              3.12
+              {parseFloat(user?.user?.balance).toFixed(2)}
             </p>
             <p className="text-slate-400 text-center font-normal">
               Balance
@@ -97,7 +103,7 @@ function Profile() {
           {/* available funds */}
           <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
-              {user?.user?.balance}
+              {parseFloat(user?.user?.balance).toFixed(2)}
             </p>
             <p className="text-slate-400 text-center font-normal">
               Available <br /> funds
@@ -107,10 +113,10 @@ function Profile() {
           {/* total income */}
           <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
-              0.12
+              {user?.user?.totalIncome || "0.00"}
             </p>
             <p className="text-slate-400 text-center font-normal">
-              Total <br /> income
+              investment <br /> income
             </p>
           </div>
         </div>
@@ -120,112 +126,112 @@ function Profile() {
           {/* Today's commission */}
           <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
-              0.00
+              {user?.user?.investments?.length || 0}
             </p>
             <p className="text-slate-400 text-center font-normal">
-              Today's <br /> commission
+              My <br /> investments
             </p>
           </div>
 
           {/*Today's income */}
           <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
-              0.03
+              {user?.user?.refererCount}
             </p>
             <p className="text-slate-400 text-center font-normal">
-              Today's <br /> income
+              My <br /> referals
             </p>
           </div>
 
           {/* Yesterday's income */}
           <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
-              0.06
+              {user?.user?.validReferCount}
             </p>
             <p className="text-slate-400 text-center font-normal">
-              Yesterday's <br /> income
+              Valid <br /> referals
             </p>
           </div>
         </div>
 
         <div className="flex justify-between mb-3 items-center" >
           {/* Quantitative benefits */}
-          <div className="flex items-center flex-col" >
+          {/* <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
               0.12
             </p>
             <p className="text-slate-400 text-center font-normal">
               Quantitative <br /> benefits
             </p>
-          </div>
+          </div> */}
 
           {/*This month's income */}
-          <div className="flex items-center flex-col" >
+          {/* <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
               0.12
             </p>
             <p className="text-slate-400 text-center font-normal">
               This month's <br /> income
             </p>
-          </div>
+          </div> */}
 
           {/* Last month's income */}
-          <div className="flex items-center flex-col" >
+          {/* <div className="flex items-center flex-col" >
             <p className="font-bold text-xl">
               0.06
             </p>
             <p className="text-slate-400 text-center font-normal">
               Last month's  <br />income
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
 
 
       <div
-        className="mb-5 w-full  rounded-xl bg-gradient-to-r from-orange-200 to-orange-300">
+        className="mb-5 w-full  rounded-xl bg-gradient-to-r from-slate-500 to-slate-900">
         <div className='px-3 py-3'>
-          <p className='text-red-950 font-normal text-xl mb-2'>Next level</p>
+          <p className='text-slate-400 font-normal text-xl mb-2'>Next level</p>
           <div className='flex justify-between'>
             <div className='flex items-center'>
-              <p className='text-red-950 font-semibold text-3xl' >VIP1</p>
+              <p className='text-slate-400 font-semibold text-3xl' >VIP{`${user.user.rank < 6 ? user?.user?.rank + 1 : user?.user?.rank}`}</p>
               <img className='h-7' src={crown} />
             </div>
-            <p className='text-red-950'>Effective amount(3.12/30.00)</p>
+            <p className='text-slate-400'>Effective amount({`${quantifyData[ user?.user?.rank < 6 ? user?.user?.rank + 1 : user?.user?.rank ]?.data?.balance}`})</p>
           </div>
         </div>
 
-        <div className='bg-white bg-opacity-20 px-3 py-3 text-white'>
+        <div className='bg-slate-800 bg-opacity-20 px-3 py-3 text-white'>
           <div className="flex justify-between mb-3 items-center" >
             {/*Level one */}
-            <div className="flex items-center flex-col" >
+            {/* <div className="flex items-center flex-col" >
               <p className="font-bold text-xl">
                 1(0)
               </p>
               <p className="text-center font-normal">
                 Level one
               </p>
-            </div>
+            </div> */}
 
             {/*Secondary */}
-            <div className="flex items-center flex-col" >
+            {/* <div className="flex items-center flex-col" >
               <p className="font-bold text-xl">
                 0(0)
               </p>
               <p className=" text-center font-normal">
                 Secondary
               </p>
-            </div>
+            </div> */}
 
             {/* Level three */}
-            <div className="flex items-center flex-col" >
+            {/* <div className="flex items-center flex-col" >
               <p className="font-bold text-xl">
                 0(0)
               </p>
               <p className=" text-center font-normal">
                 Level three
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

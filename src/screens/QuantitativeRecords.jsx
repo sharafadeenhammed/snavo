@@ -19,7 +19,7 @@ function QuantitativeRecords() {
           </div>
           <div className="w-full text-center">
             <h1 className='text-center text-2xl font-medium'>
-              Quantitative record</h1>
+              Earnings record</h1>
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@ function Quantify() {
             <Back />
           </div>
           <h1 className='text-center text-2xl font-medium'>
-            Quantitative trading
+            Investment trading
           </h1>
           <div onClick={() => navigate(routesName.QUANTITATIVE_RECORDS)}>
             <img className='h-8' src={history} alt="" />
@@ -58,7 +58,7 @@ function Quantify() {
             Funds
           </p>
           <p className='text-white font-normal text-3xl'>
-            3.06 <span className='text-lg font-semibold'>USDT</span>
+            {parseFloat(user.user.balance).toFixed(2)} <span className='text-lg font-semibold'>USDT</span>
           </p>
           <div className='w-full flex justify-between '>
             <p

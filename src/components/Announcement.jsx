@@ -27,14 +27,14 @@ function Announcement({ close }) {
             <img src={headerImage} alt="" />
           </div> */}
           <p className="px-5 font-bold text-lg">
-            Register as a new user and get <span className="text-red-500">3 USDT</span>
+            Register as a new user and get <span className="text-green-500">3 USDT</span>
 
             <div className="mb-3"></div>
-            (1) Invite subordinates to recharge 50USDT for the first time, and superiors can receive <span className="text-red-500">3USDT!</span>
+            (1) Invite subordinates to recharge 50USDT for the first time, and superiors can receive <span className="text-green-500">3USDT!</span>
 
             <div className="mb-3"></div>
 
-            (2) Invite subordinates to recharge 100 USDT for the first time, and superiors can receive <span className="text-red-500">7 USDT!</span>
+            (2) Invite subordinates to recharge 100 USDT for the first time, and superiors can receive <span className="text-green-500">7 USDT!</span>
 
             <div className="mb-3"></div>
 
