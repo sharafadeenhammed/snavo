@@ -31,13 +31,13 @@ function MinerDetails() {
           <div className='flex items-center'>
             <img className=' block rounded-lg h-16 mr-3' src={minerLogo} alt="" />
             <p className=' font-normal text-xl'>
-              AI mining machine
+              ATMASLIFE INVESTMENT
               <br />
-              ATMASLIFE Cloud Miner
+              machine
             </p>
           </div>
           <p className='text-right font-normal text-xl'>
-            Daily income
+            ROI
             <br />
             <span className='text-orange-400'>2.00%</span>
           </p>
@@ -48,7 +48,7 @@ function MinerDetails() {
           <p className='text-2xl font-normal'>
             7(Day)
             <br />
-            <span className='text-slate-400 text-lg'>Escrow cycle</span>
+            <span className='text-slate-400 text-lg'>ROI cycle</span>
           </p>
           <p className='text-2xl font-normal'>
             100.00
@@ -74,7 +74,7 @@ function MinerDetails() {
               <span className='text-lg text-white'>Daily</span>
             </p>
             <p className='text-lg text-center text-slate-400  font-normal'>
-              Escrow funds
+              ROI funds
               <br />
               <span className='text-lg text-white'>Return due</span>
             </p>
