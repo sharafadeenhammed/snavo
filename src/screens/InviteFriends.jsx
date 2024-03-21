@@ -14,7 +14,7 @@ function InviteFriends() {
   const [ showToast, setShowToast ] = useState(false);
   const location = useLocation();
   function copyLink() {
-    navigator.clipboard.writeText(`${import.meta.env.VITE_FRONTEND_URL}/#${routesName.REGISTER}?uid=${user.user.referalCode}`);
+    navigator.clipboard.writeText(` ${window.location.protocol}//${window.location.host}/#${routesName.REGISTER}?ref=${user.user.referalCode}`);
     setToastMessage("Copy successfully");
     setShowToast(true);
   }
