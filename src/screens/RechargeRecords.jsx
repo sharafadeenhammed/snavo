@@ -5,18 +5,23 @@ import Screen from "../components/Screen";
 import Back from "../components/Back";
 import ThinSpinner from "../components/ThinSpinner";
 import pageAnimation from "../data/pageAnimation";
-import noREcord from "../assets/images/no-record.png"
 import { AnimatePresence } from "framer-motion";
 import NoRecord from "../components/NoRecord";
+import * as recharge from "../api/recharge";
+import useApi from "../hooks/useApi";
 
 function RechargeRecords() {
 
-  const [ currentTab, setCurrentTab ] = useState("all");
+  const [ currentTab, setCurrentTab ] = useState("All");
   const [ isLoading, setIsLoading ] = useState(false)
+  const [ data, setData ] = useState([]);
+  const api = useApi(recharge.getRechageRecords);
   async function loadData() {
-    setIsLoading(true)
-    setTimeout(() => setIsLoading(false), 2000)
-
+    setData([]);
+    setIsLoading(true);
+    const data = await api.callApi(currentTab);
+    if (data.ok) setData(data.data.data);
+    setIsLoading(false);
   }
   useEffect(() => {
     loadData()
@@ -45,52 +50,62 @@ function RechargeRecords() {
 
       <div className="w-full min-h-screen bg-slate-800 text-white px-0 py-2">
         <div className=" bg-slate-800 py-3 px-4 w-full flex items-center justify-between mb-5">
-          <p className={"mr-10 font-semibold text-base cursor-pointer " + (currentTab === "all" ? "text-indigo-700" : "")} onClick={() => setCurrentTab("all")}>
+          <p className={"mr-10 font-semibold text-base cursor-pointer " + (currentTab === "All" ? "text-indigo-700" : "")} onClick={() => setCurrentTab("All")}>
             All
           </p>
 
-          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "review" ? "text-indigo-700" : "")} onClick={() => {
-            setCurrentTab("review")
-          }
-          }>
-            Under review
-          </p>
-
-          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "success" ? "text-indigo-700" : "")} onClick={() => {
-            setCurrentTab("success")
+          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "Success" ? "text-indigo-700" : "")} onClick={() => {
+            setCurrentTab("Success")
           }
           }>
             Success
           </p>
 
-          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "fail" ? "text-indigo-700" : "")} onClick={() => {
-            setCurrentTab("fail")
+          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "Pending" ? "text-indigo-700" : "")} onClick={() => {
+            setCurrentTab("Pending")
           }
           }>
-            Fail
+            Pending
+          </p>
+
+          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "Failed" ? "text-indigo-700" : "")} onClick={() => {
+            setCurrentTab("Failed")
+          }
+          }>
+            Failed
           </p>
         </div>
+        <div className="w-full ">
+          {
+            isLoading ? <ThinSpinner /> : null
+          }
+          {
+            data?.length > 0 && isLoading === false ? (
+              data.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="w-full border-b-2 px-4 mb-2 border-b-slate-700 py-2 flex items-center justify-between">
+                    <p className="flex items-center">
+                      <div className={`h-3 mr-3 w-3 rounded-full ${item.status === "Success" ? "bg-green-500" : ""} ${item.status === "Pending" ? "bg-yellow-500" : ""} ${item.status === "Failed" ? "bg-red-500" : ""}`}></div>
+                      {item.status}
 
-        {currentTab === "all" ?
-          <NoRecord /> : null}
+                    </p>
+                    <p>
+                      {item.rechargeType}
+                    </p>
+                    <p>
+                      {parseFloat(item.amount).toFixed(2)}
+                    </p>
+                  </div>
+                )
+              })
+            ) : <NoRecord />
 
+          }
 
-        {/* team contribution */}
-        {
-          currentTab === "review" ?
-            <NoRecord /> : null
+        </div>
 
-        }
-        {
-          currentTab === "success" ?
-            <NoRecord /> : null
-
-        }
-        {
-          currentTab === "fail" ?
-            <NoRecord /> : null
-
-        }
 
 
       </div>
