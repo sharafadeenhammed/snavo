@@ -47,6 +47,7 @@ function WithdrawalMethod() {
     setMessage(response.data.message);
     setShowToast(true);
     setIsLoading(false);
+    if (!response.ok) return;
     setTimeout(() => {
       navigate(routesName.WITHDRAW_RECORDS)
     }, 6300)
