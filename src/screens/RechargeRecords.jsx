@@ -135,7 +135,7 @@ function RechargeRecords() {
                   </tbody>
                 </table> */}
               </>
-            ) : <NoRecord />
+            ) : isLoading === false ? <NoRecord /> : null
 
           }
 
