@@ -9,6 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import NoRecord from "../components/NoRecord";
 import * as recharge from "../api/recharge";
 import useApi from "../hooks/useApi";
+import moment from "moment";
 
 function RechargeRecords() {
 
@@ -81,25 +82,59 @@ function RechargeRecords() {
           }
           {
             data?.length > 0 && isLoading === false ? (
-              data.map((item, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="w-full border-b-2 px-4 mb-2 border-b-slate-700 py-2 flex items-center justify-between">
-                    <p className="flex items-center">
-                      <div className={`h-3 mr-3 w-3 rounded-full ${item.status === "Success" ? "bg-green-500" : ""} ${item.status === "Pending" ? "bg-yellow-500" : ""} ${item.status === "Failed" ? "bg-red-500" : ""}`}></div>
-                      {item.status}
+              <>
+                {data.map((item, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="w-full text-sm border-b-2 px-4 mb-2 border-b-slate-700 py-2 flex items-center justify-between">
+                      <p className="w-1/4 text-left flex items-center">
+                        <div className={`h-3 mr-1 w-3 rounded-full ${item.status === "Success" ? "bg-green-500" : ""} ${item.status === "Pending" ? "bg-yellow-500" : ""} ${item.status === "Failed" ? "bg-red-500" : ""}`}></div>
+                        {item.status}
 
-                    </p>
-                    <p>
-                      {item.rechargeType}
-                    </p>
-                    <p>
-                      {parseFloat(item.amount).toFixed(2)}
-                    </p>
-                  </div>
-                )
-              })
+                      </p>
+                      <p className="w-1/4 text-center">
+                        {item.rechargeType}
+                      </p>
+                      <p className="w-1/4 text-center">
+                        {parseFloat(item.amount).toFixed(2)}
+                      </p>
+                      <p className="w-1/4 text-right">
+                        {moment(item.updatedAt).fromNow(true)}
+                      </p>
+                    </div>
+                  )
+                })}
+
+                {/* <table className="w-full">
+                  <thead>
+                    <tr>
+                      <th >Status</th>
+                      <th >Recharge</th>
+                      <th >Amount</th>
+                      <th >Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.map((item, index) => {
+                      return (
+                        <tr className="text-sm w-full border-b-2 mb-2 border-b-slate-700" key={index}>
+                          <td >
+                            <p className=" text-left flex items-center">
+                              <div className={`h-3 mr-1 w-3 rounded-full ${item.status === "Success" ? "bg-green-500" : ""} ${item.status === "Pending" ? "bg-yellow-500" : ""} ${item.status === "Failed" ? "bg-red-500" : ""}`}></div>
+                              {item.status}
+
+                            </p>
+                          </td>
+                          <td >{item.rechargeType}</td>
+                          <td >{parseFloat(item.amount).toFixed(2)}</td>
+                          <td >{moment(item.updatedAt).format("YYYY-MM-DD")}</td>
+                        </tr>
+                      )
+                    })}
+                  </tbody>
+                </table> */}
+              </>
             ) : <NoRecord />
 
           }
