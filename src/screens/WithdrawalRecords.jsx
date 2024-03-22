@@ -5,18 +5,23 @@ import Screen from "../components/Screen";
 import Back from "../components/Back";
 import ThinSpinner from "../components/ThinSpinner";
 import pageAnimation from "../data/pageAnimation";
-import noREcord from "../assets/images/no-record.png"
 import { AnimatePresence } from "framer-motion";
-
 import NoRecord from "../components/NoRecord";
+import useApi from "../hooks/useApi";
+import * as withdraw from "../api/withdraw"
+import moment from "moment";
 
 function WithdrawalRecords() {
-
-  const [ currentTab, setCurrentTab ] = useState("all");
-  const [ isLoading, setIsLoading ] = useState(false)
+  const [ currentTab, setCurrentTab ] = useState("All");
+  const [ isLoading, setIsLoading ] = useState(false);
+  const [ data, setData ] = useState([]);
+  const api = useApi(withdraw.getWithdrawals);
   async function loadData() {
     setIsLoading(true)
-    setTimeout(() => setIsLoading(false), 2000)
+    setData([]);
+    const response = await api.callApi(currentTab);
+    if (response.ok) setData(response.data.data);
+    setIsLoading(false)
 
   }
   useEffect(() => {
@@ -44,57 +49,97 @@ function WithdrawalRecords() {
         </div>
       </div>
 
-      <div className="w-full min-h-screen bg-slate-800 text-white px-0 py-2">
+      <div className="w-full bg-slate-800 text-white px-0 py-2">
         <div className=" py-3 px-4 w-full flex items-center justify-between mb-5">
-          <p className={"mr-10 font-semibold text-base cursor-pointer " + (currentTab === "all" ? "text-indigo-700" : "")} onClick={() => setCurrentTab("all")}>
+          <p className={"mr-10 font-semibold text-base cursor-pointer " + (currentTab === "All" ? "text-indigo-700" : "")} onClick={() => setCurrentTab("All")}>
             All
           </p>
 
-          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "review" ? "text-indigo-700" : "")} onClick={() => {
-            setCurrentTab("review")
-          }
-          }>
-            Under review
-          </p>
-
-          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "success" ? "text-indigo-700" : "")} onClick={() => {
-            setCurrentTab("success")
+          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "Success" ? "text-indigo-700" : "")} onClick={() => {
+            setCurrentTab("Success")
           }
           }>
             Success
           </p>
 
-          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "fail" ? "text-indigo-700" : "")} onClick={() => {
-            setCurrentTab("fail")
+          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "Pending" ? "text-indigo-700" : "")} onClick={() => {
+            setCurrentTab("Pending")
           }
           }>
-            Fail
+            Pending
+          </p>
+
+
+
+          <p className={"font-semibold text-base cursor-pointer " + (currentTab === "Failed" ? "text-indigo-700" : "")} onClick={() => {
+            setCurrentTab("Failed")
+          }
+          }>
+            Failed
           </p>
         </div>
+      </div>
 
-        {currentTab === "all" ?
-          <NoRecord /> : null}
-
-
-        {/* team contribution */}
+      {/*  data */}
+      <div className="w-full text-white ">
         {
-          currentTab === "review" ?
-            <NoRecord /> : null
-
+          isLoading ? <ThinSpinner /> : null
         }
         {
-          currentTab === "success" ?
-            <NoRecord /> : null
+          data.length > 0 && isLoading === false ? (
+            <>
+              <div
+                className="w-full  border-b-2 font-bold text-sm px-4 mb-2 border-b-slate-700 py-2 flex items-center justify-between">
+                <p className="w-1/4 text-left flex items-center">
+                  Status
+
+                </p>
+                <p className="w-1/4 text-center">
+                  Address
+                </p>
+                <p className="w-1/4 text-center">
+                  Amount
+                </p>
+                <p className="w-1/4 text-right">
+                  Time
+                </p>
+              </div>
+              {data.map((item, index) => {
+                console.log(item)
+                return (
+                  <div
+                    key={index}
+                    className="w-full text-sm border-b-2 px-4 mb-2 border-b-slate-700 py-2 flex items-center justify-between">
+                    <p className="w-1/4 text-left flex items-center">
+                      <div className={`h-3 mr-1 w-3 rounded-full ${item.status === "Success" ? "bg-green-500" : ""} ${item.status === "Pending" ? "bg-yellow-500" : ""} ${item.status === "Failed" ? "bg-red-500" : ""}`}></div>
+                      {item.status}
+
+                    </p>
+                    <p className="w-1/4 text-center">
+                      {item.address.slice(0, 3) + "..." + item.address.slice(-3)}
+                    </p>
+                    <p className="w-1/4 text-center">
+                      {parseFloat(item.amount).toFixed(2)}
+                    </p>
+                    <p className="w-1/4 text-right">
+                      {moment(item.updatedAt).fromNow(true)}
+                    </p>
+                  </div>
+                )
+              })}
+            </>
+          ) : isLoading === false ? <NoRecord /> : null
 
         }
-        {
-          currentTab === "fail" ?
-            <NoRecord /> : null
-
-        }
-
 
       </div>
+
+
+
+
+
+
+
     </Screen >
   )
 }
