@@ -83,6 +83,22 @@ function RechargeRecords() {
           {
             data?.length > 0 && isLoading === false ? (
               <>
+                <div
+                  className="w-full  border-b-2 font-bold text-sm px-4 mb-2 border-b-slate-700 py-2 flex items-center justify-between">
+                  <p className="w-1/4 text-left flex items-center">
+                    Status
+
+                  </p>
+                  <p className="w-1/4 text-center">
+                    Address
+                  </p>
+                  <p className="w-1/4 text-center">
+                    Amount
+                  </p>
+                  <p className="w-1/4 text-right">
+                    Time
+                  </p>
+                </div>
                 {data.map((item, index) => {
                   return (
                     <div
