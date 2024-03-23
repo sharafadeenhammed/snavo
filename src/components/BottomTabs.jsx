@@ -1,7 +1,7 @@
 
-import { Link, useLocation, useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import routesName from "../data/routesName"
-import { FaHome, FaUser, FaRegChartBar, FaMoneyBillWave } from "react-icons/fa"
+import { FaHome, FaUser, FaRegChartBar, FaCoins } from "react-icons/fa"
 import useUserContext from "../hooks/useUserContext";
 function BottomTabs() {
   const { user } = useUserContext();
@@ -46,7 +46,7 @@ function BottomTabs() {
             <div
               className="mb-1 "
             >
-              <FaMoneyBillWave size={iconSize} />
+              <FaCoins size={iconSize} />
             </div>
             <p className="text-sm font-semibold ">Invest</p>
           </div>
