@@ -115,7 +115,7 @@ function WithdrawalRecords() {
 
                     </p>
                     <p className="w-1/4 text-center">
-                      {item.address.slice(0, 3) + "..." + item.address.slice(-3)}
+                      {item.address.slice(0, 3) + "***" + item.address.slice(-3)}
                     </p>
                     <p className="w-1/4 text-center">
                       {parseFloat(item.amount).toFixed(2)}
