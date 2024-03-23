@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { FaArrowLeft, FaHeadphones, FaGlobe, FaArrowRight, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaArrowLeft, FaEnvelope, FaHeadphones, FaGlobe, FaArrowRight, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -19,9 +19,11 @@ function Login() {
   const [ passwordType, setPasswordType ] = useState("password")
   const [ password, setPassword ] = useState("")
   const [ phone, setPhone ] = useState("")
+  const [ email, setEmail ] = useState("")
   const [ countryCode, setCountryCode ] = useState("+1")
   const [ openCountryPicker, setOpenCountryPicker ] = useState(false);
   const [ showLoginMessage, setShowLoginMessage ] = useState(false);
+  const [ loginType, setLoginType ] = useState("phone");
   const api = useApi(auth.login);
   const navigate = useNavigate();
   const { user, userDispatch } = useUserContext();
@@ -43,7 +45,12 @@ function Login() {
   // submit login form
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await api.callApi({ phone: `${countryCode}${phone}`, password });
+    const data = {
+      channel: loginType,
+      to: loginType === "phone" ? countryCode + phone : email,
+      password
+    }
+    const response = await api.callApi(data);
     if (!response.ok) return
     setShowLoginMessage(true)
     setTimeout(() => {
@@ -86,12 +93,42 @@ function Login() {
       {/* header */}
       <h1 className='text-center text-3xl font-medium mb-20'>Login Please</h1>
       {/* tagline */}
-      <h1 className='text-2xl font-medium mb-2 text-indigo-600 '>
-        Phone login
-      </h1>
+      <div className="flex text-white mb-5 w-full items-center justify-between">
+        <h1
+          onClick={() => setLoginType("phone")}
+          className={`text-xl font-medium mb-2 text-indigo-600 ${loginType === "phone" ? "text-indigo-600" : "text-white"} `}>
+          Phone login
+        </h1>
+        <h1
+          onClick={() => setLoginType("email")}
+          className={`text-xl font-medium mb-2 ${loginType === "email" ? "text-indigo-600" : "text-white"}`}>
+          Email login
+        </h1>
+
+      </div>
       {/* input */}
       <form onSubmit={handleSubmit} className='mb-5'>
-        <AppInput LeftIcon={<p onClick={() => setOpenCountryPicker(true)} className="cursor-pointer flex items-center text-indigo-600 font-bold text-lg mr-2 bg-gray-50">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" handleOnChange={setPhoneState} />
+
+
+
+        {loginType === "phone" ?
+          (
+            <AppInput LeftIcon={<p onClick={() => setOpenCountryPicker(true)} className="cursor-pointer flex items-center text-indigo-600 font-bold text-lg mr-2 bg-gray-50">{countryCode} <FaArrowRight size={15} /> </p>} placeholder='Please enter phone number' type="tel" handleOnChange={setPhoneState} />
+          )
+          :
+          (
+            <AppInput placeholder="Please input the email address" value={email} handleOnChange={(e) => setEmail(e.target.value)} LeftIcon={<FaEnvelope size={20} className="mr-2" />} type="email" />
+          )
+
+        }
+
+
+
+
+
+
+
+
 
         <AppInput handleOnChange={setPasswordState} LeftIcon={<FaLock size={20} className="mr-2" />} type={passwordType} placeholder='Please enter password' RightIcon={passwordType === "password" ? < FaEyeSlash color="lightgray" onClick={() => setPasswordType("text")} size={25} /> : <FaEye color="lightgray" onClick={() => setPasswordType("password")} size={25} />} />
 
