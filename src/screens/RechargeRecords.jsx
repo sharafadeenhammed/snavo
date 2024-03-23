@@ -90,7 +90,7 @@ function RechargeRecords() {
 
                   </p>
                   <p className="w-1/4 text-center">
-                    Address
+                    Type
                   </p>
                   <p className="w-1/4 text-center">
                     Amount
