@@ -87,14 +87,14 @@ function Register() {
           <div>
             <Back />
           </div>
-          <div className='flex items-center'>
+          {/* <div className='flex items-center'>
             <div className='mr-2 p-2 rounded-full bg-indigo-100'>
               <FaHeadphones size={20} color='#4f46e5' />
             </div>
             <div className='rounded-full bg-indigo-100 p-2'>
               <FaGlobe size={20} color='#4f46e5' />
             </div>
-          </div>
+          </div> */}
 
         </div>
       </div>

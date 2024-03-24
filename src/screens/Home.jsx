@@ -97,9 +97,9 @@ function Home() {
             <FaUser onClick={() => setShowLeftPanel(true)} size={20} color='#4f46e5' />
           </div>
           <div className='flex items-center'>
-            <div className='mr-2 p-2 rounded-full bg-indigo-100'>
+            {/* <div className='mr-2 p-2 rounded-full bg-indigo-100'>
               <FaHeadphones size={20} color='#4f46e5' />
-            </div>
+            </div> */}
             <div onClick={() => navigate(routesName.MESSAGE_CENTER)} className='rounded-full bg-indigo-100 p-2'>
               <FaEnvelope size={20} color='#4f46e5' />
             </div>

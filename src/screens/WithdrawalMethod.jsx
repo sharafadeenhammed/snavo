@@ -1,8 +1,10 @@
 
 
-import { useState } from 'react'
-import { FaAngleRight, FaCoins, FaMoneyBillWave } from 'react-icons/fa'
+import { useState, useEffect } from 'react'
+import { FaAngleRight, FaCoins, FaMoneyBillWave, FaShieldAlt } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import { loadCaptchaEnginge, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+
 
 
 import usdt from "../assets/images/usdt.png"
@@ -22,6 +24,7 @@ import * as withdraw from "../api/withdraw";
 
 function WithdrawalMethod() {
   const navigate = useNavigate();
+  const [ captcha, setCaptcha ] = useState("")
   const [ address, setAddress ] = useState("")
   const [ amount, setAmount ] = useState("")
   const [ description, setDescription ] = useState("")
@@ -32,9 +35,19 @@ function WithdrawalMethod() {
   const { user } = useUserContext();
   const api = useApi(withdraw.applyForWithdrawal);
 
+  useEffect(() => {
+    loadCaptchaEnginge(4);
+  }, [])
+
   const handleSubmit = async (e) => {
-    setIsLoading(true);
     e.preventDefault();
+    const captchValidate = validateCaptcha(captcha)
+    if (!captchValidate) {
+      setMessage("Captcha not correct!");
+      setShowToast(true);
+      return
+    }
+    setIsLoading(true);
     const data = {
       address,
       amount,
@@ -111,6 +124,9 @@ function WithdrawalMethod() {
           type="text"
           LeftIcon={<FaMoneyBillWave className='mr-2 inline-block' color='black' size={20} />}
         />
+
+        <AppInput value={captcha} handleOnChange={(e) => setCaptcha(e.target.value)} LeftIcon={<FaShieldAlt className="mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<LoadCanvasTemplateNoReload className="bg-slate-400" />} />
+
         <input
           className='bg-indigo-600 mt-5 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none border-none text-white text-lg cursor-pointer' type='submit' value="Apply For Withdraw" />
       </form>
