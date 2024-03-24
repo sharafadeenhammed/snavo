@@ -1,7 +1,7 @@
 
 
 import { useState, useEffect } from 'react'
-import { FaAngleRight, FaCoins, FaMoneyBillWave, FaShieldAlt } from 'react-icons/fa'
+import { FaAngleRight, FaCoins, FaMoneyBillWave, FaShieldAlt, FaPenSquare } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { loadCaptchaEnginge, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
@@ -19,6 +19,7 @@ import ThinSpinner from '../components/ThinSpinner'
 import useApi from '../hooks/useApi'
 import useUserContext from '../hooks/useUserContext'
 import * as withdraw from "../api/withdraw";
+import updateUserContext from '../utils/updateUserContext';
 
 
 
@@ -32,7 +33,7 @@ function WithdrawalMethod() {
   const [ coin, setCoin ] = useState("USDT");
   const [ showToast, setShowToast ] = useState(false)
   const [ message, setMessage ] = useState("")
-  const { user } = useUserContext();
+  const { user, userDispatch } = useUserContext();
   const api = useApi(withdraw.applyForWithdrawal);
 
   useEffect(() => {
@@ -59,11 +60,18 @@ function WithdrawalMethod() {
     setIsLoading(false);
     setMessage(response.data.message);
     setShowToast(true);
-    setIsLoading(false);
-    if (!response.ok) return;
+    if (!response.ok) {
+      setIsLoading(false);
+      return;
+    }
+    const updatedUser = await updateUserContext();
+    if (updatedUser !== null)
+      userDispatch({ type: "SET_USER", payload: updatedUser });
+
     setTimeout(() => {
       navigate(routesName.WITHDRAW_RECORDS)
     }, 6300)
+    setIsLoading(false);
   }
   return (
     <Screen
@@ -122,10 +130,10 @@ function WithdrawalMethod() {
           placeholder={"description"}
           value={description}
           type="text"
-          LeftIcon={<FaMoneyBillWave className='mr-2 inline-block' color='black' size={20} />}
+          LeftIcon={<FaPenSquare className='mr-2 inline-block' color='gray' size={20} />}
         />
 
-        <AppInput value={captcha} handleOnChange={(e) => setCaptcha(e.target.value)} LeftIcon={<FaShieldAlt className="mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<LoadCanvasTemplateNoReload className="bg-slate-400" />} />
+        <AppInput value={captcha} handleOnChange={(e) => setCaptcha(e.target.value)} LeftIcon={<FaShieldAlt color='gray' className="mr-2" size={30} />} placeholder="Please enter verification code" RightIcon={<LoadCanvasTemplateNoReload className="bg-slate-400" />} />
 
         <input
           className='bg-indigo-600 mt-5 mb-5 w-full py-3 px-2 border-2 rounded-lg outline-none border-none text-white text-lg cursor-pointer' type='submit' value="Apply For Withdraw" />

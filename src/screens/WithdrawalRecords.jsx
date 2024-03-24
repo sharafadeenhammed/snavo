@@ -101,7 +101,7 @@ function WithdrawalRecords() {
                   Amount
                 </p>
                 <p className="w-1/4 text-right">
-                  Time
+                  Since
                 </p>
               </div>
               {data.map((item, index) => {
