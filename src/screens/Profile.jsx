@@ -49,6 +49,9 @@ function Profile() {
   return (
     <Screen
       {...pageAnimation}
+      objStyle={{
+        paddingTop:"10px"
+      }}
     >
       {isLoading ? <ThinSpinner /> : null}
       <AnimatePresence>
