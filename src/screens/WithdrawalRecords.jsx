@@ -19,7 +19,10 @@ function WithdrawalRecords() {
   async function loadData() {
     setIsLoading(true)
     setData([]);
-    const response = await api.callApi(currentTab);
+    let response = {};
+    if (currentTab !== "All")
+      response = await api.callApi({ status: currentTab });
+    else response = await api.callApi();
     if (response.ok) setData(response.data.data);
     setIsLoading(false)
 

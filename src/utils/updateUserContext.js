@@ -1,6 +1,4 @@
 
-
-import userReducer from "../reducer/userReducer";
 import * as auth from "../api/auth";
 
 

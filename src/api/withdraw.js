@@ -14,7 +14,7 @@ export const applyForWithdrawal = async (data) => {
   return response;
 }
 
-export const getWithdrawals = async (type) => {
-  const response = await request.get(`/withdraw/${type}`);
+export const getWithdrawals = async (data) => {
+  const response = await request.get(`/withdraw/`, data);
   return response;
 }

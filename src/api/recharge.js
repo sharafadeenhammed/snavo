@@ -9,7 +9,7 @@ request.addAsyncRequestTransform(async (request) => {
   return request;
 });
 
-export const getRechageRecords = async (type) => {
-  const response = await request.get(`/recharge/${type}`);
+export const getRechageRecords = async (data) => {
+  const response = await request.get(`/recharge/`,data);
   return response;
 }

@@ -20,8 +20,11 @@ function RechargeRecords() {
   async function loadData() {
     setData([]);
     setIsLoading(true);
-    const data = await api.callApi(currentTab);
-    if (data.ok) setData(data.data.data);
+    let response = {};
+    if (currentTab !== "All")
+      response = await api.callApi({ status: currentTab });
+    else response = await api.callApi();
+    if (response.ok) setData(response.data.data);
     setIsLoading(false);
   }
   useEffect(() => {

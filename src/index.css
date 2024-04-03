@@ -18,7 +18,8 @@
 }
 
 .custom-primary-color{
-  color:#644fdd
+  color:#644fdd;
+  /* color:rgba(231, 138, 57, 0.3); */
 }
 body{
   overflow-x: hidden;
@@ -101,3 +102,16 @@ button:focus-visible {
 .color{
   background-color: #4f46e5;
 }
+
+.img{
+  width: 60%;
+  display:inline-block;
+  padding: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+}
+
+@media(max-width:500px){
+  .img{
+    width: 80%;
+  }}
